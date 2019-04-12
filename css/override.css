@@ -105,6 +105,16 @@ html {
   height: 26px;
 }
 
+#main {
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  backface-visibility: hidden;
+  will-change: overflow;
+}
+
 .left.text-muted {
   float: left;
   margin-left: 9px;
@@ -190,15 +200,15 @@ ul {
 }
 
 #dev-to {
-  overflow: hidden;
-}
-
-iframe {
-  width: 105%;
+  float: left;
   overflow: auto;
+  height: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  width: 20%;
 }
 
-iframe::-webkit-scrollbar {
+#dev-to::-webkit-scrollbar {
   display: none;
 }
 
@@ -210,4 +220,12 @@ iframe::-webkit-scrollbar {
 #options:hover {
   color: orange;
   text-decoration: none;
+}
+
+#devStart h2 {
+  color: #f1fa8c;
+}
+
+#devStart p {
+  color: white;
 }
