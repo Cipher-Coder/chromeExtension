@@ -1,0 +1,30 @@
+{
+  "name": "Dev Tabs",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "New Tab extension aimed at my Dev Work",
+  "homepage_url": "https://mattaz.com",
+  "icons": {
+    "16": "icons/devTabs-16x16.png",
+    "32": "icons/devTabs-32x32.png",
+    "48": "icons/devTabs-48x48.png",
+    "128": "icons/devTabs-128x128.png"
+  },
+  "default_locale": "en",
+  "options_page": "src/options_custom/index.html",
+  "browser_action": {
+    "default_icon": "icons/devTabs-32x32.png",
+    "default_title": "Dev Tabs",
+    "default_popup": "src/browser_action/browser_action.html"
+  },
+  "chrome_url_overrides": {
+    "newtab": "src/override/override.html"
+  },
+  "permissions": [
+    "chrome://favicon/",
+    "contentSettings",
+    "management",
+    "tabs",
+    "https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"
+  ]
+}

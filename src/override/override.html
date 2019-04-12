@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link id="favicon" rel="icon" href="/icons/devTabs.ico">
+	<script src="/js/github-calendar.js"></script>
+  <link rel="stylesheet" href="/css/override.css">
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet"> 
+  <title>devTabs</title>
+</head>
+<body>
+<div class="container">
+	<div class="fl w-10">
+		<h3 class="f3 tc light-blue">Bookmarks</h3>
+		<ul id="bookmarkList"></ul>
+		
+	</div>
+
+	<div id="dev-to" class="fl w-20">
+		<h3 class="f3 tc light-blue">Dev.to</h3>
+	</div>
+	<div class="fl w-50">
+    <h3 class="f3 tc light-blue">GitHub Calendar</h3>
+    <div class="calendar"></div>
+    <div id="clock-place" class="clock-container pt6 tc">
+    <div id="clock" class="blue tc f1 pa3"></div>
+    <div class="weather-container pt3">
+      <p class="light-blue f4">City: <span id="city" class="orange i"></span></p>
+      <p class="light-blue f4">Temperature: <span id="temp" class="orange i"></span>Humidity: <span id="humidity" class="orange i"></span></p>
+			<p class="light-blue f4">Wind Speed: <span id="wind" class="orange i"></span>Clouds: <span id="sky" class="orange i"></span></p>
+			<p><a id="options" href="/src/options_custom/index.html">Options</a></p>
+    </div>
+    </div>
+	</div>
+	<div class="fl w-20">
+    <h3 class="f3 tc pb2 light-blue">Github Repo's</h3>
+    <div id="github-feeds" class="tc f6 white"></div>
+  </div>
+</div>
+
+<script src="/js/githubFeed.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>
