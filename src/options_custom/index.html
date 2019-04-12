@@ -12,30 +12,35 @@
         <link rel="stylesheet" href="custom.css" media="screen">
         
         <!-- JavaScripts -->
-        <script src="lib/mootools-core.js"></script>
         <script src="lib/store.js"></script>
-        <script src="js/classes/tab.js"></script>
-        <script src="js/classes/setting.js"></script>
-        <script src="js/classes/search.js"></script>
-        <script src="js/classes/fancy-settings.js"></script>
-        <script src="i18n.js"></script>
-        <script src="js/i18n.js"></script>
-        <script src="manifest.js"></script>
-        <script src="settings.js"></script>
+
     </head>
     <body class="no-select">
         <div id="sidebar" class="fancy">
-            <img id="icon" src="devTabs.ico" alt=""><h1 id="settings-label"></h1>
+            <img id="icon" src="devTabs.ico" alt=""><h1 id="settings-label">Settings</h1>
             <div id="tab-container">
-                <div id="search-container" class="tab">
-                    <input id="search" type="search" placeholder="">
+                <div id="git-feed" class="tab">
+                    <h3>Github Feed</h3>
+                </div>
+                <div id="bookmark-opt" class="tab">
+                    <h3>Bookmark Options</h3>
+                </div>
+                <div id="githubCal" class="tab">
+                    <h3>Github Calendar</h3>
                 </div>
             </div>
         </div>
         <div id="content">
-            <div id="search-result-container" class="tab-content">
-                <h2 id="search-label"></h2>
+            <div id="github-feed" class="tab-content">
+                <h3>Github Feed Options</h3>
+            </div>
+            <div id="bookmark-option" class="tab-content">
+                <h3>Bookmark Options</h3>
+            </div>
+            <div id="github-cal" class="tab-content">
+                <h3>Github Calendar Options</h3>
             </div>
         </div>
+        <script src="lib/main.js"></script>
     </body>
 </html>
