@@ -1,0 +1,45 @@
+#ignore any editor directories and files
+.vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+.idea
+.vs
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+#ignore my pinegrow file
+pinegrow.json
+
+
+# Any IDE'settings
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+#other misc files including node modules
+.DS_Store
+node_modules
+/dist
+
+# Ignore the CNAME file
+CNAME
+
