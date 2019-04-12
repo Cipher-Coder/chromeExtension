@@ -51,6 +51,7 @@ document.getElementById("githubCal").onclick = function() {
 
 document.getElementById("submitgituser").onclick = function() {
   var user1 = document.getElementById("gitUser").value;
+  sessionStorage.clear();
   sessionStorage.setItem("userGit", user1);
 };
 console.log(sessionStorage);

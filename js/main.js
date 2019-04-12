@@ -1,13 +1,15 @@
 new GitHubCalendar(".calendar", "Cipher-Coder", { responsive: true });
 
-let gitUserName = sessionStorage.getItem("userGit");
+let gitUser = sessionStorage.getItem("userGit");
+
 GithubFeed.init({
-  username: gitUserName,
+  username: gitUser,
   container: "#github-feeds",
   count: 8,
   order: "desc",
   onComplete: function() {
     console.log("Feed Loaded");
+    console.log(gitUser);
   }
 });
 
@@ -123,3 +125,14 @@ function httpRequestAsync(url, callback) {
   httpRequest.send();
 }
 findWeather(); //Initiate the function
+
+/* let request = new XMLHttpRequest();
+request.open("GET", "https://dev.to/api/articles", true);
+request.onload = function() {
+  let data = JSON.parse(this.response);
+
+  data.forEach(article => {
+    console.log(article.title);
+  });
+};
+ */

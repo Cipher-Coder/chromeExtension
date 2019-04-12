@@ -117,23 +117,4 @@ body.searching #tab-container .tab.active {
 #submitgituser {
   margin: 8px 60px;
   border-radius: 4px;
-  background-color: #16a085;
-  border: none;
-  color: #fff;
-  transition-duration: 0.4s;
-  overflow: hidden;
-  padding: 8px;
-  box-shadow: 0 5px 10px #193047;
-}
-
-#submitgituser:hover {
-  background: #fff;
-  box-shadow: 0 2px 6px 4px #1abc9c;
-  color: #000;
-}
-
-#submitgituser:after {
-  content: "";
-  background: #1abc9c;
-  display: block;
 }
