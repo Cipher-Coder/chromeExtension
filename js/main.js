@@ -1,7 +1,8 @@
 new GitHubCalendar(".calendar", "Cipher-Coder", { responsive: true });
 
+let gitUserName = sessionStorage.getItem("userGit");
 GithubFeed.init({
-  username: "Cipher-Coder",
+  username: gitUserName,
   container: "#github-feeds",
   count: 8,
   order: "desc",

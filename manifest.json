@@ -20,6 +20,12 @@
   "chrome_url_overrides": {
     "newtab": "src/override/override.html"
   },
-  "permissions": ["chrome://favicon/", "contentSettings", "management", "tabs"],
+  "permissions": [
+    "chrome://favicon/",
+    "contentSettings",
+    "management",
+    "tabs",
+    "storage"
+  ],
   "content_security_policy": "script-src 'self' blob:filesystem: chrome-extension-resource 'unsafe-eval'; object-src 'self'"
 }
