@@ -114,7 +114,8 @@ body.searching #tab-container .tab.active {
   padding-top: 15px;
 }
 
-#submitgituser {
+#submitgituser,
+#submitCalUser {
   margin: 8px 60px;
   border-radius: 4px;
 }
