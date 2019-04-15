@@ -24,7 +24,8 @@
     "contentSettings",
     "management",
     "tabs",
-    "storage"
+    "storage",
+    "bookmarks"
   ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

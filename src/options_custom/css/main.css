@@ -98,7 +98,8 @@
 }
 
 #submitgituser,
-#submitCalUser {
+#submitCalUser,
+#submitbookmark {
   margin: 8px 60px;
   border-radius: 4px;
 }

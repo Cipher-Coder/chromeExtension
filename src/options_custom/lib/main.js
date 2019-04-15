@@ -55,3 +55,11 @@ document.getElementById("submitgituser").onclick = function() {
   sessionStorage.setItem("userGit", user1);
 };
 console.log(sessionStorage);
+
+/* document.getElementById("submitbookmark").onclick = function() {
+  var bmTree = document.getElementById("bookmark-tree").value;
+  bookmarks.getChildren(bmTree, function() {
+    console.log(bmTree);
+  });
+};
+ */
