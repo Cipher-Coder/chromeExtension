@@ -146,8 +146,9 @@ request.onload = function() {
     data.forEach(article => {
       const card = document.createElement("div");
       card.setAttribute("class", "card");
-      const h2 = document.createElement("h2");
-      h2.textContent = article.title;
+      const a = document.createElement("a");
+      a.href = article.url;
+      a.textContent = article.title;
       const p = document.createElement("p");
       article.description = article.description.substring(0, 300);
       p.textContent = `${article.description}...`;
@@ -155,11 +156,9 @@ request.onload = function() {
       img.src = article.cover_image;
 
       container.appendChild(card);
-      card.appendChild(h2);
+      card.appendChild(a);
       card.appendChild(p);
       card.appendChild(img);
-
-      console.log("Done", request.response.length);
     });
   }
 };

@@ -213,17 +213,29 @@ ul {
 }
 
 #options {
-  color: rgba(170, 114, 9, 0.726);
-  text-decoration: none;
+  -webkit-filter: brightness(70%);
+  -moz-filter: brightness(70%);
+  -o-filter: brightness(70%);
+  -ms-filter: brightness(70%);
+  filter: brightness(70%);
 }
 
 #options:hover {
-  color: orange;
-  text-decoration: none;
+  -webkit-filter: brightness(100%);
+  -moz-filter: brightness(100%);
+  -o-filter: brightness(100%);
+  -ms-filter: brightness(100%);
+  filter: brightness(100%);
 }
 
-#devStart h2 {
+#devStart a:hover {
+  color: greenyellow;
+}
+
+#devStart a {
   color: #f1fa8c;
+  font-size: 1.25rem;
+  text-decoration: none;
 }
 
 #devStart p {

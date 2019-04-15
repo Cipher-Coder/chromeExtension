@@ -61,8 +61,7 @@
   cursor: pointer;
 }
 
-#tab-container .tab.active,
-body.searching #search-container {
+#tab-container .tab.active {
   background-color: #d4d4d4;
   border-color: #bfbfbf;
   color: black;
@@ -70,7 +69,7 @@ body.searching #search-container {
   box-shadow: inset -12px 0 30px -30px black;
 }
 
-body.searching #tab-container .tab.active {
+#tab-container .tab.active {
   background-color: transparent;
   border-color: transparent;
   color: #808080;
@@ -102,4 +101,8 @@ body.searching #tab-container .tab.active {
 #submitCalUser {
   margin: 8px 60px;
   border-radius: 4px;
+}
+
+.active {
+  display: block;
 }
