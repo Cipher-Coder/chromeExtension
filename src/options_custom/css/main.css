@@ -98,11 +98,26 @@
 
 #submitgituser,
 #submitCalUser,
-#submitbookmark {
+#submitbookmark,
+#deleteBookmark {
   margin: 8px 60px;
   border-radius: 4px;
 }
 
 .active {
   display: block;
+}
+
+.explainSettings {
+  margin: 10px;
+}
+
+.explain {
+  font-size: 0.875rem;
+}
+
+#github-feed,
+#bookmark-option,
+#github-cal {
+  margin-top: 220px;
 }

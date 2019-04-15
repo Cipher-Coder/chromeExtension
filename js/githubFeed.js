@@ -1,6 +1,6 @@
 var GithubFeed = {
   init: function(config) {
-    this.count = config.count || 0;
+    this.count = config.count || 8;
     this.order = config.order || "desc";
     this.url =
       "https://api.github.com/users/" +

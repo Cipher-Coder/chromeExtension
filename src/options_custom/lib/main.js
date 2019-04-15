@@ -59,18 +59,17 @@ console.log(sessionStorage);
 
 function clearForm() {
   document.getElementById("gitUser").value = "";
+  document.getElementById("bookmarkURL").value = "";
+  document.getElementById("bookmarkName").value = "";
+  document.getElementById("gitCalUser").value = "";
 }
-/* document.getElementById("submitbookmark").onclick = function() {
-  var bmTree = document.getElementById("bookmark-tree").value;
-  bookmarks.getChildren(bmTree, function() {
-    console.log(bmTree);
-  });
+
+document.getElementById("submitbookmark").onclick = function() {
+  let bmURL = document.getElementById("bookmarkURL").value;
+  let bmName = document.getElementById("bookmarkName").value;
+
+  sessionStorage.setItem("bookmarkURL", bmURL);
+  sessionStorage.setItem("bookmarkName", bmName);
+  clearForm();
+  console.log(sessionStorage);
 };
- */
-/* let bmButton = document.getElementById("submitbookmark");
-bmButton.addEventListener("click", function() {
-  let bmTree = document.getElementById("bookmark-tree").value;
-  chrome.bookmarks.getChildren(bmTree, function() {
-    console.log(bmTree);
-  });
-}); */

@@ -24,11 +24,18 @@
             </div>
         </div>
         <div id="content">
+            <div class="explainSettings">
+                <h2>Settings Configuration:</h2>
+                <h3>Select the options on the left to configure the settings for each item.</h3>
+                <p class="explain"><b>Github Feed</b> option will set the username for whatever Github user's repository list you would like shown on the far right of the screen.</p>
+                <p class="explain"><b>Bookmark Options</b> will configure what bookmarks you want listed on the New Tab page on the far left for quick access. This is configured to open in the same window when clicked.</p>
+                <p class="explain"><b>Github Calendar</b> will configure what Github profile will show in the commit calendar in the middle of the New Tab page.</p>
+            </div>
             <div id="github-feed" class="tab-content" style="display: none;">
                 <h2>Github Feed Options</h2>
                 <h3>Please configure the options for the Github feed:</h3>
                 <div id="form-feed">
-                    <form id="feed-options" action="/">
+                    <form id="feed-options">
                         Username: <input id="gitUser" type="text" name="username" placeholder="Enter Github Username-Feed">
                     </form>
                         <button id="submitgituser">Save</button>
@@ -39,17 +46,22 @@
                 <h2>Bookmark Options</h2>
                 <h3>Enter the name of the folder you wish to display:</h3>
                 <div id="form-bookmark">
-                    <form id="bookmark-options" action="/">
-                        Bookmark Folder: <input id="bookmark-tree" type="text" name="username" placeholder="Enter Bookmarks folder">
+                    <form id="bookmarkOptions">
+                        Bookmarks: <input id="bookmarkURL" type="url" name="BookmarkURL" placeholder="Enter Bookmark URL">
+                        Name: <input id="bookmarkName" type="text" name="bookmarkName" placeholder="Enter a Name for the Bookmark">
                     </form>
                         <button id="submitbookmark">Save</button>
+                </div>
+                <div>
+                <p>Delete Bookmarks - Starting with last entered.</p>
+                <button id="deleteBookmark">Delete</button>
                 </div>
             </div>
             <div id="github-cal" class="tab-content" style="display: none;">
                 <h2>Github Calendar Options</h2>
                 <h3>Please configure the options for the Github feed:</h3>
                 <div id="form-cal">
-                    <form id="cal-options" action="/">
+                    <form id="cal-options">
                         Username: <input id="gitCalUser" type="text" name="username" placeholder="Enter Github Username-Calender">
                     </form>
                         <button id="submitCalUser">Save</button>

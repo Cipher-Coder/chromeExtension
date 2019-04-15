@@ -5,7 +5,7 @@ let gitUser = sessionStorage.getItem("userGit");
 GithubFeed.init({
   username: gitUser,
   container: "#github-feeds",
-  count: 8,
+  count: 10,
   order: "desc",
   onComplete: function() {
     console.log("Feed Loaded");
@@ -165,3 +165,6 @@ request.onload = function() {
 request.onerror = function() {
   console.log("request failed");
 };
+
+let bookmarkURL = sessionStorage.getItem("bookmarkURL");
+let bookmarkName = sessionStorage.getItem("bookmarkName");
