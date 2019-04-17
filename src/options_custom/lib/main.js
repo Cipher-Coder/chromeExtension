@@ -72,7 +72,7 @@ document.getElementById("submitWeather").onclick = function() {
     console.log(`Latitude : ${crd.latitude}`);
     console.log(`Longitude: ${crd.longitude}`);
     console.log(`More or less ${crd.accuracy} meters.`); */
-    
+
     sessionStorage.userLatitude = crd.latitude;
     sessionStorage.userLongitude = crd.longitude;
   }
@@ -112,8 +112,22 @@ function clearForm() {
   document.getElementById("gitCalUser").value = "";
 }
 
-/* document.getElementById("submitbookmark").onclick = function() {
-  sessionStorage.setItem("bookmarkURL", bmURL);
-  sessionStorage.setItem("bookmarkName", bmName);
-  console.log(sessionStorage);
-}; */
+document.getElementById("submitbookmark").onclick = function bookmarkfn() {
+  let userBookmarks = [];
+  userBookmarks = document.getElementById("bookmarkForm").value;
+  let tempBook = new Array();
+
+  tempBook = marked.inlineLexer(userBookmarks, []).split(",");
+
+  sessionStorage.userBookmark = tempBook;
+  /* let ul = "<ul>";
+
+  tempBook.forEach(bookmarkfn);
+  ul += "</ul>";
+
+  document.getElementById("deleteBookmarks").innerHTML = ul;
+
+  function bookmarkfn(value) {
+    ul += "<li>" + value + "</li>";
+  } */
+};

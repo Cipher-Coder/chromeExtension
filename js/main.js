@@ -1,3 +1,22 @@
+window.onload = function makeBookmark() {
+  let myBookmarks = sessionStorage.userBookmark;
+
+  let tempBook = new Array();
+
+  tempBook = myBookmarks.split(",");
+
+  let ul = "<ul>";
+
+  tempBook.forEach(makeBookmark);
+  ul += "</ul>";
+
+  document.getElementById("bookmarkList").innerHTML = ul;
+
+  function makeBookmark(value) {
+    ul += "<li>" + value + "</li>";
+  }
+};
+
 new GitHubCalendar(".calendar", "Cipher-Coder", { responsive: true });
 
 if (sessionStorage.userGit === undefined) {
@@ -97,8 +116,6 @@ let skyEl = document.getElementById("sky");
 
 let lat = sessionStorage.userLatitude; //Location you want your weather for.
 let lon = sessionStorage.userLongitude;
-
-
 
 function findWeather() {
   let searchLink =

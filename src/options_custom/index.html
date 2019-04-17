@@ -6,7 +6,7 @@
         <link id="favicon" rel="icon" href="devTabs.ico">
         <link rel="stylesheet" href="lib/default.css" media="screen">
         <link rel="stylesheet" href="css/main.css" media="screen">
-        <!-- <script src="lib/store.js"></script> -->
+        <script src="lib/marked.min.js"></script>
     </head>
     <body class="no-select">
         <div id="sidebar" class="fancy">
@@ -43,18 +43,17 @@
                         Username: <input id="gitUser" type="text" name="username" placeholder="Enter Github Username">
                     </form>
                         <button id="submitgituser">Save</button>
-                    
                 </div>
             </div>
             <div id="bookmark-option" class="tab-content" style="display: none;">
                 <h2>Bookmark Options</h2>
                 <h3>Enter the bookmarks you wish to display.The links will be listed on the main page in the far left column. Please be sure to <b>Use Markdown Format.</b> Also, please be sure to separate entries with a comma. ex: [Link Name](https://link.url.com)<b>,</b>[Link Name](https://link.url.com) - no space needed.</h3>
                 <div id="form-bookmark">
-                    <textarea id="myForm" rows="6" cols="60"></textarea><br>
+                    <textarea id="bookmarkForm" rows="6" cols="60"></textarea><br>
                         <button id="submitbookmark">Save</button>
                 </div>
                 <div>
-                <p>Delete Bookmarks - Starting with last entered.</p>
+                <p id="deleteBookmarks">Delete Bookmarks - Starting with last entered.</p>
                 <button id="deleteBookmark">Delete</button>
                 </div>
             </div>
@@ -75,7 +74,6 @@
                     <button id="submitWeather">Get Location</button>
                 </div>
             </div>
-        </div>
         <script src="lib/main.js"></script>
         <script src="/js/githubFeed.js"></script>
     </body>

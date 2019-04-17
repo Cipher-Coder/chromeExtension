@@ -165,10 +165,12 @@ img.favicons {
 
 li a:link {
   color: #6272a4;
+  text-decoration: none;
 }
 
 li a:visited {
   color: #6272a4;
+  text-decoration: none;
 }
 
 li a:hover {
@@ -182,6 +184,7 @@ ul {
 
 .repo-name a {
   color: #f1fa8c;
+  text-decoration: none;
 }
 
 .repo-name a:hover {
@@ -244,4 +247,17 @@ ul {
 
 .card {
   padding-bottom: 35px;
+}
+
+#bookmarkLinks {
+  float: left;
+  overflow: auto;
+  height: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#bookmarkLinks::-webkit-scrollbar {
+  display: none;
 }
