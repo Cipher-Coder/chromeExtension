@@ -486,12 +486,6 @@ input[type="password"] {
   padding: 4px;
 }
 
-textarea {
-  width: 450px;
-  height: 170px;
-  padding: 5px;
-}
-
 /* success, info, notice and error boxes */
 .success,
 .info,
@@ -540,4 +534,20 @@ textarea {
 
 .error a {
   color: #8a1f11;
+}
+
+.red {
+  color: red;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.black {
+  color: black;
+}
+
+.small {
+  font-size: 0.75rem;
 }

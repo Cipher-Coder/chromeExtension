@@ -49,12 +49,14 @@
                 <h2>Bookmark Options</h2>
                 <h3>Enter the bookmarks you wish to display.The links will be listed on the main page in the far left column. Please be sure to <b>Use Markdown Format.</b> Also, please be sure to separate entries with a comma. ex: [Link Name](https://link.url.com)<b>,</b>[Link Name](https://link.url.com) - no space needed.</h3>
                 <div id="form-bookmark">
-                    <textarea id="bookmarkForm" rows="6" cols="60"></textarea><br>
+                    <textarea id="bookmarkForm" rows="8" cols="80" placeholder="[Gmail](https://gmail.com),[Mozilla](https://developer.mozilla.org/)"></textarea><br>
                         <button id="submitbookmark">Save</button>
+                        <p>Save your most used Bookmarks</p>
                 </div>
                 <div>
-                <p id="deleteBookmarks">Delete Bookmarks - Starting with last entered.</p>
-                <button id="deleteBookmark">Delete</button>
+                <button id="deleteBookmark" class="red">Delete</button>
+                <p id="deleteBookmarks" class="red strong">Delete Bookmarks</p>
+                <p class="red">This will delete all bookmarks in the column labeled 'Bookmarks' on the DevTabs page.<br><span class="black small">(This will not affect bookmarks saved in your bookmarks folder.)</span></p>
                 </div>
             </div>
             <div id="github-cal" class="tab-content" style="display: none;">

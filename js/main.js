@@ -13,7 +13,7 @@ window.onload = function makeBookmark() {
   document.getElementById("bookmarkList").innerHTML = ul;
 
   function makeBookmark(value) {
-    ul += "<li>" + value + "</li>";
+    ul += "<li class='userMark'>" + value + "</li>";
   }
 };
 
@@ -177,6 +177,7 @@ request.onload = function() {
       p.textContent = `${article.description}...`;
       const img = document.createElement("img");
       img.src = article.cover_image;
+      img.alt = "";
 
       container.appendChild(card);
       card.appendChild(a);
@@ -188,6 +189,3 @@ request.onload = function() {
 request.onerror = function() {
   console.log("request failed");
 };
-
-let bookmarkURL = sessionStorage.getItem("bookmarkURL");
-let bookmarkName = sessionStorage.getItem("bookmarkName");

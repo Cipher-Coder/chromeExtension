@@ -246,7 +246,9 @@ ul {
 }
 
 .card {
-  padding-bottom: 35px;
+  padding-bottom: 5px;
+  border-bottom: solid 1px #6272a4;
+  margin-top: 30px;
 }
 
 #bookmarkLinks {
