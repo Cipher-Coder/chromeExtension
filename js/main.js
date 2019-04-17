@@ -1,17 +1,21 @@
 new GitHubCalendar(".calendar", "Cipher-Coder", { responsive: true });
 
-let gitUser = sessionStorage.getItem("userGit");
-
-GithubFeed.init({
-  username: gitUser,
-  container: "#github-feeds",
-  count: 10,
-  order: "desc",
-  onComplete: function() {
-    console.log("Feed Loaded");
-    console.log(gitUser);
-  }
-});
+if (sessionStorage.userGit === undefined) {
+  document.getElementById("github-feeds").style.color = "red";
+  document.getElementById("github-feeds").textContent =
+    "Please configure Github Username!";
+} else {
+  GithubFeed.init({
+    username: sessionStorage.userGit,
+    container: "#github-feeds",
+    count: 10,
+    order: "desc",
+    onComplete: function() {
+      console.log("Feed Loaded");
+    }
+  });
+}
+console.log(sessionStorage);
 
 // Start of Clock and Calendar
 
@@ -91,8 +95,10 @@ let humidityEl = document.getElementById("humidity");
 let windEl = document.getElementById("wind");
 let skyEl = document.getElementById("sky");
 
-let lat = 35.398775; //Location you want your weather for.
-let lon = -84.346465;
+let lat = sessionStorage.userLatitude; //Location you want your weather for.
+let lon = sessionStorage.userLongitude;
+
+
 
 function findWeather() {
   let searchLink =

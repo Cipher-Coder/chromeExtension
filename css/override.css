@@ -241,3 +241,7 @@ ul {
 #devStart p {
   color: white;
 }
+
+.card {
+  padding-bottom: 35px;
+}

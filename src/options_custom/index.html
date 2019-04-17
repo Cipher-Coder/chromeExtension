@@ -6,7 +6,7 @@
         <link id="favicon" rel="icon" href="devTabs.ico">
         <link rel="stylesheet" href="lib/default.css" media="screen">
         <link rel="stylesheet" href="css/main.css" media="screen">
-        <script src="lib/store.js"></script>
+        <!-- <script src="lib/store.js"></script> -->
     </head>
     <body class="no-select">
         <div id="sidebar" class="fancy">
@@ -21,6 +21,9 @@
                 <div id="githubCal" class="tab">
                     <h3>Github Calendar</h3>
                 </div>
+                <div id="weatherInfo" class="tab">
+                    <h3>Weather</h3>
+                </div>
             </div>
         </div>
         <div id="content">
@@ -28,15 +31,16 @@
                 <h2>Settings Configuration:</h2>
                 <h3>Select the options on the left to configure the settings for each item.</h3>
                 <p class="explain"><b>Github Feed</b> option will set the username for whatever Github user's repository list you would like shown on the far right of the screen.</p>
-                <p class="explain"><b>Bookmark Options</b> will configure what bookmarks you want listed on the New Tab page on the far left for quick access. This is configured to open in the same window when clicked.</p>
+                <p class="explain"><b>Bookmark Options</b> will configure what bookmarks you want listed on the New Tab page in the far left column for quick access. This is configured to open in the link in the same window when clicked.</p>
                 <p class="explain"><b>Github Calendar</b> will configure what Github profile will show in the commit calendar in the middle of the New Tab page.</p>
+                <p class="explain"><b>Weather</b> will configure the Latitude and Longitude of the location you want weather info to show up for.</p>
             </div>
             <div id="github-feed" class="tab-content" style="display: none;">
                 <h2>Github Feed Options</h2>
                 <h3>Please configure the options for the Github feed:</h3>
                 <div id="form-feed">
                     <form id="feed-options">
-                        Username: <input id="gitUser" type="text" name="username" placeholder="Enter Github Username-Feed">
+                        Username: <input id="gitUser" type="text" name="username" placeholder="Enter Github Username">
                     </form>
                         <button id="submitgituser">Save</button>
                     
@@ -44,12 +48,9 @@
             </div>
             <div id="bookmark-option" class="tab-content" style="display: none;">
                 <h2>Bookmark Options</h2>
-                <h3>Enter the name of the folder you wish to display:</h3>
+                <h3>Enter the bookmarks you wish to display.The links will be listed on the main page in the far left column. Please be sure to <b>Use Markdown Format.</b> Also, please be sure to separate entries with a comma. ex: [Link Name](https://link.url.com)<b>,</b>[Link Name](https://link.url.com) - no space needed.</h3>
                 <div id="form-bookmark">
-                    <form id="bookmarkOptions">
-                        Bookmarks: <input id="bookmarkURL" type="url" name="BookmarkURL" placeholder="Enter Bookmark URL">
-                        Name: <input id="bookmarkName" type="text" name="bookmarkName" placeholder="Enter a Name for the Bookmark">
-                    </form>
+                    <textarea id="myForm" rows="6" cols="60"></textarea><br>
                         <button id="submitbookmark">Save</button>
                 </div>
                 <div>
@@ -65,6 +66,13 @@
                         Username: <input id="gitCalUser" type="text" name="username" placeholder="Enter Github Username-Calender">
                     </form>
                         <button id="submitCalUser">Save</button>
+                </div>
+            </div>
+            <div id="weatherOpt" class="tab-content" style="display: none;">
+                <h2>Weather Location</h2>
+                <h3>Please configure the location for the weather:</h3>
+                <p class="explain">Hit the button to get your current location. Once you press 'Get Location' a message will appear asking you to allow this page to access your location. Once you hit 'allow', your current location will be saved and those coordinates will be used. This extension does <b>not</b> track or 'follow' you, so if you move and want your location updated, just come back here and hit the button again to update your weather display. </p>
+                    <button id="submitWeather">Get Location</button>
                 </div>
             </div>
         </div>

@@ -99,7 +99,8 @@
 #submitgituser,
 #submitCalUser,
 #submitbookmark,
-#deleteBookmark {
+#deleteBookmark,
+#submitWeather {
   margin: 8px 60px;
   border-radius: 4px;
 }
@@ -118,6 +119,7 @@
 
 #github-feed,
 #bookmark-option,
-#github-cal {
-  margin-top: 220px;
+#github-cal,
+#weatherOpt {
+  margin-top: 280px;
 }
