@@ -119,7 +119,10 @@ document.getElementById("submitbookmark").onclick = function bookmarkfn() {
 
   tempBook = marked.inlineLexer(userBookmarks, []).split(",");
 
-  sessionStorage.userBookmark = tempBook;
+  if (sessionStorage) {
+    sessionStorage.userBookmark = tempBook;
+  }
+
   /* let ul = "<ul>";
 
   tempBook.forEach(bookmarkfn);
