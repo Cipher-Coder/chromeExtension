@@ -1,4 +1,5 @@
-document.getElementById("git-feed").onclick = function() {
+document.getElementById("git-feed").addEventListener("click", feedDisplay);
+function feedDisplay() {
   let feedSettings = document.getElementById("github-feed");
   let bookmarkSettings = document.getElementById("bookmark-option");
   let calSettings = document.getElementById("github-cal");
@@ -11,9 +12,12 @@ document.getElementById("git-feed").onclick = function() {
   } else {
     feedSettings.style.display = "none";
   }
-};
+}
 
-document.getElementById("bookmark-opt").onclick = function() {
+document
+  .getElementById("bookmark-opt")
+  .addEventListener("click", bookmarkDisplay);
+function bookmarkDisplay() {
   let bookmarkSettings = document.getElementById("bookmark-option");
   let feedSettings = document.getElementById("github-feed");
   let calSettings = document.getElementById("github-cal");
@@ -26,9 +30,10 @@ document.getElementById("bookmark-opt").onclick = function() {
   } else {
     bookmarkSettings.style.display = "none";
   }
-};
+}
 
-document.getElementById("githubCal").onclick = function() {
+document.getElementById("githubCal").addEventListener("click", calendarDisplay);
+function calendarDisplay() {
   let calSettings = document.getElementById("github-cal");
   let bookmarkSettings = document.getElementById("bookmark-option");
   let feedSettings = document.getElementById("github-feed");
@@ -41,9 +46,12 @@ document.getElementById("githubCal").onclick = function() {
   } else {
     calSettings.style.display = "none";
   }
-};
+}
 
-document.getElementById("weatherInfo").onclick = function() {
+document
+  .getElementById("weatherInfo")
+  .addEventListener("click", weatherDisplay);
+function weatherDisplay() {
   let calSettings = document.getElementById("github-cal");
   let bookmarkSettings = document.getElementById("bookmark-option");
   let feedSettings = document.getElementById("github-feed");
@@ -56,9 +64,12 @@ document.getElementById("weatherInfo").onclick = function() {
   } else {
     weatherSettings.style.display = "none";
   }
-};
+}
 
-document.getElementById("submitWeather").onclick = function() {
+document
+  .getElementById("submitWeather")
+  .addEventListener("click", weatherLocation);
+function weatherLocation() {
   var options = {
     enableHighAccuracy: true,
     timeout: 5000,
@@ -82,7 +93,7 @@ document.getElementById("submitWeather").onclick = function() {
   }
 
   navigator.geolocation.getCurrentPosition(success, error, options);
-};
+}
 /* document.getElementById("submitgituser").onclick = function() {
   var user1 = document.getElementById("gitUser").value;
   if (!user1) {
@@ -95,7 +106,10 @@ document.getElementById("submitWeather").onclick = function() {
 };
  */
 
-document.getElementById("submitgituser").onclick = function() {
+document
+  .getElementById("submitgituser")
+  .addEventListener("click", submitGitUser);
+function submitGitUser() {
   let user1 = document.getElementById("gitUser").value;
 
   if (sessionStorage.getItem("userGit" === null)) {
@@ -104,7 +118,7 @@ document.getElementById("submitgituser").onclick = function() {
     sessionStorage.userGit = user1;
   }
   clearForm();
-};
+}
 console.log(sessionStorage);
 
 function clearForm() {
@@ -112,7 +126,10 @@ function clearForm() {
   document.getElementById("gitCalUser").value = "";
 }
 
-document.getElementById("submitbookmark").onclick = function bookmarkfn() {
+document
+  .getElementById("submitbookmark")
+  .addEventListener("click", saveBookmarks);
+function saveBookmarks() {
   let userBookmarks = [];
   userBookmarks = document.getElementById("bookmarkForm").value;
   let tempBook = new Array();
@@ -133,4 +150,6 @@ document.getElementById("submitbookmark").onclick = function bookmarkfn() {
   function bookmarkfn(value) {
     ul += "<li>" + value + "</li>";
   } */
-};
+}
+
+/* document.getElementById('submitCalUser').addEventListener("click", function) */
