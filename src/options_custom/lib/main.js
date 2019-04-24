@@ -152,4 +152,16 @@ function saveBookmarks() {
   } */
 }
 
-/* document.getElementById('submitCalUser').addEventListener("click", function) */
+document
+  .getElementById("submitCalUser")
+  .addEventListener("click", calendarUser);
+function calendarUser() {
+  let calendarName = document.getElementById("gitCalUser").value;
+
+  if (sessionStorage.getItem("calName" === null)) {
+    return undefined;
+  } else {
+    sessionStorage.calName = calendarName;
+  }
+  clearForm();
+}

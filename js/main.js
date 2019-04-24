@@ -17,6 +17,10 @@ window.onload = function makeBookmark() {
   }
 };
 
+/* if (sessionStorage.calName === undefined) {
+  document.getElementById
+} */
+
 new GitHubCalendar(".calendar", "Cipher-Coder", { responsive: true });
 
 if (sessionStorage.userGit === undefined) {
@@ -115,7 +119,7 @@ setInterval(GetClock, 1000);
 
 // Start of Weather Widget
 
-const apiKey = "de86474ef2fa9963ad1c2292b7b89082"; //Please change to your own API key. They are free.
+const apiKey = "de86474ef2fa9963ad1c2292b7b89082"; //API key.
 let cityEl = document.getElementById("city");
 let currTempEl = document.getElementById("temp");
 let humidityEl = document.getElementById("humidity");
@@ -167,7 +171,8 @@ container.setAttribute("class", "container");
 app.appendChild(container);
 
 let request = new XMLHttpRequest();
-request.open("GET", "https://dev.to/api/articles", true);
+let d = new Date();
+request.open("GET", "https://dev.to/api/articles?" + d.getTime(), true);
 request.send();
 request.onload = function() {
   let data = JSON.parse(this.response);
@@ -186,11 +191,14 @@ request.onload = function() {
       const img = document.createElement("img");
       img.src = article.cover_image;
       img.alt = "";
+      img.onerror = function() {
+        this.style.display = "none";
+      };
 
       container.appendChild(card);
+      card.appendChild(img);
       card.appendChild(a);
       card.appendChild(p);
-      card.appendChild(img);
     });
   }
 };
