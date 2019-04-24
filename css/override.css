@@ -120,10 +120,12 @@ html {
   margin-left: 9px;
   color: #1ca0dd;
 }
+
 .left.text-muted a {
   color: #3987ec;
   text-decoration: none;
 }
+
 .left.text-muted a:hover,
 .monospace a:hover {
   text-decoration: underline;
@@ -137,6 +139,7 @@ h2.f4.text-normal.mb-3 {
   float: left;
   color: #5bd75b;
 }
+
 #user-activity-overview {
   display: none;
 }
@@ -200,6 +203,20 @@ ul {
 .repo-container:hover {
   transition: all 0.2s ease-in;
   border-left: solid greenyellow 3px;
+}
+
+#gitFeed {
+  float: left;
+  overflow: auto;
+  height: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  width: 20%;
+
+}
+
+#gitFeed::-webkit-scrollbar {
+  display: none;
 }
 
 #dev-to {
