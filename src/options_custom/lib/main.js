@@ -119,7 +119,7 @@ function submitGitUser() {
   }
   clearForm();
 }
-console.log(sessionStorage);
+/* console.log(sessionStorage); */
 
 function clearForm() {
   document.getElementById("gitUser").value = "";
@@ -152,16 +152,13 @@ function saveBookmarks() {
   } */
 }
 
-document
-  .getElementById("submitCalUser")
-  .addEventListener("click", calendarUser);
-function calendarUser() {
+document.getElementById("submitCalUser").addEventListener("click", function() {
   let calendarName = document.getElementById("gitCalUser").value;
-
-  if (sessionStorage.getItem("calName" === null)) {
-    return undefined;
-  } else {
-    sessionStorage.calName = calendarName;
+  if (!calendarName) {
+    console.log("Please input username");
+    return;
   }
-  clearForm();
-}
+  chrome.storage.local.set({ gitCalName: calendarName }, function() {
+    console.log("Setting Saved");
+  });
+});

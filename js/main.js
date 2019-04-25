@@ -38,7 +38,7 @@ if (sessionStorage.userGit === undefined) {
     }
   });
 }
-console.log(sessionStorage);
+console.log(chrome.storage.local);
 
 // Start of Clock and Calendar
 
