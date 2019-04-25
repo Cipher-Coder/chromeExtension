@@ -17,11 +17,16 @@ window.onload = function makeBookmark() {
   }
 };
 
-/* if (sessionStorage.calName === undefined) {
-  document.getElementById
-} */
-
-new GitHubCalendar(".calendar", "Cipher-Coder", { responsive: true });
+chrome.storage.local.get(["gitCalName"], function(result) {
+  if (result.gitCalName === undefined) {
+    let calStart = document.getElementById("calendar-start");
+    calStart.setAttribute("style", "color: red; font-size: 1.25rem;");
+    calStart.textContent = "Please go to settings and configure your username!";
+  } else {
+    let calendarName = result.gitCalName;
+    new GitHubCalendar(".calendar", calendarName, { responsive: true });
+  }
+});
 
 if (sessionStorage.userGit === undefined) {
   document.getElementById("github-feeds").style.color = "red";
@@ -38,7 +43,6 @@ if (sessionStorage.userGit === undefined) {
     }
   });
 }
-console.log(chrome.storage.local);
 
 // Start of Clock and Calendar
 

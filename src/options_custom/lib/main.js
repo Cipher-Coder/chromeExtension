@@ -161,4 +161,5 @@ document.getElementById("submitCalUser").addEventListener("click", function() {
   chrome.storage.local.set({ gitCalName: calendarName }, function() {
     console.log("Setting Saved");
   });
+  clearForm();
 });
