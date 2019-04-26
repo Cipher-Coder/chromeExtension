@@ -112,11 +112,13 @@ document
 function submitGitUser() {
   let user1 = document.getElementById("gitUser").value;
 
-  if (sessionStorage.getItem("userGit" === null)) {
-    return undefined;
-  } else {
-    sessionStorage.userGit = user1;
+  if (!user1) {
+    console.log("Please submit Github Username!");
+    return;
   }
+  chrome.storage.local.set({ userGit: user1 }, function() {
+    console.log("Setting Saved");
+  });
   clearForm();
 }
 /* console.log(sessionStorage); */
