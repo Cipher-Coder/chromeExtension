@@ -17,6 +17,8 @@ window.onload = function makeBookmark() {
   }
 };
 
+// Get username for calendar
+
 chrome.storage.local.get(["gitCalName"], function(result) {
   if (result.gitCalName === undefined) {
     let calStart = document.getElementById("calendar-start");
@@ -28,21 +30,24 @@ chrome.storage.local.get(["gitCalName"], function(result) {
   }
 });
 
-if (sessionStorage.userGit === undefined) {
-  document.getElementById("github-feeds").style.color = "red";
-  document.getElementById("github-feeds").textContent =
-    "Please configure Github Username!";
-} else {
-  GithubFeed.init({
-    username: sessionStorage.userGit,
-    container: "#github-feeds",
-    count: 10,
-    order: "desc",
-    onComplete: function() {
-      console.log("Feed Loaded");
-    }
-  });
-}
+// Get and set username for github feeds
+chrome.storage.local.get(["userGit"], function(result) {
+  if (result.userGit === undefined) {
+    let feedUnknown = document.getElementById("github-feeds");
+    feedUnknown.setAttribute("style", "color: red; font-size: 1.15rem;");
+    feedUnknown.textContent = "Please configure Github Username!";
+  } else {
+    GithubFeed.init({
+      username: result.userGit,
+      container: "#github-feeds",
+      count: 10,
+      order: "desc",
+      onComplete: function() {
+        console.log("Feed Loaded");
+      }
+    });
+  }
+});
 
 // Start of Clock and Calendar
 

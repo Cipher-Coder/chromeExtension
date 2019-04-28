@@ -65,6 +65,7 @@ function weatherDisplay() {
     weatherSettings.style.display = "none";
   }
 }
+// Get location for weather
 
 document
   .getElementById("submitWeather")
@@ -106,6 +107,8 @@ function weatherLocation() {
 };
  */
 
+// Get Github username for feed
+
 document
   .getElementById("submitgituser")
   .addEventListener("click", submitGitUser);
@@ -127,6 +130,8 @@ function clearForm() {
   document.getElementById("gitUser").value = "";
   document.getElementById("gitCalUser").value = "";
 }
+
+// Get user defined bookmarks
 
 document
   .getElementById("submitbookmark")
@@ -153,6 +158,7 @@ function saveBookmarks() {
     ul += "<li>" + value + "</li>";
   } */
 }
+// Set Github calendar username
 
 document.getElementById("submitCalUser").addEventListener("click", function() {
   let calendarName = document.getElementById("gitCalUser").value;
