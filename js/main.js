@@ -135,40 +135,42 @@ let humidityEl = document.getElementById("humidity");
 let windEl = document.getElementById("wind");
 let skyEl = document.getElementById("sky");
 
-let lat = sessionStorage.userLatitude; //Location you want your weather for.
-let lon = sessionStorage.userLongitude;
+chrome.storage.local.get(["userLat", "userLong"], function(result) {
+  let lat = result.userLat;
+  let lon = result.userLong;
 
-function findWeather() {
-  let searchLink =
-    "https://api.openweathermap.org/data/2.5/weather?lat=" +
-    lat +
-    "&lon=" +
-    lon +
-    "&appid=" +
-    apiKey +
-    "&units=imperial"; // Change this to metric or leave as imperial if in the US
-  httpRequestAsync(searchLink, theResponse);
-}
+  function findWeather() {
+    let searchLink =
+      "https://api.openweathermap.org/data/2.5/weather?lat=" +
+      lat +
+      "&lon=" +
+      lon +
+      "&appid=" +
+      apiKey +
+      "&units=imperial"; // Change this to metric or leave as imperial if in the US
+    httpRequestAsync(searchLink, theResponse);
+  }
 
-function theResponse(response) {
-  let jsonObject = JSON.parse(response);
-  cityEl.textContent = jsonObject.name; // Location
-  currTempEl.textContent = parseInt(jsonObject.main.temp) + "° "; //Temperature
-  humidityEl.textContent = jsonObject.main.humidity + "%"; // Humidity
-  windEl.textContent = jsonObject.wind.speed + "mph "; // Wind Speed
-  skyEl.textContent = jsonObject.clouds.all + "%"; // Cloud Cover %
-}
+  function theResponse(response) {
+    let jsonObject = JSON.parse(response);
+    cityEl.textContent = jsonObject.name; // Location
+    currTempEl.textContent = parseInt(jsonObject.main.temp) + "° "; //Temperature
+    humidityEl.textContent = jsonObject.main.humidity + "%"; // Humidity
+    windEl.textContent = jsonObject.wind.speed + "mph "; // Wind Speed
+    skyEl.textContent = jsonObject.clouds.all + "%"; // Cloud Cover %
+  }
 
-function httpRequestAsync(url, callback) {
-  var httpRequest = new XMLHttpRequest();
-  httpRequest.onreadystatechange = () => {
-    if (httpRequest.readyState == 4 && httpRequest.status == 200)
-      callback(httpRequest.responseText);
-  };
-  httpRequest.open("GET", url, true);
-  httpRequest.send();
-}
-findWeather(); //Initiate the function
+  function httpRequestAsync(url, callback) {
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = () => {
+      if (httpRequest.readyState == 4 && httpRequest.status == 200)
+        callback(httpRequest.responseText);
+    };
+    httpRequest.open("GET", url, true);
+    httpRequest.send();
+  }
+  findWeather(); //Initiate the function
+});
 
 // Dev.to Feed
 

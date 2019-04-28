@@ -78,15 +78,21 @@ function weatherLocation() {
   };
 
   function success(pos) {
-    var crd = pos.coords;
+    const crd = pos.coords;
 
     /* console.log("Your current position is:");
     console.log(`Latitude : ${crd.latitude}`);
     console.log(`Longitude: ${crd.longitude}`);
     console.log(`More or less ${crd.accuracy} meters.`); */
 
-    sessionStorage.userLatitude = crd.latitude;
-    sessionStorage.userLongitude = crd.longitude;
+    /* sessionStorage.userLatitude = crd.latitude;
+    sessionStorage.userLongitude = crd.longitude; */
+    chrome.storage.local.set(
+      { userLat: crd.latitude, userLong: crd.longitude },
+      function() {
+        console.log("Location Saved!");
+      }
+    );
   }
 
   function error(err) {
