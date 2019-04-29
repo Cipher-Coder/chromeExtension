@@ -51,31 +51,30 @@ chrome.storage.local.get(["userGit"], function(result) {
 
 // Start of Clock and Calendar
 
-let tday = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
-];
-let tmonth = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
-];
-
 function GetClock() {
+  let tday = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  let tmonth = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
   let d = new Date();
   let nday = d.getDay(),
     nmonth = d.getMonth(),
@@ -101,25 +100,15 @@ function GetClock() {
   if (nmin <= 9) nmin = "0" + nmin;
   if (nsec <= 9) nsec = "0" + nsec;
 
-  let clocktext =
-    "" +
-    tday[nday] +
-    ", " +
-    tmonth[nmonth] +
-    " " +
-    ndate +
-    ", " +
-    nyear +
-    "  " +
-    nhour +
-    ":" +
-    nmin +
-    ":" +
-    nsec +
-    ap +
-    "";
+  let dateText =
+    "" + tday[nday] + ", " + tmonth[nmonth] + " " + ndate + ", " + nyear + " ";
+  let clockText = nhour + ":" + nmin + ":" + nsec + ap + "";
+  let clockDate = document.getElementById("date");
+  let clockTime = document.getElementById("clock");
+  clockDate.textContent = dateText;
+  clockTime.textContent = clockText;
 
-  document.getElementById("clock").textContent = clocktext;
+  /* document.getElementById("clock").innerHTML = dateText + "<br />" + clockText; */
 }
 
 GetClock();

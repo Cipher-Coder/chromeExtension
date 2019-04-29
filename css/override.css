@@ -156,10 +156,24 @@ span.text-muted {
   color: #3987ec;
 }
 
-#clock {
+#clock,
+#date {
+  font-family: "Share Tech Mono", monospace;
   max-width: 700px;
   display: inline-block;
   text-align: center;
+  color: #daf6ff;
+  text-shadow: 0 0 20px #1b8db3, 0 0 20px rgba(10, 175, 230, 0);
+}
+
+#clock {
+  letter-spacing: 0.05em;
+  padding: 5px 0;
+}
+
+#date {
+  letter-spacing: 0.1em;
+  font-size: 24px;
 }
 
 img.favicons {
@@ -212,7 +226,6 @@ ul {
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;
   width: 20%;
-
 }
 
 #gitFeed::-webkit-scrollbar {
