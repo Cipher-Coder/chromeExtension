@@ -145,6 +145,7 @@ document
 function saveBookmarks() {
   let userBookmarks = [];
   userBookmarks = document.getElementById("bookmarkForm").value;
+
   let tempBook = new Array();
 
   tempBook = marked.inlineLexer(userBookmarks, []).split(",");
@@ -152,17 +153,6 @@ function saveBookmarks() {
   if (sessionStorage) {
     sessionStorage.userBookmark = tempBook;
   }
-
-  /* let ul = "<ul>";
-
-  tempBook.forEach(bookmarkfn);
-  ul += "</ul>";
-
-  document.getElementById("deleteBookmarks").innerHTML = ul;
-
-  function bookmarkfn(value) {
-    ul += "<li>" + value + "</li>";
-  } */
 }
 // Set Github calendar username
 

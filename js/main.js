@@ -1,11 +1,11 @@
-window.onload = function makeBookmark() {
+/* window.onload = function makeBookmark() {
   let myBookmarks = sessionStorage.userBookmark;
 
   let tempBook = new Array();
 
   tempBook = myBookmarks.split(",");
 
-  let ul = "<ul>";
+  let ul = "<ul id='bmList'>";
 
   tempBook.forEach(makeBookmark);
   ul += "</ul>";
@@ -15,7 +15,53 @@ window.onload = function makeBookmark() {
   function makeBookmark(value) {
     ul += "<li class='userMark'>" + value + "</li>";
   }
-};
+}; */
+
+/* function findBookmarksBar(id) {
+  chrome.bookmarks.getChildren(id, function(children) {
+    for (let i = 0; i < children.length; i++) {
+      let bookmark = children[i];
+      console.log(bookmark.title);
+    }
+  });
+}
+findBookmarksBar("0"); */
+
+var list = document.querySelector("#bookmarkList");
+
+chrome.bookmarks.getTree(function(bmTree) {
+  bmTree.forEach(function(node) {
+    processNode(node);
+  });
+});
+
+function processNode(node) {
+  if (node.children) {
+    // We won’t touch the root directory which has no parentId,
+    // as well as the “BookmarkBar Folder” and the “Other Folder”
+    // both of which have parentId as `0`. We’ll cover everything else here
+    if (node.parentId && node.parentId != "0") {
+      list.innerHTML +=
+        "<li>" + node.title + '(Folder)</li><ul id="' + node.id + '"></ul>';
+    }
+    node.children.forEach(function(child) {
+      processNode(child);
+    });
+  }
+  if (node.url) {
+    if (node.parentId) {
+      var check = document.getElementById(node.parentId);
+    }
+    // If a folder exists with this id
+    if (check) {
+      // Add the children as a list entry under that folder
+      check.innerHTML += "<li>" + node.title + "</li>";
+    } else {
+      // Add a list entry under the main list
+      list.innerHTML += "<li>" + node.title + "</li>";
+    }
+  }
+}
 
 // Get username for calendar
 

@@ -176,9 +176,9 @@ span.text-muted {
   font-size: 24px;
 }
 
-img.favicons {
+/* img.favicons {
   padding-right: 6px;
-}
+} */
 
 li a:link {
   color: #6272a4;
@@ -195,9 +195,9 @@ li a:hover {
   color: #f1fa8c;
 }
 
-ul {
+/* ul {
   list-style: none;
-}
+} */
 
 .repo-name a {
   color: #f1fa8c;
@@ -281,15 +281,31 @@ ul {
   margin-top: 30px;
 }
 
-#bookmarkLinks {
+#bookmarkList {
   float: left;
   overflow: auto;
   height: auto;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  width: 100%;
+  color: lightblue;
 }
 
-#bookmarkLinks::-webkit-scrollbar {
+#bookmarkList::-webkit-scrollbar {
   display: none;
 }
+
+#bmList {
+  list-style: none;
+  margin-left: -10px;
+}
+
+/* li.userMark {
+  background-image: url("/src/override/img/daBomb.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 25px 30px;
+  background-position: 0 -0.6em;
+  padding-left: 30px;
+} */
