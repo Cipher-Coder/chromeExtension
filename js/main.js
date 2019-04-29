@@ -42,7 +42,7 @@ function processNode(node) {
     // both of which have parentId as `0`. We’ll cover everything else here
     if (node.parentId && node.parentId != "0") {
       list.innerHTML +=
-        "<li>" + node.title + '(Folder)</li><ul id="' + node.id + '"></ul>';
+        "<li>" + node.title + '</li><ul id="' + node.id + '"></ul>';
     }
     node.children.forEach(function(child) {
       processNode(child);

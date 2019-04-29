@@ -281,24 +281,22 @@ li a:hover {
   margin-top: 30px;
 }
 
-#bookmarkList {
+#bookmarks {
   float: left;
   overflow: auto;
-  height: auto;
+  height: 100vh;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;
-  scrollbar-width: none;
-  width: 100%;
-  color: lightblue;
+  width: 20%;
 }
 
-#bookmarkList::-webkit-scrollbar {
+#bookmarks::-webkit-scrollbar {
   display: none;
 }
 
-#bmList {
+#bookmarkList li {
+  color: lightblue;
   list-style: none;
-  margin-left: -10px;
 }
 
 /* li.userMark {
