@@ -101,17 +101,6 @@ function weatherLocation() {
 
   navigator.geolocation.getCurrentPosition(success, error, options);
 }
-/* document.getElementById("submitgituser").onclick = function() {
-  var user1 = document.getElementById("gitUser").value;
-  if (!user1) {
-    message("Error: Enter Username");
-    return;
-  }
-  chrome.sessionStorage.setItem({ user1 }, function() {
-    message("Settings Saved");
-  });
-};
- */
 
 // Get Github username for feed
 
@@ -130,7 +119,6 @@ function submitGitUser() {
   });
   clearForm();
 }
-/* console.log(sessionStorage); */
 
 function clearForm() {
   document.getElementById("gitUser").value = "";
