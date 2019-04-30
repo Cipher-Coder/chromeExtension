@@ -296,6 +296,22 @@ li a:hover {
 
 #bookmarkList li {
   color: lightblue;
-  list-style-image: url("/icons/devTabs-16x16.png");
-  margin-left: 15px;
+  list-style: none;
+  line-height: 1.5;
+  text-indent: -0.7rem;
+}
+
+#bookmarkList li:nth-child(3n + 1)::before {
+  content: url("/icons/favicon1.ico");
+  padding-right: 1rem;
+}
+
+#bookmarkList li:nth-child(3n + 2)::before {
+  content: url("/icons/favicon2.ico");
+  padding-right: 1rem;
+}
+
+#bookmarkList li:nth-child(3n)::before {
+  content: url("/icons/favicon3.ico");
+  padding-right: 1rem;
 }
