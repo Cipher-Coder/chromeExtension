@@ -21,6 +21,7 @@
   },
   "permissions": [
     "https://dev.to/api/articles",
+    "https://api.qrserver.com/v1/create-qr-code/",
     "chrome://favicon/",
     "contentSettings",
     "management",
