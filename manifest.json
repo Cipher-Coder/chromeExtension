@@ -21,14 +21,14 @@
   },
   "permissions": [
     "https://dev.to/api/articles",
-    "https://api.qrserver.com/v1/create-qr-code/",
+    "https://api.github.com",
+    "https://api.openweathermap.org",
     "chrome://favicon/",
     "contentSettings",
     "management",
     "tabs",
     "storage",
-    "unlimitedStorage",
-    "bookmarks"
+    "unlimitedStorage"
   ],
-  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
+  "content_security_policy": "script-src 'self' https://*.googleapis.com; object-src 'self'"
 }

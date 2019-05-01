@@ -138,9 +138,9 @@ function saveBookmarks() {
 
   tempBook = marked.inlineLexer(userBookmarks, []).split(",");
 
-  if (sessionStorage) {
-    sessionStorage.userBookmark = tempBook;
-  }
+  chrome.storage.local.set({ userBookmark: tempBook }, function() {
+    console.log("Bookmarks Logged");
+  });
 }
 // Set Github calendar username
 
