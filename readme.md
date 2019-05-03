@@ -4,7 +4,7 @@
 
 ### Github Feed
 
-The [Github](https://www.github.com) feed on the right hand side of the page lists the first 10 repo's in you profile. This makes it easy to quickly access a good portion of your repos.
+The [Github](https://www.github.com) feed on the right hand side of the page lists the first 10 repo's in your profile. This makes it easy to quickly access a good portion of your repos.
 
 I used a library called [GithubFeed](https://github.com/samwx/GithubFeed), from 'samwx' to implement this. The lib is very well documented however, I did have to alter the code slightly as well as the CSS so it matched the Dev Tabs page.
 
@@ -14,7 +14,7 @@ Once you save your username, it gets put into local storage and accessed from th
 
 ### Github Calendar
 
-The [Github](https://www.github.com) calendar is was integrated with a library from IonicaBizau. The library is [github-calendar.js](https://github.com/IonicaBizau/github-calendar), and can display your github contribution calendar. Very well explained lib, and is responsive. I changed the original styles that came with it to match the basic styles of the Dev Tabs page.
+The [Github](https://www.github.com) calendar is integrated with a library from IonicaBizau. The library is [github-calendar.js](https://github.com/IonicaBizau/github-calendar), and can display your github contribution calendar. Very well explained lib, and is responsive. I changed the original styles that came with it to match the basic styles of the Dev Tabs page.
 
 When you first start the extension, look under the weather info at the center of the page and click on the settings cog. On the settings page just click on the 'Github Calendar' selection on the left and fill in your github username. No quotes or anything and click save.
 
@@ -22,7 +22,7 @@ Again, this username is stored in chrome.storage.local. So if you clear your bro
 
 ### Time and Date
 
-The time and date is pretty self explanatory. Just a clock with the date. I made it stand out with the color and I was going for a slight glow to it so when i glance at it, it looks good.
+The time and date is pretty self explanatory. Just a clock with the date. I made it stand out with the color and I was going for a slight glow to it, so when I glance at it, it's easy to see.
 
 ### Dev.to
 
@@ -30,7 +30,7 @@ This is hooked up to the [dev.to](https://dev.to) API. It gets the articles from
 
 ### Weather
 
-This is just to display your current weather conditions. As I explained in the settings, I set it up to display your local weather. If you go to the settings and click to button to locate yourself, it will hit the HTML geolocation API. Once that is hit, it will take your coordinates, store that value in local storage. Then when you flip back to the main page it will take the coordinates from local storage, and hit the [Open Weather Map API](https://openweathermap.org/api) and display your weather conditions. With that being said, this does not continually track you. It will store those coordinates until you go back to the settings page and hit the button again. So if you move to a different locale and want that weather, you will have to go back to the settings and just hit the button again.
+This is just to display your current weather conditions. As I explained in the settings, I set it up to display your local weather. If you go to the settings and click the button to locate yourself, it will hit the HTML geolocation API. Once that is hit, it will take your coordinates, store that value in local storage. Then when you flip back to the main page it will take the coordinates from local storage, and hit the [Open Weather Map API](https://openweathermap.org/api) and display your weather conditions. That is all it does with that info. With that being said, this does not continually track you. It will store those coordinates until you go back to the settings page and hit the button again. So if you move to a different locale and want that weather, you will have to go back to the settings and just hit the button again.
 
 ## Location and Tracking
 

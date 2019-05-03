@@ -1,20 +1,30 @@
 window.onload = function makeBookmark() {
-  let myBookmarks = sessionStorage.userBookmark;
+  /* let myBookmarks = sessionStorage.userBookmark; */
+  chrome.storage.local.get(["userBookmark"], function(result) {
+    let myBookmarks = result.userBookmark;
 
-  let tempBook = new Array();
+    if (myBookmarks === undefined) {
+      let bookmarkStart = document.getElementById("bookmarkList");
+      bookmarkStart.setAttribute("style", "color: red;");
+      bookmarkStart.textContent = "Please configure Bookmarks in Settings";
+    } else {
+      /* let tempBook = new Array();
+      console.log(myBookmarks);
 
-  tempBook = myBookmarks.split(",");
+      tempBook = myBookmarks.toString().split(",");
+            */
+      let ul = "<ul id='bmList'>";
 
-  let ul = "<ul id='bmList'>";
+      myBookmarks.forEach(makeBookmark);
+      ul += "</ul>";
 
-  tempBook.forEach(makeBookmark);
-  ul += "</ul>";
+      document.getElementById("bookmarkList").innerHTML = ul;
 
-  document.getElementById("bookmarkList").innerHTML = ul;
-
-  function makeBookmark(value) {
-    ul += "<li class='userMark'>" + value + "</li>";
-  }
+      function makeBookmark(value) {
+        ul += "<li class='userMark'>" + value + "</li>";
+      }
+    }
+  });
 };
 
 // Get username for calendar
