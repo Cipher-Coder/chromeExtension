@@ -13,7 +13,7 @@ function feedDisplay() {
     feedSettings.style.display = "none";
   }
 }
-
+// Toggle settings being shown
 document
   .getElementById("bookmark-opt")
   .addEventListener("click", bookmarkDisplay);
@@ -31,7 +31,7 @@ function bookmarkDisplay() {
     bookmarkSettings.style.display = "none";
   }
 }
-
+// Toggle settings being shown
 document.getElementById("githubCal").addEventListener("click", calendarDisplay);
 function calendarDisplay() {
   let calSettings = document.getElementById("github-cal");
@@ -47,7 +47,7 @@ function calendarDisplay() {
     calSettings.style.display = "none";
   }
 }
-
+// Toggle settings being shown
 document
   .getElementById("weatherInfo")
   .addEventListener("click", weatherDisplay);
@@ -79,14 +79,7 @@ function weatherLocation() {
 
   function success(pos) {
     const crd = pos.coords;
-
-    /* console.log("Your current position is:");
-    console.log(`Latitude : ${crd.latitude}`);
-    console.log(`Longitude: ${crd.longitude}`);
-    console.log(`More or less ${crd.accuracy} meters.`); */
-
-    /* sessionStorage.userLatitude = crd.latitude;
-    sessionStorage.userLongitude = crd.longitude; */
+    // Set location in local storage
     chrome.storage.local.set(
       { userLat: crd.latitude, userLong: crd.longitude },
       function() {

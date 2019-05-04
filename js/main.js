@@ -1,18 +1,14 @@
 window.onload = function makeBookmark() {
-  /* let myBookmarks = sessionStorage.userBookmark; */
+  //Get user input bookmarks from local storage
   chrome.storage.local.get(["userBookmark"], function(result) {
     let myBookmarks = result.userBookmark;
 
     if (myBookmarks === undefined) {
+      // Error Message
       let bookmarkStart = document.getElementById("bookmarkList");
       bookmarkStart.setAttribute("style", "color: red;");
       bookmarkStart.textContent = "Please configure Bookmarks in Settings";
     } else {
-      /* let tempBook = new Array();
-      console.log(myBookmarks);
-
-      tempBook = myBookmarks.toString().split(",");
-            */
       let ul = "<ul id='bmList'>";
 
       myBookmarks.forEach(makeBookmark);
@@ -31,10 +27,12 @@ window.onload = function makeBookmark() {
 
 chrome.storage.local.get(["gitCalName"], function(result) {
   if (result.gitCalName === undefined) {
+    //Error Message Block
     let calStart = document.getElementById("calendar-start");
     calStart.setAttribute("style", "color: red; font-size: 1.25rem;");
     calStart.textContent = "Please go to settings and configure your username!";
   } else {
+    // Info to initiate the github calendar - pulled into the github-calendar.js
     let calendarName = result.gitCalName;
     new GitHubCalendar(".calendar", calendarName, { responsive: true });
   }
@@ -45,8 +43,9 @@ chrome.storage.local.get(["userGit"], function(result) {
   if (result.userGit === undefined) {
     let feedUnknown = document.getElementById("github-feeds");
     feedUnknown.setAttribute("style", "color: red; font-size: 1.15rem;");
-    feedUnknown.textContent = "Please configure Github Username!";
+    feedUnknown.textContent = "Please configure Github Username!"; //Error Message
   } else {
+    // Initiate the Feed - This is pulled  into the githubFeed.js file
     GithubFeed.init({
       username: result.userGit,
       container: "#github-feeds",
@@ -117,8 +116,6 @@ function GetClock() {
   let clockTime = document.getElementById("clock");
   clockDate.textContent = dateText;
   clockTime.textContent = clockText;
-
-  /* document.getElementById("clock").innerHTML = dateText + "<br />" + clockText; */
 }
 
 GetClock();
@@ -135,6 +132,7 @@ let windEl = document.getElementById("wind");
 let skyEl = document.getElementById("sky");
 
 chrome.storage.local.get(["userLat", "userLong"], function(result) {
+  // Pull from chrome local storage
   let lat = result.userLat;
   let lon = result.userLong;
 
@@ -183,6 +181,7 @@ app.appendChild(container);
 let request = new XMLHttpRequest();
 let d = new Date();
 request.open("GET", "https://dev.to/api/articles?" + d.getTime(), true);
+//Append Timestamp onto end of API call to make sure I don't pull from cache
 request.send();
 request.onload = function() {
   let data = JSON.parse(this.response);
@@ -205,10 +204,10 @@ request.onload = function() {
         this.style.display = "none";
       };
 
-      container.appendChild(card);
-      card.appendChild(img);
-      card.appendChild(a);
-      card.appendChild(p);
+      container.appendChild(card); //Create card
+      card.appendChild(img); // Add Image to card
+      card.appendChild(a); // Add link
+      card.appendChild(p); // Add description
     });
   }
 };
