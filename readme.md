@@ -1,3 +1,5 @@
+[![MIT license](https://img.shields.io/github/license/Cipher-Coder/chromeExtension.svg)](http://opensource.org/licenses/MIT)
+
 # Dev Tabs
 
 ## Chrome Extension for Developers - Replaces your NewTab and Homepage in Chrome
