@@ -148,3 +148,14 @@ document.getElementById("submitCalUser").addEventListener("click", function() {
   });
   clearForm();
 });
+
+document.getElementById("deleteBookmark").addEventListener("click", function() {
+  let confirmationCheck = confirm(
+    "Are you sure you want to delete your Dev Tab Bookmarks. (This will not effect your browser bookmarks)"
+  );
+  if (confirmationCheck == true) {
+    console.log("true");
+  } else {
+    console.log("False");
+  }
+});
