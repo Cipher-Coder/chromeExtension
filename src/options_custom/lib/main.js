@@ -154,8 +154,10 @@ document.getElementById("deleteBookmark").addEventListener("click", function() {
     "Are you sure you want to delete your Dev Tab Bookmarks. (This will not effect your browser bookmarks)"
   );
   if (confirmationCheck == true) {
-    console.log("true");
+    chrome.storage.local.removeItem("userBookamrk", function() {
+      alert("Bookmarks Deleted!");
+    });
   } else {
-    console.log("False");
+    alert("Action Cancelled");
   }
 });
