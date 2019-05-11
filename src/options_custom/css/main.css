@@ -127,3 +127,52 @@
 .bmDescription {
   margin-top: 20px;
 }
+
+.donate {
+  position: absolute;
+  margin: 0 15px;
+  bottom: 20px;
+}
+
+#donation {
+  border-top: 1px solid #a9bdc9;
+  background: #595959;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#a8b9c4),
+    to(#595959)
+  );
+  background: -webkit-linear-gradient(top, #a8b9c4, #949494);
+  background: -moz-linear-gradient(top, #a8b9c4, #949494);
+  background: -ms-linear-gradient(top, #a8b9c4, #949494);
+  background: -o-linear-gradient(top, #a8b9c4, #949494);
+  padding: 6px 12px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+  box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+  text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;
+  color: #000000;
+  font-size: 12px;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+#donation:hover {
+  border-top-color: #737475;
+  background: #737475;
+  color: #000000;
+}
+
+#donation:active {
+  border-top-color: #8b9ba6;
+  background: #8b9ba6;
+}
+
+#tracking-info {
+  font-family: Helvetica, "Ubuntu", Arial, sans-serif;
+}
