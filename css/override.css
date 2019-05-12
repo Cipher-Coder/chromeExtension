@@ -322,6 +322,7 @@ li a:hover {
   background: none;
   border: none;
   cursor: pointer;
+  outline: none;
 }
 
 .singleDesc {
@@ -336,4 +337,48 @@ li a:hover {
 #addItem {
   margin-top: 7px;
   cursor: pointer;
+  border-top: 1px solid #7c858a;
+  background: #8a949b;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#586066),
+    to(#a6acb0)
+  );
+  background: -webkit-linear-gradient(top, #586066, #a6acb0);
+  background: -moz-linear-gradient(top, #586066, #a6acb0);
+  background: -ms-linear-gradient(top, #586066, #a6acb0);
+  background: -o-linear-gradient(top, #586066, #a6acb0);
+  padding: 5px 10px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+  -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+  box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+  text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;
+  color: #000000;
+  font-size: 11px;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+#addItem:hover {
+  border-top-color: #92999e;
+  background: #92999e;
+  color: #000000;
+}
+
+#addItem:active {
+  border-top-color: #b6b9ba;
+  background: #b6b9ba;
+}
+
+#urlName {
+  height: 1.5rem;
+}
+
+#siteUrl {
+  height: 1.5rem;
 }

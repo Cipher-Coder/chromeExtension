@@ -231,8 +231,7 @@ function showInput() {
   }
 }
 
-document.getElementById("addItem").addEventListener("click", addListItem);
-function addListItem() {
+/* function addListItem() {
   let ul = document.getElementById("bmList");
   let name = document.getElementById("urlName");
   let url = document.getElementById("siteUrl");
@@ -246,4 +245,24 @@ function addListItem() {
   li.appendChild(a);
   name.value = "";
   url.value = "";
+} */
+
+document.getElementById("addItem").addEventListener("click", addEntry);
+function addEntry() {
+  chrome.storage.local.get("userBookmark", function(result) {
+    let existingEntries = result.userBookmark;
+    if (existingEntries == null) existingEntries = [];
+    let urlName = document.getElementById("urlName").value;
+    let url = document.getElementById("siteUrl").value;
+    let entry = "<a href='" + url + "'>" + urlName + "</a>";
+    existingEntries.push(entry);
+    chrome.storage.local.set({ userBookmark: existingEntries }, function() {
+      console.log("New Entry Saved");
+      clearInput();
+    });
+  });
+}
+function clearInput() {
+  document.getElementById("urlName").value = "";
+  document.getElementById("siteUrl").value = "";
 }
