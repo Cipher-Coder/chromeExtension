@@ -315,3 +315,25 @@ li a:hover {
   content: url("/icons/favicon3.ico");
   padding-right: 1rem;
 }
+
+#addIcon {
+  color: orangered;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.singleDesc {
+  color: orangered;
+  margin-top: -5px;
+}
+
+.addBookmark {
+  margin-right: 2px;
+}
+
+#addItem {
+  margin-top: 7px;
+  cursor: pointer;
+}

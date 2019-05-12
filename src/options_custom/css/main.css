@@ -2,6 +2,10 @@
   text-shadow: #f5f5f5 0 1px 0;
 }
 
+input {
+  border-radius: 4px;
+}
+
 #sidebar {
   position: absolute;
   background-color: #ededed;
@@ -103,6 +107,11 @@
 #submitWeather {
   margin: 8px 60px;
   border-radius: 4px;
+  cursor: pointer;
+}
+
+#showBookmarks {
+  cursor: pointer;
 }
 
 .active {
@@ -130,8 +139,9 @@
 
 .donate {
   position: absolute;
-  margin: 0 15px;
+  margin: 0 30px 0 15px;
   bottom: 20px;
+  text-align: right;
 }
 
 #donation {
@@ -175,4 +185,5 @@
 
 #tracking-info {
   font-family: Helvetica, "Ubuntu", Arial, sans-serif;
+  text-align: left;
 }

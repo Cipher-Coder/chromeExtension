@@ -214,3 +214,36 @@ request.onload = function() {
 request.onerror = function() {
   console.log("request failed");
 };
+
+document.getElementById("addIcon").addEventListener("click", showInput);
+function showInput() {
+  let input1 = document.getElementById("urlName");
+  let input2 = document.getElementById("siteUrl");
+  let addButton = document.getElementById("addItem");
+  if (input1.style.display === "none") {
+    (input1.style.display = "inline-block"),
+      (input2.style.display = "inline-block"),
+      (addButton.style.display = "inline-block");
+  } else {
+    (input1.style.display = "none"),
+      (input2.style.display = "none"),
+      (addButton.style.display = "none");
+  }
+}
+
+document.getElementById("addItem").addEventListener("click", addListItem);
+function addListItem() {
+  let ul = document.getElementById("bmList");
+  let name = document.getElementById("urlName");
+  let url = document.getElementById("siteUrl");
+  let li = document.createElement("li");
+  li.setAttribute("class", "userMark");
+
+  ul.appendChild(li);
+  let a = document.createElement("a");
+  a.href = url.value;
+  a.textContent = name.value;
+  li.appendChild(a);
+  name.value = "";
+  url.value = "";
+}
