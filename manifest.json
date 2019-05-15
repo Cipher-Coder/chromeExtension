@@ -19,6 +19,12 @@
   "chrome_url_overrides": {
     "newtab": "src/override/override.html"
   },
+  "content_scripts": [
+    {
+      "matches": ["https://twitter.com/", "https://twitter.com/*"],
+      "js": ["js/inject.js"]
+    }
+  ],
   "permissions": [
     "https://dev.to/api/articles",
     "https://api.github.com",

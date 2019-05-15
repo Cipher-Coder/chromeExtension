@@ -1,3 +1,5 @@
+[![GitHub license](https://img.shields.io/github/license/Cipher-Coder/chromeExtension.svg)](https://github.com/Cipher-Coder/chromeExtension/blob/master/LICENSE.txt)
+
 # Dev Tabs
 
 ## Chrome Extension for Developers - Replaces your NewTab and Homepage in Chrome
@@ -27,6 +29,12 @@ The time and date is pretty self explanatory. Just a clock with the date. I made
 ### Dev.to
 
 This is hooked up to the [dev.to](https://dev.to) API. It gets the articles from their website and creates a card for each individual article. Once the card is created, it gets appended to the div and the content gets appended to that. I had a bit of trouble getting chrome to not show the broken link image when there was not a url included for the articles image, but I beleve I have it figured out now. In the future, I may add a setting to display your individual feed. But for now, it is just the general article feed.
+
+### Dev.to Twitter
+
+[dev.to](https://dev.to) also has a Chrome extension for Twitter.. [thepracticaldev](https://github.com/thepracticaldev/DevTwitter) is the github repo. It has an MIT license attached to it so I borrowed some of the code. I went ahead and added their content script into the extension. Now, when you log into your [Twitter](https://twitter.com) account, a box on the left hand side of your feed will show up with the days dev.to headlines. It will look something like this:
+
+![Twitter Picture](/img/twitter.png)
 
 ### Weather
 
