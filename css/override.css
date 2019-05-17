@@ -1,35 +1,7 @@
-@font-face {
-  font-family: "Inconsolata";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/css/fonts/inconsolata-v17-latin-regular.eot");
-  src: local("Inconsolata Regular"), local("Inconsolata-Regular"),
-    url("/css/fonts/inconsolata-v17-latin-regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("/css/fonts/inconsolata-v17-latin-regular.woff2") format("woff2"),
-    url("/css/fonts/inconsolata-v17-latin-regular.woff") format("woff"),
-    url("/css/fonts/inconsolata-v17-latin-regular.ttf") format("truetype"),
-    url("/css/fonts/inconsolata-v17-latin-regular.svg#Inconsolata")
-      format("svg");
-}
-
-@font-face {
-  font-family: "Inconsolata";
-  font-style: normal;
-  font-weight: 700;
-  src: url("/css/fonts/inconsolata-v17-latin-700.eot");
-  src: local("Inconsolata Bold"), local("Inconsolata-Bold"),
-    url("/css/fonts/inconsolata-v17-latin-700.eot?#iefix")
-      format("embedded-opentype"),
-    url("/css/fonts/inconsolata-v17-latin-700.woff2") format("woff2"),
-    url("/css/fonts/inconsolata-v17-latin-700.woff") format("woff"),
-    url("/css/fonts/inconsolata-v17-latin-700.ttf") format("truetype"),
-    url("/css/fonts/inconsolata-v17-latin-700.svg#Inconsolata") format("svg");
-}
-
 html {
   background-color: #252730;
-  font-family: "Inconsolata", monospace;
+  font-family: monospace;
+  font-size: 16px;
 }
 
 /* Github Calendar */
@@ -115,12 +87,12 @@ html {
 }
 
 .bold {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .monospace {
-  text-align: center;
-  font-family: "Inconsolata", monospace;
+  font-family: monospace;
+  font-style: normal;
 }
 
 .monospace a {
@@ -195,7 +167,7 @@ span.text-muted {
   display: inline-block;
   text-align: center;
   color: #daf6ff;
-  text-shadow: 0 0 20px #1b8db3, 0 0 20px rgba(10, 175, 230, 0);
+  text-shadow: 0 0 10px #1b8db3, 0 0 10px rgba(10, 175, 230, 0);
 }
 
 #clock {
@@ -208,28 +180,21 @@ span.text-muted {
   font-size: 24px;
 }
 
-/* img.favicons {
-  padding-right: 6px;
-} */
-
 li a:link {
-  color: #6272a4;
+  color: #808fbb;
   text-decoration: none;
 }
 
 li a:visited {
-  color: #6272a4;
+  color: #808fbb;
   text-decoration: none;
 }
 
 li a:hover {
+  text-decoration: none !important;
   transition: all 0.2s ease-in;
   color: #f1fa8c;
 }
-
-/* ul {
-  list-style: none;
-} */
 
 .repo-name a {
   color: #f1fa8c;

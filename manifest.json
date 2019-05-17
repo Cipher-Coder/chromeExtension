@@ -1,9 +1,9 @@
 {
-  "name": "Dev Tabs",
-  "version": "0.0.1",
   "manifest_version": 2,
-  "description": "New Tab extension aimed at my Dev Work",
-  "homepage_url": "https://github.com/Cipher-Coder/chromeExtension",
+  "name": "Dev Tabs",
+  "version": "0.1.1",
+  "description": "New Tab extension for Web Developers, Full Stack Developers, Github users and more.",
+  "homepage_url": "https://mattaz.com/devTabs.html",
   "icons": {
     "16": "icons/devTabs-16x16.png",
     "32": "icons/devTabs-32x32.png",
@@ -25,10 +25,17 @@
       "js": ["js/inject.js"]
     }
   ],
+  "web_accessible_resources": [
+    "icons/devTabs-16x16.png",
+    "icons/devTabs-32x32.png",
+    "icons/devTabs-48x48.png",
+    "icons/devTabs-128x128.png",
+    "src/override/devTabs.ico"
+  ],
   "permissions": [
     "https://dev.to/api/articles",
-    "https://api.github.com",
-    "https://api.openweathermap.org",
+    "https://api.github.com/",
+    "https://api.openweathermap.org/",
     "chrome://favicon/",
     "contentSettings",
     "management",
