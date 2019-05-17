@@ -1,3 +1,32 @@
+@font-face {
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/css/fonts/inconsolata-v17-latin-regular.eot");
+  src: local("Inconsolata Regular"), local("Inconsolata-Regular"),
+    url("/css/fonts/inconsolata-v17-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("/css/fonts/inconsolata-v17-latin-regular.woff2") format("woff2"),
+    url("/css/fonts/inconsolata-v17-latin-regular.woff") format("woff"),
+    url("/css/fonts/inconsolata-v17-latin-regular.ttf") format("truetype"),
+    url("/css/fonts/inconsolata-v17-latin-regular.svg#Inconsolata")
+      format("svg");
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/css/fonts/inconsolata-v17-latin-700.eot");
+  src: local("Inconsolata Bold"), local("Inconsolata-Bold"),
+    url("/css/fonts/inconsolata-v17-latin-700.eot?#iefix")
+      format("embedded-opentype"),
+    url("/css/fonts/inconsolata-v17-latin-700.woff2") format("woff2"),
+    url("/css/fonts/inconsolata-v17-latin-700.woff") format("woff"),
+    url("/css/fonts/inconsolata-v17-latin-700.ttf") format("truetype"),
+    url("/css/fonts/inconsolata-v17-latin-700.svg#Inconsolata") format("svg");
+}
+
 html {
   background-color: #252730;
   font-family: "Inconsolata", monospace;
@@ -85,10 +114,13 @@ html {
   min-height: 70px;
 }
 
+.bold {
+  font-weight: 700;
+}
+
 .monospace {
   text-align: center;
-  color: rgb(27, 221, 131);
-  font-family: monospace;
+  font-family: "Inconsolata", monospace;
 }
 
 .monospace a {
