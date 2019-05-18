@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Dev Tabs",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "New Tab extension for Web Developers, Full Stack Developers, Software Engineers, GitHub users, and more.",
   "homepage_url": "https://mattaz.com/devTabs.html",
   "icons": {
@@ -29,8 +29,7 @@
     "icons/devTabs-16x16.png",
     "icons/devTabs-32x32.png",
     "icons/devTabs-48x48.png",
-    "icons/devTabs-128x128.png",
-    "src/override/devTabs.ico"
+    "icons/devTabs-128x128.png"
   ],
   "permissions": [
     "https://dev.to/api/articles",

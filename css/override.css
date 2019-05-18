@@ -332,44 +332,43 @@ li a:hover {
 }
 
 #addItem {
-  margin-top: 7px;
   cursor: pointer;
-  border-top: 1px solid #7c858a;
-  background: #8a949b;
+  margin-top: 9px;
+  border: 1px solid #455259;
+  background: #46535c;
   background: -webkit-gradient(
     linear,
     left top,
     left bottom,
-    from(#586066),
-    to(#a6acb0)
+    from(#a1a1a1),
+    to(#46535c)
   );
-  background: -webkit-linear-gradient(top, #586066, #a6acb0);
-  background: -moz-linear-gradient(top, #586066, #a6acb0);
-  background: -ms-linear-gradient(top, #586066, #a6acb0);
-  background: -o-linear-gradient(top, #586066, #a6acb0);
+  background: -webkit-linear-gradient(top, #a1a1a1, #46535c);
+  background: -moz-linear-gradient(top, #a1a1a1, #46535c);
+  background: -ms-linear-gradient(top, #a1a1a1, #46535c);
+  background: -o-linear-gradient(top, #a1a1a1, #46535c);
   padding: 5px 10px;
-  -webkit-border-radius: 9px;
-  -moz-border-radius: 9px;
-  border-radius: 9px;
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  border-radius: 11px;
   -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
   -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
   box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
-  text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;
+  text-shadow: rgba(0, 0, 0, 1) 0 1px 0;
   color: #000000;
-  font-size: 11px;
+  font-size: 12px;
+  font-family: Georgia, serif;
   text-decoration: none;
   vertical-align: middle;
 }
-
 #addItem:hover {
-  border-top-color: #92999e;
-  background: #92999e;
+  border-top-color: #4a5359;
+  background: #4a5359;
   color: #000000;
 }
-
 #addItem:active {
-  border-top-color: #b6b9ba;
-  background: #b6b9ba;
+  border-top-color: #39434a;
+  background: #39434a;
 }
 
 #urlName {

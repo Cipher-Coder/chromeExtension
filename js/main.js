@@ -231,22 +231,6 @@ function showInput() {
   }
 }
 
-/* function addListItem() {
-  let ul = document.getElementById("bmList");
-  let name = document.getElementById("urlName");
-  let url = document.getElementById("siteUrl");
-  let li = document.createElement("li");
-  li.setAttribute("class", "userMark");
-
-  ul.appendChild(li);
-  let a = document.createElement("a");
-  a.href = url.value;
-  a.textContent = name.value;
-  li.appendChild(a);
-  name.value = "";
-  url.value = "";
-} */
-
 document.getElementById("addItem").addEventListener("click", addEntry);
 function addEntry() {
   chrome.storage.local.get("userBookmark", function(result) {
