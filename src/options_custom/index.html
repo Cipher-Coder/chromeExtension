@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title id="title">Dev Tabs</title>
@@ -44,7 +44,7 @@
                 <h3>Please configure the options for the Github feed:</h3>
                 <div id="form-feed">
                     <form id="feed-options">
-                        Username: <input id="gitUser" type="text" name="username" placeholder="Enter Github Username">
+                        <label for="gitUser">Username: </label><input id="gitUser" type="text" name="username" placeholder="Enter Github Username">
                     </form>
                         <button id="submitgituser">Save</button>
                 </div>
@@ -53,7 +53,7 @@
                 <h2>Bookmark Options</h2>
                 <h3>Enter the bookmarks you wish to display.The links will be listed on the main page in the far left column. <b>Please Use Markdown Format.</b> Also, please be sure to separate entries with a comma. ex: [Link Name](https://link.url.com)<b>,</b>[Link Name](https://link.url.com) - no space needed.</h3>
                 <div id="form-bookmark">
-                    <textarea id="bookmarkForm" rows="8" cols="80" placeholder="[Gmail](https://google.com/gmail),[Mozilla](https://developer.mozilla.org/)"></textarea><br>
+                    <label for="bookmarkForm">Bookmarks:</label><br/><textarea id="bookmarkForm" rows="8" cols="80" placeholder="[Gmail](https://google.com/gmail),[Mozilla](https://developer.mozilla.org/)"></textarea><br>
                         <button id="submitbookmark">Save</button>
                         <button id="deleteBookmark" class="red">Delete All</button>
                         <!-- <p>Save your most used Bookmarks</p> -->
@@ -67,7 +67,7 @@
                 <h3>Please configure the options for the Github feed:</h3>
                 <div id="form-cal">
                     <form id="cal-options">
-                        Username: <input id="gitCalUser" type="text" name="username" placeholder="Enter Github Username-Calender">
+                        <label for="gitCalUser">Username: </label><input id="gitCalUser" type="text" name="username" placeholder="Enter Github Username-Calender">
                     </form>
                         <button id="submitCalUser">Save</button>
                 </div>

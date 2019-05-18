@@ -1,9 +1,8 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<title id="title">Dev Tabs</title>
-	<link id="favicon" rel="icon" href="devTabs.ico">
 	<link rel="stylesheet" href="popup.css" media="screen">
 </head>
 <body>
@@ -14,8 +13,10 @@
 	<h3>QR Code Generator</h3>
 	<p>Copy a url and paste it into the input box. Press 'Get QR Code' and it will generate a QR code which you can scan with your phone and it will bring you to the page you were on. Or if you just want to create some QR codes for other things, this will work.
 	</p>
-	<input id="userURL" size="45">
+	<div id="qr-input">
+	<label for="userURL">URL: </label><input id="userURL" size="45">
 	<button id="getURL">Get QR Code</button>
+	</div>
 </div>
 <div id="displayQR"></div>
 </div>

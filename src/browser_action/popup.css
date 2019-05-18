@@ -24,6 +24,7 @@ a:hover {
 }
 
 button {
+  margin-top: 5px;
   padding: 6px;
   border-radius: 4px;
 }
@@ -34,5 +35,9 @@ button:hover {
 }
 
 #displayQR {
+  text-align: center;
+}
+
+#qr-input {
   text-align: center;
 }

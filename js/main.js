@@ -185,7 +185,7 @@ request.open("GET", "https://dev.to/api/articles?" + d.getTime(), true);
 request.send();
 request.onload = function() {
   let data = JSON.parse(this.response);
-  if (request.status != 200) {
+  if (request.status !== 200) {
     console.log("Error", request.statusText);
   } else {
     data.forEach(article => {
@@ -220,14 +220,20 @@ function showInput() {
   let input1 = document.getElementById("urlName");
   let input2 = document.getElementById("siteUrl");
   let addButton = document.getElementById("addItem");
+  let label1 = document.getElementById("siteLabel");
+  let label2 = document.getElementById("urlLabel");
   if (input1.style.display === "none") {
     (input1.style.display = "inline-block"),
       (input2.style.display = "inline-block"),
-      (addButton.style.display = "inline-block");
+      (addButton.style.display = "inline-block"),
+        (label1.style.display = "inline-block"),
+        (label2.style.display = "inline-block");
   } else {
     (input1.style.display = "none"),
       (input2.style.display = "none"),
-      (addButton.style.display = "none");
+      (addButton.style.display = "none"),
+        (label1.style.display = "none"),
+        (label2.style.display = "none");
   }
 }
 

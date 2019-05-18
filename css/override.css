@@ -7,7 +7,7 @@ html {
 /* Github Calendar */
 .calendar {
   max-width: 700px;
-  font-family: Helvetica, arial;
+  font-family: Helvetica, arial, serif;
   border: 1px solid #39dd34;
   border-radius: 3px;
   min-height: 243px;
@@ -373,8 +373,14 @@ li a:hover {
 
 #urlName {
   height: 1.5rem;
+  margin: 5px;
 }
 
 #siteUrl {
   height: 1.5rem;
+  margin: 5px;
+}
+
+label {
+  color: #808fbb;
 }
