@@ -42,4 +42,5 @@ node_modules
 
 # Ignore the CNAME file
 CNAME
-
+# Ignore zip file
+*.zip
