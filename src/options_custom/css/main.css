@@ -85,6 +85,10 @@ input {
   text-shadow: #f5f5f5 0 1px 0;
 }
 
+.red {
+  color: red;
+}
+
 #sidebar {
   position: absolute;
   background-color: #ededed;
