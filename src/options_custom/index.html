@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <title id="title">Dev Tabs</title>
         <link id="favicon" rel="icon" href="devTabs.ico">
-        <link rel="stylesheet" href="lib/default.css" media="screen">
         <link rel="stylesheet" href="css/main.css" media="screen">
         <script src="lib/marked.min.js"></script>
     </head>
@@ -46,7 +45,7 @@
                     <form id="feed-options">
                         <label for="gitUser">Username: </label><input id="gitUser" type="text" name="username" placeholder="Enter Github Username">
                     </form>
-                        <button id="submitgituser">Save</button>
+                        <button class="bttn" id="submitgituser">Save</button>
                 </div>
             </div>
             <div id="bookmark-option" class="tab-content" style="display: none;">
@@ -54,8 +53,8 @@
                 <h3>Enter the bookmarks you wish to display.The links will be listed on the main page in the far left column. <b>Please Use Markdown Format.</b> Also, please be sure to separate entries with a comma. ex: [Link Name](https://link.url.com)<b>,</b>[Link Name](https://link.url.com) - no space needed.</h3>
                 <div id="form-bookmark">
                     <label for="bookmarkForm">Bookmarks:</label><br/><textarea id="bookmarkForm" rows="8" cols="80" placeholder="[Gmail](https://google.com/gmail),[Mozilla](https://developer.mozilla.org/)"></textarea><br>
-                        <button id="submitbookmark">Save</button>
-                        <button id="deleteBookmark" class="red">Delete All</button>
+                        <button class="bttn" id="submitbookmark">Save</button>
+                        <button class="bttn red" id="deleteBookmark">Delete All</button>
                         <!-- <p>Save your most used Bookmarks</p> -->
                 </div>
                 <div>
@@ -69,14 +68,14 @@
                     <form id="cal-options">
                         <label for="gitCalUser">Username: </label><input id="gitCalUser" type="text" name="username" placeholder="Enter Github Username-Calender">
                     </form>
-                        <button id="submitCalUser">Save</button>
+                        <button class="bttn" id="submitCalUser">Save</button>
                 </div>
             </div>
             <div id="weatherOpt" class="tab-content" style="display: none;">
                 <h2>Weather Location</h2>
                 <h3>Please configure the location for the weather:</h3>
                 <p class="explain">Hit the button to get your current location. Once you press 'Get Location' a message will appear asking you to allow this page to access your location. Once you hit 'allow', your current location will be put into local storage, only on your machine, and those coordinates will be used. This extension does <b>not</b> track or 'follow' you, so if you move and want your location updated, just come back here and hit the button again to update your weather display. </p>
-                    <button id="submitWeather">Get Location</button>
+                    <button class="bttn" id="submitWeather">Get Location</button>
                 </div>
             </div>
             
