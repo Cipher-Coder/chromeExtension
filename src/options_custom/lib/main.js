@@ -161,3 +161,7 @@ document.getElementById("deleteBookmark").addEventListener("click", function() {
     alert("Action Cancelled");
   }
 });
+
+document.getElementById("backHome").addEventListener("click", function() {
+  window.history.back();
+});

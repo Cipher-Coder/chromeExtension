@@ -148,22 +148,6 @@ input {
   cursor: pointer;
 }
 
-#tab-container .tab.active {
-  background-color: #d4d4d4;
-  border-color: #bfbfbf;
-  color: black;
-  text-shadow: #dbdbdb 0 1px 0;
-  box-shadow: inset -12px 0 30px -30px black;
-}
-
-#tab-container .tab.active {
-  background-color: transparent;
-  border-color: transparent;
-  color: #808080;
-  text-shadow: inherit;
-  box-shadow: none;
-}
-
 #content {
   position: absolute;
   top: 0;
@@ -305,4 +289,10 @@ input {
 #tracking-info {
   font-family: Helvetica, "Ubuntu", Arial, sans-serif;
   text-align: left;
+}
+
+#backHome {
+  position: absolute;
+  bottom: 90px;
+  padding-left: 25px;
 }
