@@ -278,6 +278,11 @@ li a:hover {
   margin-top: 30px;
 }
 
+#devStart .card-byline {
+  font-size: 0.8rem;
+  color: orange;
+}
+
 #bookmarks {
   float: left;
   overflow: auto;
@@ -296,6 +301,10 @@ li a:hover {
   list-style: none;
   line-height: 1.5;
   text-indent: -0.7rem;
+}
+
+#bmList li {
+  margin-left: -5px;
 }
 
 #bookmarkList li:nth-child(3n + 1)::before {
@@ -320,11 +329,29 @@ li a:hover {
   border: none;
   cursor: pointer;
   outline: none;
+  -webkit-filter: brightness(70%);
+  -moz-filter: brightness(70%);
+  -o-filter: brightness(70%);
+  -ms-filter: brightness(70%);
+  filter: brightness(70%);
+}
+
+#addIcon:hover {
+  -webkit-filter: brightness(100%);
+  -moz-filter: brightness(100%);
+  -o-filter: brightness(100%);
+  -ms-filter: brightness(100%);
+  filter: brightness(100%);
 }
 
 .singleDesc {
   color: orangered;
   margin-top: -5px;
+  -webkit-filter: brightness(70%);
+  -moz-filter: brightness(70%);
+  -o-filter: brightness(70%);
+  -ms-filter: brightness(70%);
+  filter: brightness(70%);
 }
 
 .addBookmark {

@@ -204,10 +204,23 @@ request.onload = function() {
         this.style.display = "none";
       };
 
+      const aTwitter = document.createElement("a");
+      let byLine = "";
+      if (article.user.twitter_username === null) {
+        return "";
+      } else {
+        byLine = article.user.twitter_username;
+      }
+
+      aTwitter.className = "card-byline";
+      aTwitter.href = "https://twitter.com/" + byLine;
+      aTwitter.textContent = "By: @" + byLine;
+
       container.appendChild(card); //Create card
       card.appendChild(img); // Add Image to card
       card.appendChild(a); // Add link
       card.appendChild(p); // Add description
+      card.appendChild(aTwitter); // Add By line
     });
   }
 };
