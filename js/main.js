@@ -226,14 +226,14 @@ function showInput() {
     (input1.style.display = "inline-block"),
       (input2.style.display = "inline-block"),
       (addButton.style.display = "inline-block"),
-        (label1.style.display = "inline-block"),
-        (label2.style.display = "inline-block");
+      (label1.style.display = "inline-block"),
+      (label2.style.display = "inline-block");
   } else {
     (input1.style.display = "none"),
       (input2.style.display = "none"),
       (addButton.style.display = "none"),
-        (label1.style.display = "none"),
-        (label2.style.display = "none");
+      (label1.style.display = "none"),
+      (label2.style.display = "none");
   }
 }
 
