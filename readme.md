@@ -12,15 +12,15 @@ The [Github](https://www.github.com) repo's, on the right hand side of the page,
 
 I used a library called [GithubFeed](https://github.com/samwx/GithubFeed), from 'samwx' to implement this. The library is very well documented however, I did have to alter the code slightly to conform with Chrome's security policies, as well as the CSS so it matched the Dev Tabs page.
 
-Once you open the extension for the first time, click the settings cog in the middle of the page. The first setting is the 'Github Feed'. If you just put your Github Username in the input and save it, when you go back to the main page it will automatically load your Feed on the right hand side of the screen.
+Once you open the extension for the first time, click the settings cog in the middle of the page. The first setting is the 'Github Feed'. If you just put your Github Username in the input and save it, when you go back to the main page it will automatically load your 'Feed' on the right side of the screen.
 
-Once you save your username, it gets put into local storage and accessed from there. I debated on putting it into the chrome.sync.storage so that it gets sync'd across all instances of chrome, but ultimately decided to stick with local as it is not really hard to type it in. I also know that I have multiple Github accounts and may want to have one show up for my normal chrome instance and another username for my [Google Chrome Canary](https://www.google.com/chrome/canary/) instance. Just keep this in mind if you ever clear your local storage, you will have to input your usernames again. It is the same for the calendar. In fact all the storage in this extension is stored in local storage.
+Once you save your username, it gets put into Chrome Local Storage and accessed from there. I debated on putting it into the chrome.sync.storage so that it gets 'sync'd' across all instances of chrome, but ultimately decided to stick with local as it is not really hard to type it in. I also know that I have multiple Github accounts and may want to have one show up for my normal chrome instance and another username for my [Google Chrome Canary](https://www.google.com/chrome/canary/) instance. Just keep this in mind if you ever clear your local storage, you will have to input your usernames again. It is the same for the calendar. In fact all the storage in this extension is stored in local storage.
 
 ### Github Calendar
 
 The [Github](https://www.github.com) calendar is integrated with a library from IonicaBizau. The library is [github-calendar.js](https://github.com/IonicaBizau/github-calendar), and can display your github contribution calendar. Very well explained lib, and is responsive. I changed the original styles that came with it to match the basic styles of the Dev Tabs page.
 
-When you first start the extension, look under the weather info at the center of the page and click on the settings cog. On the settings page just click on the 'Github Calendar' selection on the left and fill in your github username. No quotes or anything and click save.
+When you initially start the extension, look under the weather info at the center of the page and click on the settings cog. On the settings page just click on the 'Github Calendar' selection on the left and fill in your github username. No quotes or anything and click save.
 
 Again, this username is stored in chrome.storage.local. So if you clear your browser, you will have to input it again. This may change in the future. I may ultimately decide to put it in chrome.storage.sync, but for now, this is how it is.
 
