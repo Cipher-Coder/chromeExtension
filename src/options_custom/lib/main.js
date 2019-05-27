@@ -165,3 +165,14 @@ document.getElementById("deleteBookmark").addEventListener("click", function() {
 document.getElementById("backHome").addEventListener("click", function() {
   window.history.back();
 });
+
+document.getElementById("getBookmarks").addEventListener("click", function() {
+  chrome.storage.local.get(["userBookmark"], function(result) {
+    if (result.userBookmark === undefined) {
+      return;
+    } else {
+      let change = document.getElementById("bookmarkForm");
+      change.innerHTML = result.userBookmark;
+    }
+  });
+});
