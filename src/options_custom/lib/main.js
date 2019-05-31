@@ -134,6 +134,11 @@ function saveBookmarks() {
   chrome.storage.local.set({ userBookmark: tempBook }, function() {
     console.log("Bookmarks Logged");
   });
+  clearInput();
+}
+
+function clearInput() {
+  document.getElementById("bookmarkForm").value = "";
 }
 // Set Github calendar username
 

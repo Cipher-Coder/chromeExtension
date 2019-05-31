@@ -53,7 +53,7 @@ html {
 }
 
 .contrib-column {
-  padding: 15px 0;
+  padding: 25px 0;
   text-align: center;
   border-left: 1px solid #39dd34;
   border-top: 1px solid #39dd34;
@@ -215,6 +215,10 @@ li a:hover {
 .repo-container:hover {
   transition: all 0.2s ease-in;
   border-left: solid greenyellow 3px;
+}
+
+.repo-description {
+  font-style: italic;
 }
 
 #gitFeed {
