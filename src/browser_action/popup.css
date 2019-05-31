@@ -25,6 +25,7 @@ a:hover {
 
 button {
   margin-top: 5px;
+  margin-bottom: 15px;
   padding: 6px;
   border-radius: 4px;
 }

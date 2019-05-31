@@ -1,6 +1,6 @@
 var GithubFeed = {
   init: function(config) {
-    this.count = config.count || 8;
+    this.count = config.count || 0;
     this.order = config.order || "desc";
     this.url =
       "https://api.github.com/users/" +
@@ -51,37 +51,39 @@ var GithubFeed = {
       return false;
     }
   },
-  bindTemplate: function(name, description, url, starCount) {
-    var container = "";
-
-    container += '<div class="repo-container">';
-    container +=
-      '<h3 class="repo-name"><a href="' + url + '">' + name + "</a></h3>";
-    container += '<div class="repo-description">' + description + "</div>";
-    container += "</div>";
-
-    return container;
-  },
 
   fetch: function() {
     var self = this;
 
     self.objJSON({ url: self.url }, function(response) {
       var repos = JSON.parse(response),
-        reposList = document.querySelector(self.container),
-        content = "",
+        reposList = document.getElementById("github-feeds"),
+        /* content = "", */
         i;
 
       for (i = 0; i < repos.length; i++) {
-        content += self.bindTemplate(
-          repos[i].name,
-          repos[i].description,
-          repos[i].svn_url,
+        /* 
           repos[i].stargazers_count
-        );
-      }
+         */
+        const div = document.createElement("div");
+        div.setAttribute("class", "repo-container");
+        const head = document.createElement("h3");
+        head.setAttribute("class", "repo-name");
+        const a = document.createElement("a");
+        a.href = repos[i].svn_url;
+        a.textContent = repos[i].name;
+        const desc = document.createElement("div");
+        desc.setAttribute("class", "repo-description");
+        desc.textContent = repos[i].description;
+        if (repos[i].description === null) {
+          desc.textContent = "Add description to your repo...";
+        }
 
-      reposList.innerHTML = content;
+        reposList.appendChild(div);
+        div.appendChild(head);
+        head.appendChild(a);
+        div.appendChild(desc);
+      }
 
       self.onComplete();
     });

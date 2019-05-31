@@ -31,6 +31,5 @@
     "icons/devTabs-48x48.png",
     "icons/devTabs-128x128.png"
   ],
-  "permissions": ["tabs", "storage", "unlimitedStorage"],
-  "content_security_policy": "script-src 'self' https://*.googleapis.com; object-src 'self'"
+  "permissions": ["tabs", "storage", "unlimitedStorage"]
 }

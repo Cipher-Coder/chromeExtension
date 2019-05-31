@@ -199,6 +199,7 @@ li a:hover {
 .repo-name a {
   color: #f1fa8c;
   text-decoration: none;
+  font-size: 1.15rem;
 }
 
 .repo-name a:hover {
