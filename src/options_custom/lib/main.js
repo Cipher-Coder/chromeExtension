@@ -171,7 +171,7 @@ document.getElementById("backHome").addEventListener("click", function() {
   window.history.back();
 });
 
-document.getElementById("getBookmarks").addEventListener("click", function() {
+/* document.getElementById("getBookmarks").addEventListener("click", function() {
   chrome.storage.local.get(["userBookmark"], function(result) {
     if (result.userBookmark === undefined) {
       return;
@@ -180,4 +180,4 @@ document.getElementById("getBookmarks").addEventListener("click", function() {
       change.innerHTML = result.userBookmark;
     }
   });
-});
+}); */
