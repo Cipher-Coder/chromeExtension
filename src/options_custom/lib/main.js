@@ -67,9 +67,11 @@ function weatherDisplay() {
 }
 // Get location for weather
 
-document
-  .getElementById("submitWeather")
-  .addEventListener("click", weatherLocation);
+document.getElementById("submitWeather").addEventListener("click", () => {
+  weatherLocation();
+  getUnitOfMeasure();
+});
+
 function weatherLocation() {
   var options = {
     enableHighAccuracy: true,
@@ -93,6 +95,18 @@ function weatherLocation() {
   }
 
   navigator.geolocation.getCurrentPosition(success, error, options);
+}
+
+function getUnitOfMeasure() {
+  let isChecked = document.getElementById("myonoffswitch").checked;
+  if (isChecked === false) {
+    isChecked = "metric";
+  } else {
+    isChecked = "imperial";
+  }
+  chrome.storage.local.set({ unitOfMeasure: isChecked }, () => {
+    console.log("Unit of Measure: " + isChecked);
+  });
 }
 
 // Get Github username for feed
@@ -170,14 +184,3 @@ document.getElementById("deleteBookmark").addEventListener("click", function() {
 document.getElementById("backHome").addEventListener("click", function() {
   window.history.back();
 });
-
-/* document.getElementById("getBookmarks").addEventListener("click", function() {
-  chrome.storage.local.get(["userBookmark"], function(result) {
-    if (result.userBookmark === undefined) {
-      return;
-    } else {
-      let change = document.getElementById("bookmarkForm");
-      change.innerHTML = result.userBookmark;
-    }
-  });
-}); */

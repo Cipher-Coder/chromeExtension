@@ -131,10 +131,13 @@ let humidityEl = document.getElementById("humidity");
 let windEl = document.getElementById("wind");
 let skyEl = document.getElementById("sky");
 
-chrome.storage.local.get(["userLat", "userLong"], function(result) {
+chrome.storage.local.get(["userLat", "userLong", "unitOfMeasure"], function(
+  result
+) {
   // Pull from chrome local storage
   let lat = result.userLat;
   let lon = result.userLong;
+  let unit = result.unitOfMeasure;
 
   function findWeather() {
     let searchLink =
@@ -144,7 +147,8 @@ chrome.storage.local.get(["userLat", "userLong"], function(result) {
       lon +
       "&appid=" +
       apiKey +
-      "&units=imperial"; // Change this to metric or leave as imperial if in the US
+      "&units=" +
+      unit;
     httpRequestAsync(searchLink, theResponse);
   }
 
@@ -153,7 +157,12 @@ chrome.storage.local.get(["userLat", "userLong"], function(result) {
     cityEl.textContent = jsonObject.name; // Location
     currTempEl.textContent = parseInt(jsonObject.main.temp) + "° "; //Temperature
     humidityEl.textContent = jsonObject.main.humidity + "%"; // Humidity
-    windEl.textContent = jsonObject.wind.speed + "mph "; // Wind Speed
+    let windSpeed = "mph";
+
+    if (unit === "metric") {
+      windSpeed = "kph";
+    }
+    windEl.textContent = jsonObject.wind.speed + windSpeed + " "; // Wind Speed
     skyEl.textContent = jsonObject.clouds.all + "%"; // Cloud Cover %
   }
 

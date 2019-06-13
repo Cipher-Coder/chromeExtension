@@ -58,7 +58,6 @@
                     <label for="bookmarkForm">Bookmarks:</label><br/><textarea id="bookmarkForm" rows="8" cols="80" placeholder="[Gmail](https://google.com/gmail),[Mozilla](https://developer.mozilla.org/)"></textarea><br>
                         <button class="bttn" id="submitbookmark">Save</button>
                         <button class="bttn red" id="deleteBookmark">Delete All</button>
-                        <!-- <button id="getBookmarks">Edit Bookmarks</button> -->
                 </div>
                 <div>
                 <p class="red bmDescription">'Delete' - This will delete 'Bookmarks' on the DevTabs page ONLY</p>
@@ -78,6 +77,13 @@
                 <h2>Weather Location</h2>
                 <h3>Please configure the location for the weather:</h3>
                 <p class="explain">Hit the button to get your current location. Once you press 'Get Location' a message will appear asking you to allow this page to access your location. Once you hit 'allow', your current location will be put into local storage, only on your machine, and those coordinates will be used. This extension does <b>not</b> track or 'follow' you, so if you move and want your location updated, just come back here and hit the button again to update your weather display. </p>
+                <div class="onoffswitch">
+                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                        <span class="onoffswitch-inner"></span>
+                        <span class="onoffswitch-switch"></span>
+                    </label>
+                </div>
                     <button class="bttn" id="submitWeather">Get Location</button>
                 </div>
             </div>
