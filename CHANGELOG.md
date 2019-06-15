@@ -6,8 +6,6 @@
 
 ## v0.2.0
 
-___
-
 ### Changes
 #### Added option to change Unit of Measure on Weather Display
 
@@ -22,8 +20,6 @@ Had a request to add in functionality to change the weather information display 
 &nbsp;
 
 ## v0.1.8
-
-___
 
 #### Bookmark options bleeding into Tracking info on bottom of screen on small screens
 
@@ -41,8 +37,6 @@ After looking at the extension loaded on a small laptop I noticed that when the 
 
 ## v0.1.7
 
-___
-
 #### Style Updates
 
 - Changed article description and repo description to italic and adjusted size on both. Also increased letter spacing on article desc.
@@ -54,8 +48,6 @@ ___
 &nbsp;
 
 ## v0.1.6
-
-___
 
 #### Update CSP | Security
 
@@ -71,8 +63,6 @@ In response to the Mozilla Review I changed a few things for security and got ri
 
 ## v0.1.5
 
-___
-
 #### Reduced permissions
 
 Reduced permissions even more
@@ -82,8 +72,6 @@ Reduced permissions even more
 &nbsp;
 
 ## v0.1.4
-
-___
 
 #### Reduced Permissions
 
@@ -97,8 +85,6 @@ Took out any of the permissions I did not really need
 
 ## v0.1.3
 
-___
-
 #### Initial Chrome Release
 
 This will be the first version released to the public
@@ -111,8 +97,6 @@ This will be the first version released to the public
 
 ## v0.1.2 - Pre-Release
 
-___
-
 #### Updated icon and got rid of error in console
 
 - Updated icons to more suitable ones.
@@ -121,8 +105,6 @@ ___
 &nbsp;
 
 ## v0.1.1 - Pre-Release
-
-___
 
 ## Initial Release
 
