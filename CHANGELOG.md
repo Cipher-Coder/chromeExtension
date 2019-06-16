@@ -4,9 +4,22 @@
 
 &nbsp;
 
+## v0.2.1
+
+### Changes
+
+#### Sanitize user input
+
+Needed to sanitize user input for all the bookmarks added.
+
+- DOMPurify lib was added and all input is run through that.
+
+&nbsp;
+
 ## v0.2.0
 
 ### Changes
+
 #### Added option to change Unit of Measure on Weather Display
 
 Had a request to add in functionality to change the weather information display to Metric
@@ -15,7 +28,7 @@ Had a request to add in functionality to change the weather information display 
 
 - Now there is a toggle switch before getting weather location. The default is Imperial but you can toggle it to Metric so you can have the Wind Speed displayed in KPH instead of MPH and the Temperature will be in Celsius.
 
-- This selection is stored in 'chrome.storage.local' with all the other options and is just appended onto the end of the API call to Open Weather Map then it will return the info in that unit of measure. Then the browser will check that selection again prior to display and show either MPH of KPH after wind speed. 
+- This selection is stored in 'chrome.storage.local' with all the other options and is just appended onto the end of the API call to Open Weather Map then it will return the info in that unit of measure. Then the browser will check that selection again prior to display and show either MPH of KPH after wind speed.
 
 &nbsp;
 
@@ -77,7 +90,7 @@ Reduced permissions even more
 
 Took out any of the permissions I did not really need
 
-- After launching and then installing on my own machine, I realized in development, I had to many permissions. When I installed the Chrome Store version it asked for a lot of permissions that are not required. 
+- After launching and then installing on my own machine, I realized in development, I had to many permissions. When I installed the Chrome Store version it asked for a lot of permissions that are not required.
 
 - I dropped the 'management', and 'content settings' permission. This was asking the user for access to everything... Which I do not need. Now I have 'storage', 'unlimited storage', 'favicon', and 'tabs' as this should be all I need for a 'New Tab' Extension. If I find that I do not need any of these I will take them out too.
 
@@ -109,5 +122,3 @@ This will be the first version released to the public
 ## Initial Release
 
 - This is the initial pre-release of Dev Tabs Chrome Extension.
-
-

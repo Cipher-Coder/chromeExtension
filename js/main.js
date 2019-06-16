@@ -14,7 +14,12 @@ window.onload = function makeBookmark() {
       myBookmarks.forEach(makeBookmark);
       ul += "</ul>";
 
-      document.getElementById("bookmarkList").innerHTML = ul;
+      let bkmk = document.getElementById("bookmarkList");
+
+      let dirty = ul;
+      let clean = DOMPurify.sanitize(dirty);
+
+      bkmk.innerHTML = clean;
 
       function makeBookmark(value) {
         ul += "<li class='userMark'>" + value + "</li>";
@@ -268,13 +273,15 @@ function addEntry() {
     let urlName = document.getElementById("urlName").value;
     let url = document.getElementById("siteUrl").value;
     let entry = "<a href='" + url + "'>" + urlName + "</a>";
-    existingEntries.push(entry);
+    let cleanEntry = DOMPurify.sanitize(entry);
+    existingEntries.push(cleanEntry);
     chrome.storage.local.set({ userBookmark: existingEntries }, function() {
       console.log("New Entry Saved");
       clearInput();
     });
   });
 }
+
 function clearInput() {
   document.getElementById("urlName").value = "";
   document.getElementById("siteUrl").value = "";

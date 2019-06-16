@@ -143,6 +143,10 @@ function saveBookmarks() {
 
   let tempBook = new Array();
 
+  marked.setOptions({
+    sanitize: true
+  });
+
   tempBook = marked.inlineLexer(userBookmarks, []).split(",");
 
   chrome.storage.local.set({ userBookmark: tempBook }, function() {
