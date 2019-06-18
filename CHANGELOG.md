@@ -12,7 +12,7 @@
 
 Needed to sanitize user input for all the bookmarks added.
 
-- DOMPurify lib was added and all input is run through that.
+- DOMPurify lib was added and all input is run through that. Bookmarks entered initially as well as any input from the user for bookmarks entered one at a time from the index page. 
 
 &nbsp;
 
