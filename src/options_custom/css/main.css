@@ -202,23 +202,10 @@ input {
 .bttn {
   border: 1px solid #888b8d;
   background: #9fa0a1;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#d5e3ed),
-    to(#9fa0a1)
-  );
-  background: -webkit-linear-gradient(top, #d5e3ed, #9fa0a1);
-  background: -moz-linear-gradient(top, #d5e3ed, #9fa0a1);
-  background: -ms-linear-gradient(top, #d5e3ed, #9fa0a1);
   background: -o-linear-gradient(top, #d5e3ed, #9fa0a1);
   padding: 4px 18px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
   border-radius: 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
-  -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
   box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
   text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;
   color: #000000;
@@ -250,23 +237,10 @@ input {
 #donation {
   border-top: 1px solid #a9bdc9;
   background: #595959;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#a8b9c4),
-    to(#595959)
-  );
-  background: -webkit-linear-gradient(top, #a8b9c4, #949494);
-  background: -moz-linear-gradient(top, #a8b9c4, #949494);
-  background: -ms-linear-gradient(top, #a8b9c4, #949494);
   background: -o-linear-gradient(top, #a8b9c4, #949494);
   padding: 6px 12px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
   border-radius: 6px;
   -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
-  -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
   box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
   text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;
   color: #000000;
@@ -320,6 +294,7 @@ input {
   display: block;
   width: 200%;
   margin-left: -100%;
+  -webkit-transition: margin 0.3s ease-in 0s;
   transition: margin 0.3s ease-in 0s;
 }
 .onoffswitch-inner:before,
@@ -334,6 +309,7 @@ input {
   color: white;
   font-family: Trebuchet, Arial, sans-serif;
   font-weight: bold;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 .onoffswitch-inner:before {
@@ -360,6 +336,7 @@ input {
   right: 70px;
   border: 2px solid #ffffff;
   border-radius: 20px;
+  -webkit-transition: all 0.3s ease-in 0s;
   transition: all 0.3s ease-in 0s;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {

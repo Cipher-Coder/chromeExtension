@@ -105,16 +105,20 @@ html {
   padding: 0 10px 12px;
   text-align: left;
   width: 100%;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   height: 26px;
 }
 
 #main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   overflow: hidden;
   height: 100vh;
   position: relative;
   width: 100%;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   will-change: overflow;
 }
@@ -192,6 +196,7 @@ li a:visited {
 
 li a:hover {
   text-decoration: none !important;
+  -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   color: #f1fa8c;
 }
@@ -203,6 +208,7 @@ li a:hover {
 }
 
 .repo-name a:hover {
+  -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   color: greenyellow;
 }
@@ -213,6 +219,7 @@ li a:hover {
 }
 
 .repo-container:hover {
+  -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   border-left: solid greenyellow 3px;
 }
@@ -368,23 +375,10 @@ li a:hover {
   margin-top: 9px;
   border: 1px solid #455259;
   background: #46535c;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#a1a1a1),
-    to(#46535c)
-  );
-  background: -webkit-linear-gradient(top, #a1a1a1, #46535c);
-  background: -moz-linear-gradient(top, #a1a1a1, #46535c);
-  background: -ms-linear-gradient(top, #a1a1a1, #46535c);
   background: -o-linear-gradient(top, #a1a1a1, #46535c);
   padding: 5px 10px;
-  -webkit-border-radius: 11px;
-  -moz-border-radius: 11px;
   border-radius: 11px;
   -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
-  -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
   box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
   text-shadow: rgba(0, 0, 0, 1) 0 1px 0;
   color: #000000;
