@@ -8,6 +8,15 @@
 
 ### Changes
 
+#### Fixed Twitter portion of extension after Twitter's UI update
+
+Changed all CSS classes 
+- Adjusted all function calls 
+- Changed all class names to match Twitter's new ones
+- Changed Template literals so everything will work
+
+*Still some work to be done on styling - Just wanted to at least get it working*
+
 #### Sanitize user input
 
 Needed to sanitize user input for all the bookmarks added.
