@@ -53,7 +53,7 @@ function listHTML(data) {
 function linkItemHTML(item) {
   return (
     '<li class="r-qkLmgi r-rull8r r-1ila09b r-1sp51qo">\
-					<a target="_blank" class="r-111h2gw" href="' +
+					<a target="_blank" class="r-111h2gw" style="text-decoration: none; color: #fff;" href="' +
     item.url +
     '">\
 					<span class="css-16my406" dir="ltr">' +
@@ -74,12 +74,12 @@ function linkItemHTML(item) {
 function trendsHTML(listItems) {
   return (
     '<div class="css-1dbjc4n r-1uaug3w r-1uhd6vh r-t23y2h r-1phboty r-rs99b7 r-15d164r r-1udh08x trend-mod">\
-					<div class="trends-inner"><div class="flex-module trends-container context-trends-container">\
+					<div class="trends-inner"><div class="r-1qd0xha trends-container context-trends-container">\
 				  <div class="flex-module-header">\
 				  <h3><span class="css-1dbjc4n r-1ila09b r-rull8r r-qklmqi r-1wtj0ep r-1sp51qo" style="color: #fff; font-size: 1.5rem; font-weight: 800;">dev.to</span></h3>\
 				  </div>\
 				  <div class="flex-module-inner">\
-					<ul class="css-1dbjc4n" style="list-style-type: none;" id="dev-to-trends">\
+					<ul class="css-1dbjc4n r-1qd0xha" style="list-style-type: none;" id="dev-to-trends">\
 					' +
     listItems +
     "</ul></div></div></div>"
