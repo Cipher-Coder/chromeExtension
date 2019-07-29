@@ -18,10 +18,14 @@ setInterval(function() {
 }, 50);
 
 function insertLinks(data) {
-  var trendsBox = document.getElementsByClassName("r-rs99b7 r-15d164r")[0];
+  var trendsBox = document.getElementsByClassName(
+    "css-1dbjc4n r-1uaug3w r-1uhd6vh r-t23y2h r-1phboty r-rs99b7 r-15d164r r-1udh08x"
+  )[0];
   var devBox = document.getElementById("dev-to-trends");
   if (!trendsBox || devBox) return;
   var newItem = document.createElement("DIV");
+  newItem.className =
+    "css-1dbjc4n r-1uaug3w r-1uhd6vh r-t23y2h r-1phboty r-rs99b7 r-15d164r r-1udh08x";
   newItem.innerHTML = trendsHTML(listHTML(data));
   insertAfter(newItem, trendsBox);
 }
@@ -52,7 +56,7 @@ function listHTML(data) {
 
 function linkItemHTML(item) {
   return (
-    '<li class="r-qkLmgi r-rull8r r-1ila09b r-1sp51qo">\
+    '<li class="r-qkLmgi r-rull8r r-1ila09b r-1sp51qo r-rs99b7">\
 					<a target="_blank" class="r-111h2gw" style="text-decoration: none; color: #fff;" href="' +
     item.url +
     '">\
@@ -73,7 +77,7 @@ function linkItemHTML(item) {
 
 function trendsHTML(listItems) {
   return (
-    '<div class="css-1dbjc4n r-1uaug3w r-1uhd6vh r-t23y2h r-1phboty r-rs99b7 r-15d164r r-1udh08x trend-mod">\
+    '<div class="css-1dbjc4n trend-mod">\
 					<div class="trends-inner"><div class="r-1qd0xha trends-container context-trends-container">\
 				  <div class="flex-module-header">\
 				  <h3><span class="css-1dbjc4n r-1ila09b r-rull8r r-qklmqi r-1wtj0ep r-1sp51qo" style="color: #fff; font-size: 1.5rem; font-weight: 800;">dev.to</span></h3>\

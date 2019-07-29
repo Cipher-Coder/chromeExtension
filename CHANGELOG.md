@@ -4,24 +4,35 @@
 
 &nbsp;
 
+## v0.2.3
+
+## Changes
+
+#### Fixed the [DEV](https://dev.to) box from showing up in the central feed when you switch to another page
+
+After changing the [DEV](https://dev.to) box CSS classes, I realized that if you were to click on another page it would put the box in the main feed. The CSS classes selected as a reference in the DOM were reused on the other page forcing the box into a position it should not have been in. I had to be even more specific and add in more of the classes to have more specificity.
+
+&nbsp;
+
 ## v0.2.2
 
 ### Changes
 
 #### Fixed Twitter portion of extension after Twitter's UI update
 
-Changed all CSS classes 
-- Adjusted all function calls 
+Changed all CSS classes
+
+- Adjusted all function calls
 - Changed all class names to match Twitter's new ones
 - Changed Template literals so everything will work
 
-*Still some work to be done on styling - Just wanted to at least get it working*
+_Still some work to be done on styling - Just wanted to at least get it working_
 
 #### Sanitize user input
 
 Needed to sanitize user input for all the bookmarks added.
 
-- DOMPurify lib was added and all input is run through that. Bookmarks entered initially as well as any input from the user for bookmarks entered one at a time from the index page. 
+- DOMPurify lib was added and all input is run through that. Bookmarks entered initially as well as any input from the user for bookmarks entered one at a time from the index page.
 
 Ran autoprefixer on all CSS files
 
