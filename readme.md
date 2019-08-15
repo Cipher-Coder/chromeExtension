@@ -1,4 +1,4 @@
-[![GitHub license](https://img.shields.io/github/license/Cipher-Coder/chromeExtension.svg)](https://github.com/Cipher-Coder/chromeExtension/blob/master/LICENSE.txt) ![Chrome Web Store](https://img.shields.io/chrome-web-store/v/ghkccmckjecalghejidolggalehgbcnj.svg)
+[![GitHub license](https://img.shields.io/github/license/Cipher-Coder/chromeExtension.svg)](https://github.com/Cipher-Coder/chromeExtension/blob/master/LICENSE.txt) ![Chrome Web Store](https://img.shields.io/chrome-web-store/users/ghkccmckjecalghejidolggalehgbcnj)
 
 # Dev Tabs
 
