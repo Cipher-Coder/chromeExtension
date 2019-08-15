@@ -5,29 +5,46 @@ fetch("https://dev.to/api/articles")
     response.json().then(function(data) {
       links = data;
       insertLinks(data);
+      getUiVariant();
     });
   })
   .catch(function(err) {
     console.log(err);
   });
 
-setInterval(function() {
+var intervalId = setInterval(function() {
   if (links) {
     insertLinks(links);
   }
 }, 50);
 
+function getUiVariant() {
+  let UIVariant = window
+    .getComputedStyle(document.body, null)
+    .getPropertyValue("background-color");
+  switch (UIVariant) {
+    case "rgb(0, 0, 0)":
+      console.log("Dark UI");
+      break;
+    case "rgb(21, 32, 43)":
+      console.log("Dim UI");
+      break;
+    default:
+      console.log("Light UI");
+  }
+}
+
 function insertLinks(data) {
   var trendsBox = document.getElementsByClassName(
     "css-1dbjc4n r-1uaug3w r-1uhd6vh r-t23y2h r-1phboty r-rs99b7 r-15d164r r-1udh08x"
   )[0];
-  var devBox = document.getElementById("dev-to-trends");
-  if (!trendsBox || devBox) return;
+  if (!trendsBox) return;
   var newItem = document.createElement("DIV");
   newItem.className =
     "css-1dbjc4n r-1uaug3w r-1uhd6vh r-t23y2h r-1phboty r-rs99b7 r-15d164r r-1udh08x";
   newItem.innerHTML = trendsHTML(listHTML(data));
   insertAfter(newItem, trendsBox);
+  clearInterval(intervalId);
 }
 
 function insertAfter(newNode, referenceNode) {
