@@ -19,7 +19,7 @@ var intervalId = setInterval(function() {
 
 function insertLinks(data) {
   var trendsBox = document.getElementsByClassName(
-    "css-1dbjc4n r-1uaug3w r-1uhd6vh r-t23y2h r-1phboty r-rs99b7 r-ku1wi2 r-1udh08x"
+    "css-1dbjc4n r-1niwhzg r-ku1wi2"
   )[0];
   if (!trendsBox) return;
   var newItem = document.createElement("DIV");
