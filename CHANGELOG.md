@@ -4,6 +4,16 @@
 
 &nbsp;
 
+## v0.2.4
+
+## Changes
+
+#### Patched URL Proxy
+
+The URL Proxy I was using to hit GitHub and get commit graph details kept going over its limit and interrupting my service. So I created my own Proxy through Google App Engine and am now hitting that and all is working agian. 
+
+&nbsp;
+
 ## v0.2.3
 
 ## Changes
