@@ -113,7 +113,9 @@ var _typeof =
               (i.proxy =
                 i.proxy ||
                 function(e) {
-                  return "https://urlreq.appspot.com/req?method=GET&url=" + e;
+                  return (
+                    "https://mattazurl.appspot.com/req?method=GET&url=" + e
+                  );
                 });
             var c = function l() {
               return fetch(i.proxy("https://github.com/" + t))
