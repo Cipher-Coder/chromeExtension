@@ -4,6 +4,16 @@
 
 &nbsp;
 
+## v0.2.5
+
+## Changes
+
+#### Complete re-write of github-calendar.js
+
+This release is centered around a complete re-write of the github-calendar.js file. I changed from hitting GitHub in general to `https://github.com/users/username/contributions` API and instead of parsing the entire profile and getting just the contribution info this will in turn decrease the downloaded file size and increase loading time for the calendar since it is just the contribution info being loaded. Also this lib had a total rewrite from its maintainer. I also made sure my proxy was coded into the lib so it did not depend on someone elses free tier from App Engine. 
+
+&nbsp;
+
 ## v0.2.4
 
 ## Changes
