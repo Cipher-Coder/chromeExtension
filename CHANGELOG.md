@@ -4,13 +4,23 @@
 
 &nbsp;
 
+## v0.2.6
+
+## Changes
+
+#### DOMpurify causing an object instead of string
+
+After using the extension on the new Chrome, I tried to add a single bookmark from the Dev Tabs homepage. In doing so I got `[object, Object]` as output instead of the expected string pushed to the end of the bookmarks array. After looking at the [DOMpurify issues](https://github.com/cure53/DOMPurify/issues/361) I realized the sanitized output returns TrustedHTML-Object instead of a string. So I had to convert the sanitized output `toString()` prior to appending it to the array. Now everything works as expected.
+
+&nbsp;
+
 ## v0.2.5
 
 ## Changes
 
 #### Complete re-write of github-calendar.js
 
-This release is centered around a complete re-write of the github-calendar.js file. I changed from hitting GitHub in general to `https://github.com/users/username/contributions` API and instead of parsing the entire profile and getting just the contribution info this will in turn decrease the downloaded file size and increase loading time for the calendar since it is just the contribution info being loaded. Also this lib had a total rewrite from its maintainer. I also made sure my proxy was coded into the lib so it did not depend on someone elses free tier from App Engine. 
+This release is centered around a complete re-write of the github-calendar.js file. I changed from hitting GitHub in general to `https://github.com/users/username/contributions` API and instead of parsing the entire profile and getting just the contribution info this will in turn decrease the downloaded file size and increase loading time for the calendar since it is just the contribution info being loaded. Also this lib had a total rewrite from its maintainer. I also made sure my proxy was coded into the lib so it did not depend on someone elses free tier from App Engine.
 
 &nbsp;
 
@@ -20,7 +30,7 @@ This release is centered around a complete re-write of the github-calendar.js fi
 
 #### Patched URL Proxy
 
-The URL Proxy I was using to hit GitHub and get commit graph details kept going over its limit and interrupting my service. So I created my own Proxy through Google App Engine and am now hitting that and all is working agian. 
+The URL Proxy I was using to hit GitHub and get commit graph details kept going over its limit and interrupting my service. So I created my own Proxy through Google App Engine and am now hitting that and all is working agian.
 
 &nbsp;
 
