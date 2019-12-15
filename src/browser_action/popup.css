@@ -20,20 +20,61 @@ a:hover {
   color: #081163;
 }
 
-#mainPopup {
+.mainPopup {
   padding: 10px;
 }
 
-button {
-  margin-top: 5px;
-  margin-bottom: 15px;
+.btn {
+  position: relative;
+  display: block;
+  width: 150px;
+  margin: 6px auto;
   padding: 6px;
-  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transform-style: flat;
+  transition: all 250ms ease-out;
+  cursor: pointer;
 }
 
-button:hover {
-  background-color: #d8d2d2;
-  cursor: pointer;
+.btn:before,
+.btn:after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  transition: all 250ms ease-out;
+}
+
+.paper {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(128, 128, 128, 0.1) inset;
+  border-color: #dedede;
+}
+
+.raise-flatten {
+  border-color: #fff;
+  box-shadow: none;
+}
+
+.raise-flatten:before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 15px 10px -10px rgba(31, 31, 31, 0.5);
+}
+
+.raise-flatten:hover {
+  border-color: #dedede;
+}
+
+.raise-flatten:hover:before {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(128, 128, 128, 0.1) inset;
 }
 
 #displayQR {
@@ -42,4 +83,12 @@ button:hover {
 
 #qr-input {
   text-align: center;
+}
+
+#responsiveView {
+  text-align: center;
+}
+
+input {
+  padding: 4px;
 }

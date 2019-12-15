@@ -1,0 +1,11 @@
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+body {
+  font-family: Helvetica, "Ubuntu", Arial, sans-serif;
+  background-color: #575151;
+  color: #fafafa;
+}

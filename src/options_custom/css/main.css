@@ -199,6 +199,48 @@ input {
   margin-top: 230px;
 }
 
+.button {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  margin: auto;
+  padding: 6px;
+  background-color: rgb(252, 252, 252);
+  border: 1px solid #ccc;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transform-style: flat;
+  transition: all 250ms ease-out;
+}
+.button:before,
+.button:after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  transition: all 250ms ease-out;
+}
+
+.paper {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(128, 128, 128, 0.1) inset;
+  border-color: #dedede;
+}
+
+.raise:before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.raise:hover {
+  border: 1px solid #fff;
+}
+.raise:hover:before {
+  box-shadow: 0 15px 10px -10px rgba(31, 31, 31, 0.5);
+}
+
 .bttn {
   border: 1px solid #888b8d;
   background: #9fa0a1;
@@ -225,6 +267,7 @@ input {
 
 .bmDescription {
   margin-top: 20px;
+  margin-left: 70px;
 }
 
 .donate {

@@ -21,3 +21,16 @@ function getCurrentURL() {
       console.log("Fetch did not work: ", error.message);
     });
 }
+
+document
+  .getElementById("responsiveCheck")
+  .addEventListener("click", getResponsiveURL);
+
+function getResponsiveURL() {
+  let responsiveURL = document.getElementById("responsive-url").value;
+  chrome.storage.local.set({ resURL: responsiveURL }, () => {
+    console.log("URL is: " + resURL);
+  });
+
+  chrome.tabs.create({ url: "src/responsive/index.html" });
+}

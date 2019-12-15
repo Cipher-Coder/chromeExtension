@@ -1,94 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title id="title">Dev Tabs</title>
-        <link id="favicon" rel="icon" href="devTabs.ico">
-        <link rel="stylesheet" href="css/main.css" media="screen">
-        <script src="lib/marked.min.js"></script>
-    </head>
-    <body class="no-select">
-        <div id="sidebar" class="fancy">
-            <img id="icon" src="devTabs.ico" alt="Logo"><h1 id="settings-label">Settings</h1>
-            <div id="tab-container">
-                <div id="git-feed" class="tab">
-                    <h3>Github Feed</h3>
-                </div>
-                <div id="bookmark-opt" class="tab">
-                    <h3>Bookmark Options</h3>
-                </div>
-                <div id="githubCal" class="tab">
-                    <h3>Github Calendar</h3>
-                </div>
-                <div id="weatherInfo" class="tab">
-                    <h3>Weather</h3>
-                </div>
-                <div id="backHome" class="tab">
-                    <h3>Back To Homepage</h3>
-                </div>
-            </div>
+  <head>
+    <meta charset="utf-8" />
+    <title id="title">Dev Tabs</title>
+    <link id="favicon" rel="icon" href="devTabs.ico" />
+    <link rel="stylesheet" href="css/main.css" media="screen" />
+    <script src="lib/marked.min.js"></script>
+  </head>
+  <body class="no-select">
+    <div id="sidebar" class="fancy">
+      <img id="icon" src="devTabs.ico" alt="Logo" />
+      <h1 id="settings-label">Settings</h1>
+      <div id="tab-container">
+        <div id="git-feed" class="tab">
+          <h3>Github Feed</h3>
         </div>
-        <div id="content">
-            <div class="explainSettings">
-                <h2>Settings Configuration:</h2>
-                <h3>Select the options on the left to configure the settings for each item.</h3>
-                <p class="explain"><b>Github Feed</b> option will set the username for whatever Github user's repository list you would like shown on the far right of the screen.</p>
-                <p class="explain"><b>Bookmark Options</b> will configure what bookmarks you want listed on the New Tab page in the far left column for quick access. This is configured to open in the link in the same window when clicked.</p>
-                <p class="explain"><b>Github Calendar</b> will configure what Github profile will show in the commit calendar in the middle of the New Tab page.</p>
-                <p class="explain"><b>Weather</b> will configure the Latitude and Longitude of the location you want weather info to show up for.</p>
-            </div>
-            <div class="donate">
-                <p id="tracking-info">* It was important to me that this extension not have any kind of tracking, storing of personal identifiable information, or serve any ads. This page is the first tab you see when you open your browser. It is the tab you will see every time you open a new tab. One of the motivations for making this extension was that I could not find any other new tab page, that I liked, that suited my needs, and did not have any ads, or tracked me. I even left off Google analytics. There is nothing in the code that will track you. It is open source. You are welcome to check the code and change it any way you would like, the MIT license is attached. If you are enjoying the extension and would like to show your support, click the button to buy me a coffee. Any support is <b>GREATLY</b> appreciated!</p>
-                <a id="donation" href="https://paypal.me/CipherCoder?locale.x=en_US" target="_blank">Buy Me a &#9749;</a>
-            </div>
-            <div id="github-feed" class="tab-content" style="display: none;">
-                <h2>Github Feed Options</h2>
-                <h3>Please configure the options for the Github feed:</h3>
-                <div id="form-feed">
-                    <form id="feed-options">
-                        <label for="gitUser">Username: </label><input id="gitUser" type="text" name="username" placeholder="Enter Github Username">
-                    </form>
-                        <button class="bttn" id="submitgituser">Save</button>
-                </div>
-            </div>
-            <div id="bookmark-option" class="tab-content" style="display: none;">
-                <h2>Bookmark Options</h2>
-                <h3>Enter the bookmarks you wish to display.The links will be listed on the main page in the far left column. <b>Please Use Markdown Format.</b> Also, please be sure to separate entries with a comma. ex: [Link Name](https://link.url.com)<b>,</b>[Link Name](https://link.url.com) - no space needed.</h3>
-                <div id="form-bookmark">
-                    <label for="bookmarkForm">Bookmarks:</label><br/><textarea id="bookmarkForm" rows="8" cols="80" placeholder="[Gmail](https://google.com/gmail),[Mozilla](https://developer.mozilla.org/)"></textarea><br>
-                        <button class="bttn" id="submitbookmark">Save</button>
-                        <button class="bttn red" id="deleteBookmark">Delete All</button>
-                </div>
-                <div>
-                <p class="red bmDescription">'Delete' - This will delete 'Bookmarks' on the DevTabs page ONLY</p>
-                </div>
-            </div>
-            <div id="github-cal" class="tab-content" style="display: none;">
-                <h2>Github Calendar Options</h2>
-                <h3>Please configure the options for the Github feed:</h3>
-                <div id="form-cal">
-                    <form id="cal-options">
-                        <label for="gitCalUser">Username: </label><input id="gitCalUser" type="text" name="username" placeholder="Enter Github Username-Calender">
-                    </form>
-                        <button class="bttn" id="submitCalUser">Save</button>
-                </div>
-            </div>
-            <div id="weatherOpt" class="tab-content" style="display: none;">
-                <h2>Weather Location</h2>
-                <h3>Please configure the location for the weather:</h3>
-                <p class="explain">Hit the button to get your current location. Once you press 'Get Location' a message will appear asking you to allow this page to access your location. Once you hit 'allow', your current location will be put into local storage, only on your machine, and those coordinates will be used. This extension does <b>not</b> track or 'follow' you, so if you move and want your location updated, just come back here and hit the button again to update your weather display. </p>
-                <div class="onoffswitch">
-                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-                    <label class="onoffswitch-label" for="myonoffswitch">
-                        <span class="onoffswitch-inner"></span>
-                        <span class="onoffswitch-switch"></span>
-                    </label>
-                </div>
-                    <button class="bttn" id="submitWeather">Get Location</button>
-                </div>
-            </div>
-            
-        <script src="lib/main.js"></script>
-        <script src="/js/githubFeed.js"></script>
-    </body>
+        <div id="bookmark-opt" class="tab">
+          <h3>Bookmark Options</h3>
+        </div>
+        <div id="githubCal" class="tab">
+          <h3>Github Calendar</h3>
+        </div>
+        <div id="weatherInfo" class="tab">
+          <h3>Weather</h3>
+        </div>
+        <div id="backHome" class="tab">
+          <h3>Back To Homepage</h3>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="explainSettings">
+        <h2>Settings Configuration:</h2>
+        <h3>
+          Select the options on the left to configure the settings for each
+          item.
+        </h3>
+        <p class="explain">
+          <b>Github Feed</b> option will set the username for whatever Github
+          user's repository list you would like shown on the far right of the
+          screen.
+        </p>
+        <p class="explain">
+          <b>Bookmark Options</b> will configure what bookmarks you want listed
+          on the New Tab page in the far left column for quick access. This is
+          configured to open in the link in the same window when clicked.
+        </p>
+        <p class="explain">
+          <b>Github Calendar</b> will configure what Github profile will show in
+          the commit calendar in the middle of the New Tab page.
+        </p>
+        <p class="explain">
+          <b>Weather</b> will configure the Latitude and Longitude of the
+          location you want weather info to show up for.
+        </p>
+      </div>
+      <div class="donate">
+        <p id="tracking-info">
+          * It was important to me that this extension not have any kind of
+          tracking, storing of personal identifiable information, or serve any
+          ads. This page is the first tab you see when you open your browser. It
+          is the tab you will see every time you open a new tab. One of the
+          motivations for making this extension was that I could not find any
+          other new tab page, that I liked, that suited my needs, and did not
+          have any ads, or tracked me. I even left off Google analytics. There
+          is nothing in the code that will track you. It is open source. You are
+          welcome to check the code and change it any way you would like, the
+          MIT license is attached. If you are enjoying the extension and would
+          like to show your support, click the button to buy me a coffee. Any
+          support is <b>GREATLY</b> appreciated!
+        </p>
+        <a
+          id="donation"
+          href="https://paypal.me/CipherCoder?locale.x=en_US"
+          target="_blank"
+          >Buy Me a &#9749;</a
+        >
+      </div>
+      <div id="github-feed" class="tab-content" style="display: none;">
+        <h2>Github Feed Options</h2>
+        <h3>Please configure the options for the Github feed:</h3>
+        <div id="form-feed">
+          <form id="feed-options">
+            <label for="gitUser">Username: </label
+            ><input
+              id="gitUser"
+              type="text"
+              name="username"
+              placeholder="Enter Github Username"
+            />
+          </form>
+          <button class="button paper raise" id="submitgituser">Save</button>
+        </div>
+      </div>
+      <div id="bookmark-option" class="tab-content" style="display: none;">
+        <h2>Bookmark Options</h2>
+        <h3>
+          Enter the bookmarks you wish to display.The links will be listed on
+          the main page in the far left column.
+          <b>Please Use Markdown Format.</b> Also, please be sure to separate
+          entries with a comma. ex: [Link
+          Name](https://link.url.com)<b>,</b>[Link Name](https://link.url.com) -
+          no space needed.
+        </h3>
+        <div id="form-bookmark">
+          <label for="bookmarkForm">Bookmarks:</label><br /><textarea
+            id="bookmarkForm"
+            rows="8"
+            cols="80"
+            placeholder="[Gmail](https://google.com/gmail),[Mozilla](https://developer.mozilla.org/)"
+          ></textarea
+          ><br />
+          <button class="button paper raise" id="submitbookmark">Save</button>
+          <button class="button paper raise red" id="deleteBookmark">
+            Delete
+          </button>
+        </div>
+        <div>
+          <p class="red bmDescription">
+            'Delete' - This will delete 'Bookmarks' on the DevTabs page ONLY
+          </p>
+        </div>
+      </div>
+      <div id="github-cal" class="tab-content" style="display: none;">
+        <h2>Github Calendar Options</h2>
+        <h3>Please configure the options for the Github feed:</h3>
+        <div id="form-cal">
+          <form id="cal-options">
+            <label for="gitCalUser">Username: </label
+            ><input
+              id="gitCalUser"
+              type="text"
+              name="username"
+              placeholder="Enter Github Username-Calender"
+            />
+          </form>
+          <button class="button paper raise" id="submitCalUser">Save</button>
+        </div>
+      </div>
+      <div id="weatherOpt" class="tab-content" style="display: none;">
+        <h2>Weather Location</h2>
+        <h3>Please configure the location for the weather:</h3>
+        <p class="explain">
+          Hit the button to get your current location. Once you press 'Get
+          Location' a message will appear asking you to allow this page to
+          access your location. Once you hit 'allow', your current location will
+          be put into local storage, only on your machine, and those coordinates
+          will be used. This extension does <b>not</b> track or 'follow' you, so
+          if you move and want your location updated, just come back here and
+          hit the button again to update your weather display.
+        </p>
+        <div class="onoffswitch">
+          <input
+            type="checkbox"
+            name="onoffswitch"
+            class="onoffswitch-checkbox"
+            id="myonoffswitch"
+            checked
+          />
+          <label class="onoffswitch-label" for="myonoffswitch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+          </label>
+        </div>
+        <button class="button paper raise" id="submitWeather">
+          Get Location
+        </button>
+      </div>
+    </div>
+
+    <script src="lib/main.js"></script>
+    <script src="/js/githubFeed.js"></script>
+  </body>
 </html>
