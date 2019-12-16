@@ -8,20 +8,27 @@ window.onload = function getURL() {
       pageStart.textContent =
         "No URL Detected. Go back to Dev Tabs Popup and enter URL!";
     } else {
-      let pageStart = document.getElementById("frame-start");
-      let iframe = document.createElement("iframe");
-      iframe.src = url;
-      iframe.setAttribute(
-        "sandbox",
-        "allow-scripts allow-forms allow-same-origin"
-      );
-      iframe.setAttribute("height", "100%");
-      iframe.setAttribute("width", "100%");
-      iframe.setAttribute(
-        "style",
-        "height: 846px; width: 412px; margin: 65px 15px"
-      );
-      pageStart.appendChild(iframe);
+      function createIframe(height, width) {
+        let pageStart = document.getElementById("frame-start");
+        let iframe = document.createElement("iframe");
+        iframe.src = url;
+        iframe.setAttribute(
+          "sandbox",
+          "allow-scripts allow-forms allow-same-origin"
+        );
+        iframe.setAttribute("height", "100%");
+        iframe.setAttribute("width", "100%");
+        iframe.setAttribute(
+          "style",
+          `height: ${height}; width: ${width}; margin: 65px 45px`
+        );
+        pageStart.appendChild(iframe);
+      }
+      createIframe("846px", "412px");
+      createIframe("786px", "393px");
+      createIframe("812px", "375px");
+      createIframe("800px", "1024px");
+      createIframe("800px", "1280px");
     }
   });
 };
