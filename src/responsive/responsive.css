@@ -9,3 +9,7 @@ body {
   background-color: #575151;
   color: #fafafa;
 }
+
+.frame-start {
+  margin: auto;
+}

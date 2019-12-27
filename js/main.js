@@ -58,7 +58,7 @@ chrome.storage.local.get(["userGit"], function(result) {
       order: "desc",
       onComplete: function() {
         console.log("Feed Loaded");
-      }
+      },
     });
   }
 });
@@ -73,7 +73,7 @@ function GetClock() {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
   let tmonth = [
     "January",
@@ -87,7 +87,7 @@ function GetClock() {
     "September",
     "October",
     "November",
-    "December"
+    "December",
   ];
   let d = new Date();
   let nday = d.getDay(),
@@ -194,7 +194,7 @@ app.appendChild(container);
 
 let request = new XMLHttpRequest();
 let d = new Date();
-request.open("GET", "https://dev.to/api/articles?" + d.getTime(), true);
+request.open("GET", "https://dev.to/api/articles?top", true);
 //Append Timestamp onto end of API call to make sure I don't pull from cache
 request.send();
 request.onload = function() {
