@@ -4,6 +4,20 @@
 
 &nbsp;
 
+## v0.2.7
+
+## Changes
+
+#### Dev articles stale && Responsive Viewer
+
+In this release I am attempting to fix the Dev.to articles from becoming stale. It seems as if the list of articles that shows in the extension is not the latest or the top that they have listed on their site. So I looked at their new API documentation and it seems I can just change the API call to append to at the end and it seems to be working better in testing.
+
+I am also looking at adding some kind of responsive viewing capabilities. This is a very rudimentary implementation thus far. I really just create multiple iframes with different viewport sizes so I can load a URL and see the page and how it looks at different sizes. I have not even changed the user agent yet. Again, this is really more just to get an idea when doing responsive website building.
+
+Also in this release I changes around the buttons on the settings page so they match the design a bit better and are just generally nicer.
+
+&nbsp;
+
 ## v0.2.6
 
 ## Changes
