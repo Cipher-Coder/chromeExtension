@@ -13,3 +13,8 @@ body {
 .frame-start {
   margin: auto;
 }
+
+.iframe-container {
+  margin: auto;
+  text-align: center;
+}

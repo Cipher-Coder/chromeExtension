@@ -195,7 +195,6 @@ app.appendChild(container);
 let request = new XMLHttpRequest();
 let d = new Date();
 request.open("GET", "https://dev.to/api/articles?top", true);
-//Append Timestamp onto end of API call to make sure I don't pull from cache
 request.send();
 request.onload = function() {
   let data = JSON.parse(this.response);
