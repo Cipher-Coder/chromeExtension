@@ -4,6 +4,22 @@
 
 &nbsp;
 
+## v0.2.8
+
+## Changes
+
+#### Image Error fix
+
+In this version, I fixed the constant error in the console when the Dev API returned an article without a cover_image, it showed a null object error. I added an `if` statement to take care of that. Now it will only load `if` there is a cover_image : display none. 
+
+&nbsp;
+
+# Changelog
+
+### Any noteable changes and version notes will be kept in this file.
+
+&nbsp;
+
 ## v0.2.7
 
 ## Changes
@@ -44,7 +60,7 @@ This release is centered around a complete re-write of the github-calendar.js fi
 
 #### Patched URL Proxy
 
-The URL Proxy I was using to hit GitHub and get commit graph details kept going over its limit and interrupting my service. So I created my own Proxy through Google App Engine and am now hitting that and all is working agian.
+The URL Proxy I was using to hit GitHub and get commit graph details kept going over its limit and interrupting my service. So I created my own Proxy through Google App Engine and am now hitting that and all is working again.
 
 &nbsp;
 

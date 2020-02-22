@@ -212,12 +212,14 @@ request.onload = function() {
       article.description = article.description.substring(0, 300);
       p.textContent = `${article.description}...`;
       const img = document.createElement("img");
-      img.src = article.cover_image;
-      img.alt = "";
-      img.onerror = function() {
-        this.style.display = "none";
-      };
-
+      if (article.cover_image !== null) {
+        img.src = article.cover_image;
+        img.alt = "Article Cover Image";
+      } else {
+        img.onerror = function() {
+          this.style.display = "none";
+        };
+      }
       const aTwitter = document.createElement("a");
       let byLine = "";
       if (article.user.twitter_username === null) {
