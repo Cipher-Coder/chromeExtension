@@ -1,30 +1,30 @@
-var links = null;
+let links = null;
 
-fetch("https://dev.to/api/articles")
-  .then(function(response) {
-    response.json().then(function(data) {
+fetch('https://dev.to/api/articles')
+  .then(function (response) {
+    response.json().then(function (data) {
       links = data;
       insertLinks(data);
     });
   })
-  .catch(function(err) {
+  .catch(function (err) {
     console.log(err);
   });
 
-var intervalId = setInterval(function() {
+let intervalId = setInterval(function () {
   if (links) {
     insertLinks(links);
   }
 }, 50);
 
 function insertLinks(data) {
-  var trendsBox = document.getElementsByClassName(
-    "css-1dbjc4n r-1niwhzg r-ku1wi2"
+  let trendsBox = document.getElementsByClassName(
+    'css-1dbjc4n r-1niwhzg r-ku1wi2'
   )[0];
   if (!trendsBox) return;
-  var newItem = document.createElement("DIV");
+  let newItem = document.createElement('DIV');
   newItem.className =
-    "css-1dbjc4n r-1uaug3w r-1uhd6vh r-t23y2h r-1phboty r-rs99b7 r-ku1wi2 r-1udh08x";
+    'css-1dbjc4n r-1uaug3w r-1uhd6vh r-t23y2h r-1phboty r-rs99b7 r-ku1wi2 r-1udh08x';
   newItem.innerHTML = trendsHTML(listHTML(data));
   insertAfter(newItem, trendsBox);
   clearInterval(intervalId);
@@ -35,23 +35,23 @@ function insertAfter(newNode, referenceNode) {
 }
 
 function twitterLink(item) {
-  if (!item.user.twitter_username) return "";
+  if (!item.user.twitter_username) return '';
   return (
     '&nbsp; (<a style="display:inline;color:rgba(29, 161, 242, .8);" href="https://twitter.com/' +
     item.user.twitter_username +
     '">@' +
     item.user.twitter_username +
-    "</a>)"
+    '</a>)'
   );
 }
 
 function listHTML(data) {
   return data
     .slice(0, 11)
-    .map(function(item) {
+    .map(function (item) {
       return linkItemHTML(item);
     })
-    .join("");
+    .join('');
 }
 
 function linkItemHTML(item) {
@@ -69,9 +69,9 @@ function linkItemHTML(item) {
 						' +
     item.user.name +
     twitterLink(item) +
-    "\
+    '\
 					</div>\
-					</li>"
+					</li>'
   );
 }
 
@@ -86,6 +86,6 @@ function trendsHTML(listItems) {
 					<ul class="css-1dbjc4n r-1qd0xha" style="list-style-type: none;" id="dev-to-trends">\
 					' +
     listItems +
-    "</ul></div></div></div>"
+    '</ul></div></div></div>'
   );
 }

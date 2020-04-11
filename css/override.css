@@ -381,7 +381,7 @@ li a:hover {
   -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
   box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
   text-shadow: rgba(0, 0, 0, 1) 0 1px 0;
-  color: #000000;
+  color: #f6fffe;
   font-size: 12px;
   font-family: Georgia, serif;
   text-decoration: none;
@@ -390,7 +390,7 @@ li a:hover {
 #addItem:hover {
   border-top-color: #4a5359;
   background: #4a5359;
-  color: #000000;
+  color: #a6a6a6;
 }
 #addItem:active {
   border-top-color: #39434a;

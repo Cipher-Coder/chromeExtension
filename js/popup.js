@@ -29,7 +29,7 @@ document
 function getResponsiveURL() {
   let responsiveURL = document.getElementById("responsive-url").value;
   chrome.storage.local.set({ resURL: responsiveURL }, () => {
-    console.log("URL is: " + resURL);
+    console.log("URL is: " + responsiveURL);
   });
 
   chrome.tabs.create({ url: "src/responsive/index.html" });

@@ -1,6 +1,6 @@
 # Changelog
 
-### Any noteable changes and version notes will be kept in this file.
+### Any notable changes and version notes will be kept in this file.
 
 &nbsp;
 
@@ -10,13 +10,23 @@
 
 #### Image Error fix
 
-In this version, I fixed the constant error in the console when the Dev API returned an article without a cover_image, it showed a null object error. I added an `if` statement to take care of that. Now it will only load `if` there is a cover_image : display none. 
+In this version, I fixed the constant error in the console when the Dev API returned an article without a cover_image, it showed a null object error. I added an `if` statement to take care of that. Now it will only load `if` there is a cover_image : display none.
+
+I also fixed some misspellings, and I made the '+' icon to add a bookmark switch to a '-' when clicked to signal to user to click that button again to get back to the original state.
+
+Basic refactoring, fixed some commas that should have been semi-colons. Changed some var into let.
+
+Changed the font color of the save button on the place where you add a single bookmark.
+
+Added some JSDoc comments to clear errors in Webstorm.
+
+Fixed chrome.storage.removeItem to just chrome.storage.remove
 
 &nbsp;
 
 # Changelog
 
-### Any noteable changes and version notes will be kept in this file.
+### Any notable changes and version notes will be kept in this file.
 
 &nbsp;
 
@@ -26,11 +36,11 @@ In this version, I fixed the constant error in the console when the Dev API retu
 
 #### Dev articles stale && Responsive Viewer
 
-In this release I am attempting to fix the Dev.to articles from becoming stale. It seems as if the list of articles that shows in the extension is not the latest or the top that they have listed on their site. So I looked at their new API documentation and it seems I can just change the API call to append to at the end and it seems to be working better in testing.
+In this release I am attempting to fix the Dev.to articles from becoming stale. It seems as if the list of articles that shows in the extension is not the latest, or the top listed on their site. So I looked at their new API documentation, and it seems I can just change the API call to append to at the end, and it seems to be working better in testing.
 
-I am also looking at adding some kind of responsive viewing capabilities. This is a very rudimentary implementation thus far. I really just create multiple iframes with different viewport sizes so I can load a URL and see the page and how it looks at different sizes. I have not even changed the user agent yet. Again, this is really more just to get an idea when doing responsive website building.
+I am also looking at adding some kind of responsive viewing capabilities. This is a very rudimentary implementation thus far. I really just create multiple iFrames with different viewport sizes, so I can load a URL and see the page and how it looks at different sizes. I have not even changed the user agent yet. Again, this is really more just to get an idea when doing responsive website building.
 
-Also in this release I changes around the buttons on the settings page so they match the design a bit better and are just generally nicer.
+Also in this release I changed around the buttons on the settings page, so they match the design a bit better and are just generally nicer.
 
 &nbsp;
 
@@ -40,7 +50,7 @@ Also in this release I changes around the buttons on the settings page so they m
 
 #### DOMpurify causing an object instead of string
 
-After using the extension on the new Chrome, I tried to add a single bookmark from the Dev Tabs homepage. In doing so I got `[object, Object]` as output instead of the expected string pushed to the end of the bookmarks array. After looking at the [DOMpurify issues](https://github.com/cure53/DOMPurify/issues/361) I realized the sanitized output returns TrustedHTML-Object instead of a string. So I had to convert the sanitized output `toString()` prior to appending it to the array. Now everything works as expected.
+After using the extension on the new Chrome, I tried to add a single bookmark from the Dev Tabs homepage. In doing so, I got `[object, Object]` as output instead of the expected string pushed to the end of the bookmarks array. After looking at the [DOMpurify issues](https://github.com/cure53/DOMPurify/issues/361) I realized the sanitized output returns TrustedHTML-Object instead of a string. So I had to convert the sanitized output `toString()` prior to appending it to the array. Now everything works as expected.
 
 &nbsp;
 
@@ -50,7 +60,7 @@ After using the extension on the new Chrome, I tried to add a single bookmark fr
 
 #### Complete re-write of github-calendar.js
 
-This release is centered around a complete re-write of the github-calendar.js file. I changed from hitting GitHub in general to `https://github.com/users/username/contributions` API and instead of parsing the entire profile and getting just the contribution info this will in turn decrease the downloaded file size and increase loading time for the calendar since it is just the contribution info being loaded. Also this lib had a total rewrite from its maintainer. I also made sure my proxy was coded into the lib so it did not depend on someone elses free tier from App Engine.
+This release has been centered around a complete re-write of the github-calendar.js file. I changed from hitting GitHub in general to `https://github.com/users/username/contributions` API and instead of parsing the entire profile and getting just the contribution info this will in turn decrease the downloaded file size and increase loading time for the calendar since it is just the contribution info that is being loaded. Also, this lib had a total rewrite from its maintainer. I also made sure my proxy was hard coded into the lib, so it did not depend on someones free tier from App Engine.
 
 &nbsp;
 
@@ -92,7 +102,7 @@ _Still some work to be done on styling - Just wanted to at least get it working_
 
 Needed to sanitize user input for all the bookmarks added.
 
-- DOMPurify lib was added and all input is run through that. Bookmarks entered initially as well as any input from the user for bookmarks entered one at a time from the index page.
+- DOMPurify lib has been added and all input run through that. Bookmarks entered initially as well as any input from the user for bookmarks entered one at a time from the index page.
 
 Ran autoprefixer on all CSS files
 
@@ -108,9 +118,9 @@ Had a request to add in functionality to change the weather information display 
 
 - Added option in the Weather options to toggle between Imperial Units for the US and Metric Units for other countries.
 
-- Now there is a toggle switch before getting weather location. The default is Imperial but you can toggle it to Metric so you can have the Wind Speed displayed in KPH instead of MPH and the Temperature will be in Celsius.
+- Now there is a toggle switch before getting weather location. The default is Imperial, but you can toggle it to Metric, so you can have the Wind Speed displayed in KPH instead of MPH, and the Temperature will be in Celsius.
 
-- This selection is stored in 'chrome.storage.local' with all the other options and is just appended onto the end of the API call to Open Weather Map then it will return the info in that unit of measure. Then the browser will check that selection again prior to display and show either MPH of KPH after wind speed.
+- This selection has been stored in 'chrome.storage.local' with all the other options and is just appended onto the end of the API call to Open Weather Map then it will return the info in that unit of measure. Then the browser will check that selection again prior to display and show either MPH of KPH after wind speed.
 
 &nbsp;
 
@@ -118,11 +128,11 @@ Had a request to add in functionality to change the weather information display 
 
 #### Bookmark options bleeding into Tracking info on bottom of screen on small screens
 
-After looking at the extension loaded on a small laptop I noticed that when the bookmarks options are open, they bleed into the warning about tracking on the bottom of the screen
+After looking at the extension loaded on a small laptop I noticed that when the bookmarks options are open, they bleed into the warning about tracking at the bottom of the screen
 
-- Shrunk the margin on Options page to try and keep the Warning about deleting bookmarks from bleeding into the donate portion.
+- Shrunk the margin on Options page to try to keep the Warning about deleting bookmarks from bleeding into donate portion.
 
-- On smaller screens the warning under Delete Bookmarks was mixed into the paragraph on donating.
+- On smaller screens the warning under 'Delete Bookmarks', was mixed into the paragraph on donating.
 
 - I shrunk the margin as well as shortened the message to warn users about deleting the bookmarks.
 
@@ -134,7 +144,7 @@ After looking at the extension loaded on a small laptop I noticed that when the 
 
 #### Style Updates
 
-- Changed article description and repo description to italic and adjusted size on both. Also increased letter spacing on article desc.
+- Changed article description and repo description to italic and adjusted size on both. Also, I increased letter spacing on article desc.
 
 - Added function to clear the input for bookmarks after you hit the save button.
 
@@ -192,7 +202,7 @@ This will be the first version released to the public
 
 ## v0.1.2 - Pre-Release
 
-#### Updated icon and got rid of error in console
+#### Updated the icon and got rid of error in console
 
 - Updated icons to more suitable ones.
 - Got rid of an error in the console from an icon file that could not be read.
