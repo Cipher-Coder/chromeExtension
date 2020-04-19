@@ -4,26 +4,6 @@
 
 &nbsp;
 
-## v0.2.8
-
-## Changes
-
-#### Image Error fix
-
-In this version, I fixed the constant error in the console when the Dev API returned an article without a cover_image, it showed a null object error. I added an `if` statement to take care of that. Now it will only load `if` there is a cover_image : display none.
-
-I also fixed some misspellings, and I made the '+' icon to add a bookmark switch to a '-' when clicked to signal to user to click that button again to get back to the original state.
-
-Basic refactoring, fixed some commas that should have been semi-colons. Changed some var into let.
-
-Changed the font color of the save button on the place where you add a single bookmark.
-
-Added some JSDoc comments to clear errors in Webstorm.
-
-Fixed chrome.storage.removeItem to just chrome.storage.remove
-
-&nbsp;
-
 # Changelog
 
 ### Any notable changes and version notes will be kept in this file.
@@ -34,13 +14,23 @@ Fixed chrome.storage.removeItem to just chrome.storage.remove
 
 ## Changes
 
-#### Dev articles stale && Responsive Viewer
+#### Dev articles stale && Img Error Fix
 
 In this release I am attempting to fix the Dev.to articles from becoming stale. It seems as if the list of articles that shows in the extension is not the latest, or the top listed on their site. So I looked at their new API documentation, and it seems I can just change the API call to append to at the end, and it seems to be working better in testing.
 
-I am also looking at adding some kind of responsive viewing capabilities. This is a very rudimentary implementation thus far. I really just create multiple iFrames with different viewport sizes, so I can load a URL and see the page and how it looks at different sizes. I have not even changed the user agent yet. Again, this is really more just to get an idea when doing responsive website building.
-
 Also in this release I changed around the buttons on the settings page, so they match the design a bit better and are just generally nicer.
+
+In this version, I fixed the constant error in the console when the Dev API returned an article without a cover_image, it showed a null object error. I added an `if` statement to take care of that. Now it will only load `if` there is a cover_image : display none.
+
+I also fixed some misspellings, and I made the '+' icon to add a bookmark switch to a '-' when clicked to signal to user to click that button again to get back to the original state.
+
+Basic refactoring, fixed some commas that should have been semi-colons. Changed some var into let.
+
+Changed the font color of the save button on the place where you add a single bookmark.
+
+Added some JSDoc comments.
+
+Fixed chrome.storage.removeItem to just chrome.storage.remove
 
 &nbsp;
 
