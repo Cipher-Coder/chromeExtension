@@ -26,6 +26,8 @@ Added some JSDoc comments.
 
 Fixed chrome.storage.removeItem to just chrome.storage.remove
 
+Updated DOMpurify lib and un-minified it for Firefox - This also took care of the warning in the console about sourcemaps.
+
 &nbsp;
 
 ## v0.2.6

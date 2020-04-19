@@ -1,57 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="/js/github-calendar.js"></script>
-  <link rel="stylesheet" href="/css/tachyons.min.css">
-  <link rel="stylesheet" href="/css/override.css">
-  <title>Dev Tabs</title>
-</head>
-<body>
-  <div id="main" class="container">
-    <div id="bookmarks" class="fl w-10">
-      <h3 class="f3 tc light-blue">Bookmarks</h3>
-      <div id="bookmarkList" class="f5 light-blue monospace"></div>
-    </div>
-    <div id="dev-to" class="fl w-20">
-      <h3 class="f3 tc light-blue">Dev.to</h3>
-      <div id="devStart"></div>
-    </div>
-    <div class="fl w-50">
-      <h3 class="f3 tc light-blue">GitHub Calendar</h3>
-      <div id="calendar-start" class="calendar"></div>
-      <div id="clock-place" class="clock-container pt5 tc">
-        <div id="date" class="tc pa3"></div><br />
-        <div id="clock" class="tc f1 pa1"></div>
-        <div class="weather-container pt3">
-          <p class="light-blue f4">City: <span id="city" class="orange i"></span></p>
-          <p class="light-blue f4">Temperature: <span id="temp" class="orange i"></span>Humidity: <span id="humidity"
-              class="orange i"></span></p>
-          <p class="light-blue f4">Wind Speed: <span id="wind" class="orange i"></span>Clouds: <span id="sky"
-              class="orange i"></span></p>
-          <p><a id="options" href="/src/options_custom/index.html">
-              <img src="/img/settingsCog.png" alt="Settings Button"></a>
-          </p>
-          <div class="singleInput">
-            <button id="addIcon">+</button><br/>
-            <p class="singleDesc">Add Bookmark</p>
-            <label for="urlName" id="siteLabel" style="display: none;">Site Name: </label><input class="addBookmark" style="display: none;" type="text" id="urlName" placeholder="Enter Site Name"/><label
-                  for="siteUrl" id="urlLabel" style="display: none;">URL: </label><input class="addBookmark" style="display: none;" type="url" id="siteUrl" placeholder="Enter URL"/><br/>
-            <button id="addItem" style="display: none;">Save</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="/js/github-calendar.js"></script>
+    <link rel="stylesheet" href="/css/tachyons.min.css" />
+    <link rel="stylesheet" href="/css/override.css" />
+    <title>Dev Tabs</title>
+  </head>
+  <body>
+    <div id="main" class="container">
+      <div id="bookmarks" class="fl w-10">
+        <h3 class="f3 tc light-blue">Bookmarks</h3>
+        <div id="bookmarkList" class="f5 light-blue monospace"></div>
+      </div>
+      <div id="dev-to" class="fl w-20">
+        <h3 class="f3 tc light-blue">Dev.to</h3>
+        <div id="devStart"></div>
+      </div>
+      <div class="fl w-50">
+        <h3 class="f3 tc light-blue">GitHub Calendar</h3>
+        <div id="calendar-start" class="calendar"></div>
+        <div id="clock-place" class="clock-container pt5 tc">
+          <div id="date" class="tc pa3"></div>
+          <br />
+          <div id="clock" class="tc f1 pa1"></div>
+          <div class="weather-container pt3">
+            <p class="light-blue f4">
+              City: <span id="city" class="orange i"></span>
+            </p>
+            <p class="light-blue f4">
+              Temperature: <span id="temp" class="orange i"></span>Humidity:
+              <span id="humidity" class="orange i"></span>
+            </p>
+            <p class="light-blue f4">
+              Wind Speed: <span id="wind" class="orange i"></span>Clouds:
+              <span id="sky" class="orange i"></span>
+            </p>
+            <p>
+              <a id="options" href="/src/options_custom/index.html">
+                <img src="/img/settingsCog.png" alt="Settings Button"
+              /></a>
+            </p>
+            <div class="singleInput">
+              <button id="addIcon">+</button><br />
+              <p class="singleDesc">Add Bookmark</p>
+              <label for="urlName" id="siteLabel" style="display: none;"
+                >Site Name: </label
+              ><input
+                class="addBookmark"
+                style="display: none;"
+                type="text"
+                id="urlName"
+                placeholder="Enter Site Name"
+              /><label for="siteUrl" id="urlLabel" style="display: none;"
+                >URL: </label
+              ><input
+                class="addBookmark"
+                style="display: none;"
+                type="url"
+                id="siteUrl"
+                placeholder="Enter URL"
+              /><br />
+              <button id="addItem" style="display: none;">Save</button>
+            </div>
           </div>
         </div>
       </div>
+      <div id="gitFeed" class="fl w-20">
+        <h3 class="f3 tc pb2 light-blue">Github Repo's</h3>
+        <div id="github-feeds" class="tc f6 white"></div>
+      </div>
     </div>
-    <div id="gitFeed" class="fl w-20">
-      <h3 class="f3 tc pb2 light-blue">Github Repo's</h3>
-      <div id="github-feeds" class="tc f6 white"></div>
-    </div>
-  </div>
-  <script src="/js/purify.min.js"></script>
-  <script src="/js/githubFeed.js"></script>
-  <script src="/js/main.js"></script>
-</body>
-
+    <script src="/js/purify.js"></script>
+    <script src="/js/githubFeed.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
 </html>
