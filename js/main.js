@@ -239,7 +239,7 @@ request.onload = function () {
       }
       const aTwitter = document.createElement('a');
       let byLine = '';
-      if (article.user.twitter_username === null) {
+      if (article.user.twitter_username == null) {
         return '';
       } else {
         byLine = article.user.twitter_username;

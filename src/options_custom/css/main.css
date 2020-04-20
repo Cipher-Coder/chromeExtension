@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 75%;
   color: #222222;
   line-height: 1.5;
@@ -57,22 +57,22 @@ h6 {
   font-weight: bold;
 }
 
-input[type="text"],
-input[type="password"],
+input[type='text'],
+input[type='password'],
 textarea {
   background-color: white;
   border: 1px solid #bbbbbb;
 }
 
-input[type="text"],
-input[type="password"],
+input[type='text'],
+input[type='password'],
 textarea,
 select {
   margin: 0.5em 0;
 }
 
-input[type="text"],
-input[type="password"] {
+input[type='text'],
+input[type='password'] {
   width: 300px;
   padding: 4px;
 }
@@ -216,7 +216,7 @@ input {
 }
 .button:before,
 .button:after {
-  content: "";
+  content: '';
   position: absolute;
   z-index: -2;
   transition: all 250ms ease-out;
@@ -277,34 +277,8 @@ input {
   text-align: right;
 }
 
-#donation {
-  border-top: 1px solid #a9bdc9;
-  background: #595959;
-  background: -o-linear-gradient(top, #a8b9c4, #949494);
-  padding: 6px 12px;
-  border-radius: 6px;
-  -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
-  box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
-  text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;
-  color: #000000;
-  font-size: 12px;
-  text-decoration: none;
-  vertical-align: middle;
-}
-
-#donation:hover {
-  border-top-color: #737475;
-  background: #737475;
-  color: #000000;
-}
-
-#donation:active {
-  border-top-color: #8b9ba6;
-  background: #8b9ba6;
-}
-
 #tracking-info {
-  font-family: Helvetica, "Ubuntu", Arial, sans-serif;
+  font-family: Helvetica, 'Ubuntu', Arial, sans-serif;
   text-align: left;
 }
 
@@ -356,13 +330,13 @@ input {
   box-sizing: border-box;
 }
 .onoffswitch-inner:before {
-  content: "Imperial";
+  content: 'Imperial';
   padding-left: 10px;
   background-color: #383838;
   color: #ffffff;
 }
 .onoffswitch-inner:after {
-  content: "Metric";
+  content: 'Metric';
   padding-right: 10px;
   background-color: #383838;
   color: #ffffff;
