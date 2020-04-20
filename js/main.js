@@ -144,6 +144,18 @@ chrome.storage.local.get(['userLat', 'userLong', 'unitOfMeasure'], function (
   let lon = result.userLong;
   let unit = result.unitOfMeasure;
 
+  /**
+   *
+   * @type {object} response
+   * @property {object} main
+   * @property {number} temp
+   * @property {number} humidity
+   * @property {number} wind
+   * @property {number} clouds
+   * @property {string} name
+   *
+   */
+
   function findWeather() {
     let searchLink =
       'https://api.openweathermap.org/data/2.5/weather?lat=' +
@@ -156,15 +168,6 @@ chrome.storage.local.get(['userLat', 'userLong', 'unitOfMeasure'], function (
       unit;
     httpRequestAsync(searchLink, theResponse);
   }
-
-  /**
-   * @param {Object} response
-   * @param {String} response
-   * @param response.main.temp
-   * @param response.main.humidity
-   * @param response.wind
-   * @param response.clouds
-   */
 
   function theResponse(response) {
     let jsonObject = JSON.parse(response);
@@ -204,9 +207,13 @@ app.appendChild(container);
 /**
  *
  * @type {XMLHttpRequest}
- * @param article
- * @param article.cover_image
- * @param article.user.twitter_username
+ * @type {object} article
+ * @property {object} article.user
+ * @property {string} article.cover_image
+ * @property {string} article.user.twitter_username
+ * @property {string} article.description
+ * @property {string} article.user.name
+ * @property {string} article.user.username
  */
 
 let request = new XMLHttpRequest();
@@ -225,7 +232,10 @@ request.onload = function () {
       a.href = article.url;
       a.textContent = article.title;
       const p = document.createElement('p');
-      p.setAttribute('style', 'font-style: italic; letter-spacing: 0.07em;');
+      p.setAttribute(
+        'style',
+        'font-style: italic; letter-spacing: 0.07em; font-size: 0.75em;'
+      );
       article.description = article.description.substring(0, 300);
       p.textContent = `${article.description}...`;
       const img = document.createElement('img');
@@ -237,17 +247,20 @@ request.onload = function () {
           this.style.display = 'none';
         };
       }
+
       const aTwitter = document.createElement('a');
       let byLine = '';
-      if (article.user.twitter_username === null) {
-        return '';
+      if (article.user.twitter_username == null) {
+        byLine = article.user.name;
+        aTwitter.className = 'card-byline';
+        aTwitter.href = 'https://dev.to/' + article.user.username;
+        aTwitter.textContent = 'By: ' + byLine;
       } else {
         byLine = article.user.twitter_username;
+        aTwitter.className = 'card-byline';
+        aTwitter.href = 'https://twitter.com/' + byLine;
+        aTwitter.textContent = 'By: @' + byLine;
       }
-
-      aTwitter.className = 'card-byline';
-      aTwitter.href = 'https://twitter.com/' + byLine;
-      aTwitter.textContent = 'By: @' + byLine;
 
       container.appendChild(card); //Create card
       card.appendChild(img); // Add Image to card

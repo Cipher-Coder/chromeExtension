@@ -4,12 +4,6 @@
 
 &nbsp;
 
-# Changelog
-
-### Any notable changes and version notes will be kept in this file.
-
-&nbsp;
-
 ## v0.2.7
 
 ## Changes
@@ -20,7 +14,7 @@ In this release I am attempting to fix the Dev.to articles from becoming stale. 
 
 Also in this release I changed around the buttons on the settings page, so they match the design a bit better and are just generally nicer.
 
-In this version, I fixed the constant error in the console when the Dev API returned an article without a cover_image, it showed a null object error. I added an `if` statement to take care of that. Now it will only load `if` there is a cover_image : display none.
+Fixed the constant error in the console when the Dev API returned an article without a cover_image, it showed a null object error. I added an `if` statement to take care of that. Now it will only load `if` there is a cover_image : display none.
 
 I also fixed some misspellings, and I made the '+' icon to add a bookmark switch to a '-' when clicked to signal to user to click that button again to get back to the original state.
 
@@ -33,6 +27,8 @@ Added some JSDoc comments.
 Fixed chrome.storage.removeItem to just chrome.storage.remove
 
 Updated DOMpurify lib and un-minified it for Firefox - This also took care of the warning in the console about sourcemaps.
+
+Fixed Dev.to article by-line - problem was: if there was no twitter_username returned with the article object, the entire article was omitted. I fixed it so if there is no twitter_username, it will now display and link to the Dev.to username.
 
 &nbsp;
 
