@@ -10,7 +10,7 @@
 
 #### Dev articles stale && Img Error Fix
 
-In this release I am attempting to fix the Dev.to articles from becoming stale. It seems as if the list of articles that shows in the extension is not the latest, or the top listed on their site. So I looked at their new API documentation, and it seems I can just change the API call to append to at the end, and it seems to be working better in testing.
+In this release I fixed the Dev.to articles from becoming stale. It seems as if the list of articles that shows in the extension is not the latest, or the top listed on their site. So I looked at their new API documentation, and it seems I can just change the API call and append 'top' to the end, and it seems to be working better in testing.
 
 Also in this release I changed around the buttons on the settings page, so they match the design a bit better and are just generally nicer.
 
@@ -24,11 +24,13 @@ Changed the font color of the save button on the place where you add a single bo
 
 Added some JSDoc comments.
 
-Fixed chrome.storage.removeItem to just chrome.storage.remove
+Fixed chrome.storage.removeItem to just chrome.storage.remove so the 'Delete Bookmarks' button actually works now.
 
 Updated DOMpurify lib and un-minified it for Firefox - This also took care of the warning in the console about sourcemaps.
 
 Fixed Dev.to article by-line - problem was: if there was no twitter_username returned with the article object, the entire article was omitted. I fixed it so if there is no twitter_username, it will now display and link to the Dev.to username.
+
+Cleaned up the sanitizing of bookmarks on initial input. [Marked.js](https://marked.js.org) dropped support for sanitizing input in their library. So I was able to just use the DOMpurify library I was using in other places to sanitize on bookmark entry.
 
 &nbsp;
 

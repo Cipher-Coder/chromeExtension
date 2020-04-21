@@ -16,10 +16,7 @@ window.onload = function makeBookmark() {
 
       let bkmk = document.getElementById('bookmarkList');
 
-      let dirty = ul;
-      let clean = DOMPurify.sanitize(dirty);
-
-      bkmk.innerHTML = clean;
+      bkmk.innerHTML = ul;
 
       function makeBookmark(value) {
         ul += "<li class='userMark'>" + value + '</li>';
@@ -249,7 +246,7 @@ request.onload = function () {
       }
 
       const aTwitter = document.createElement('a');
-      let byLine = '';
+      let byLine;
       if (article.user.twitter_username == null) {
         byLine = article.user.name;
         aTwitter.className = 'card-byline';

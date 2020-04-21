@@ -141,13 +141,9 @@ function saveBookmarks() {
   let userBookmarks = [];
   userBookmarks = document.getElementById('bookmarkForm').value;
 
-  let tempBook = new Array();
+  let mytempBook = DOMPurify.sanitize(userBookmarks);
 
-  marked.setOptions({
-    sanitize: true,
-  });
-
-  tempBook = marked.inlineLexer(userBookmarks, []).split(',');
+  let tempBook = marked.inlineLexer(mytempBook, []).split(',');
 
   chrome.storage.local.set({ userBookmark: tempBook }, function () {
     console.log('Bookmarks Logged');
