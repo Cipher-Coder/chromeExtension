@@ -27,43 +27,45 @@
           <br />
           <div id="clock" class="tc f1 pa1"></div>
           <div class="weather-container pt3">
-            <p class="light-blue f4">
+            <p class="light-blue weather-text">
               City: <span id="city" class="orange i"></span>
             </p>
-            <p class="light-blue f4">
+            <p class="light-blue weather-text">
               Temperature: <span id="temp" class="orange i"></span>Humidity:
               <span id="humidity" class="orange i"></span>
             </p>
-            <p class="light-blue f4">
+            <p class="light-blue weather-text">
               Wind Speed: <span id="wind" class="orange i"></span>Clouds:
               <span id="sky" class="orange i"></span>
             </p>
-            <p>
-              <a id="options" href="/src/options_custom/index.html">
-                <img src="/img/settingsCog.png" alt="Settings Button"
-              /></a>
-            </p>
             <div class="singleInput">
-              <button id="addIcon">+</button><br />
-              <p class="singleDesc">Add Bookmark</p>
-              <label for="urlName" id="siteLabel" style="display: none;"
+              <div class="options-settings">
+                <a id="options" href="/src/options_custom/index.html">
+                  <img src="/img/settingsCog.png" alt="Settings Button"
+                /></a>
+              </div>
+              <div class="add-bookmark-button">
+                <button id="addIcon">+</button><br />
+                <p class="singleDesc">Add Bookmark</p>
+              </div>
+              <label for="urlName" id="siteLabel" style="display: none"
                 >Site Name: </label
               ><input
                 class="addBookmark"
-                style="display: none;"
+                style="display: none"
                 type="text"
                 id="urlName"
                 placeholder="Enter Site Name"
-              /><label for="siteUrl" id="urlLabel" style="display: none;"
+              /><label for="siteUrl" id="urlLabel" style="display: none"
                 >URL: </label
               ><input
                 class="addBookmark"
-                style="display: none;"
+                style="display: none"
                 type="url"
                 id="siteUrl"
                 placeholder="Enter URL"
               /><br />
-              <button id="addItem" style="display: none;">Save</button>
+              <button id="addItem" style="display: none">Save</button>
             </div>
           </div>
         </div>

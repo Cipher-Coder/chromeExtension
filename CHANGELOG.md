@@ -4,6 +4,20 @@
 
 &nbsp;
 
+## v0.2.8
+
+## Changes
+
+#### DOMPurify update / CSS for smaller screens
+
+- Updated DOMPurify Lib to latest release
+- Adjusted CSS on Main page to make it slightly more responsive on smaller screens < 1300px
+- Moved the 'Add Single Bookmark' button up and to the side of the options button so you can get to it on smaller screens
+- Adjusted text size on bookmarks that show on main page
+- Adjusted weather and clock font-size to shrink it a bit on smaller screens
+
+&nbsp;
+
 ## v0.2.7
 
 ## Changes
