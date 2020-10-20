@@ -1,7 +1,7 @@
 html {
   background-color: rgb(211, 207, 207);
-  font-family: Helvetica, "Ubuntu", Arial, sans-serif;
-  width: 500px;
+  font-family: Helvetica, 'Ubuntu', Arial, sans-serif;
+  width: 360px;
   height: auto;
 }
 
@@ -9,15 +9,8 @@ h1 {
   font-size: 2em;
 }
 
-a {
-  color: #0066cc;
-  text-decoration: underline;
-}
-
-a:hover {
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-  color: #081163;
+.menu-title {
+  margin-left: 10px;
 }
 
 /*.mainPopup {
@@ -28,10 +21,11 @@ a:hover {
   position: relative;
   display: block;
   width: 150px;
-  margin: 6px auto;
+  margin: 10px 0;
   padding: 6px;
   background-color: #fff;
   border: 1px solid #ccc;
+  border-radius: 4px;
   color: #000;
   text-align: center;
   text-decoration: none;
@@ -43,7 +37,7 @@ a:hover {
 
 .btn:before,
 .btn:after {
-  content: "";
+  content: '';
   position: absolute;
   z-index: -2;
   transition: all 250ms ease-out;
@@ -81,9 +75,9 @@ a:hover {
   text-align: center;
 }
 
-#qr-input {
+/* #qr-input {
   text-align: center;
-}
+} */
 
 #responsiveView {
   text-align: center;
@@ -94,9 +88,29 @@ input {
 }
 
 .menu-list {
+  margin-left: -30px;
   list-style: none;
+  line-height: 1.5;
 }
 
 #open-settings {
   cursor: pointer;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.menu-link:hover {
+  color: #464545;
+}
+
+.menu-item {
+  font-size: 1.3em;
+  color: #000000;
+}
+
+.menu-item:hover {
+  color: #464545;
 }

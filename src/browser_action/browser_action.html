@@ -8,32 +8,28 @@
   <body>
     <div class="mainPopup">
       <div class="container-fluid">
-        <h2>Dev Tabs</h2>
+        <h2 class="menu-title">Dev Tabs</h2>
         <ul class="menu-list">
           <li class="menu-item" id="open-settings">Settings</li>
-          <li class="menu-item"><a href="https://github.com/Cipher-Coder/chromeExtension" class="menu-link">Repository</a></li>
-          <li class="menu-item"><a href="https://mattaz.com/devtabs" class="menu-link">Website</a></li>
+          <li class="menu-item">
+            <a
+              href="https://github.com/Cipher-Coder/chromeExtension"
+              class="menu-link"
+              >Repository</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="https://mattaz.com/devtabs" class="menu-link">Website</a>
+          </li>
         </ul>
-        <p>
-          To change your settings, go to the 'settings' page by clicking the cog
-          in the middle of the page, under the weather info. Also for more info
-          on this extension visit the
-          <a
-            href="https://github.com/Cipher-Coder/chromeExtension"
-            target="_blank"
-            >Github</a
-          >
-          page, or check my website at
-          <a href="https://mattaz.com" target="_blank">mattaz.com</a>
-        </p>
       </div>
       <div>
         <h3>QR Code Generator</h3>
-        <p>
-          Paste URL and get a QR Code you can scan.
-        </p>
+        <p>Paste URL and get a QR Code you can scan.</p>
         <div id="qr-input">
-          <label for="userURL">URL: </label><input id="userURL" size="45" />
+          <label for="userURL"
+            >URL: <br /><input id="userURL" size="45"
+          /></label>
           <button class="btn paper raise-flatten" id="getURL">
             Get QR Code
           </button>

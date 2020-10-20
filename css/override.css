@@ -465,14 +465,13 @@ label {
   display: inline-block;
 }
 
-.options-settings {
+/* .options-settings {
   display: inline-block;
   margin-right: 7px;
-}
+} */
 
 .add-bookmark-button {
   display: inline-block;
-  margin-left: 7px;
 }
 
 @media (max-width: 1300px) {
