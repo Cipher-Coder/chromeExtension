@@ -21,3 +21,7 @@ function getCurrentURL() {
       console.log("Fetch did not work: ", error.message);
     });
 }
+
+document.getElementById("open-settings").addEventListener("click", () => {
+    chrome.runtime.openOptionsPage();
+})

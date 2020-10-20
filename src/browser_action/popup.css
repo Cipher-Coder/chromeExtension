@@ -20,9 +20,9 @@ a:hover {
   color: #081163;
 }
 
-.mainPopup {
+/*.mainPopup {
   padding: 10px;
-}
+}*/
 
 .btn {
   position: relative;
@@ -91,4 +91,12 @@ a:hover {
 
 input {
   padding: 4px;
+}
+
+.menu-list {
+  list-style: none;
+}
+
+#open-settings {
+  cursor: pointer;
 }

@@ -7,8 +7,13 @@
   </head>
   <body>
     <div class="mainPopup">
-      <div class="container">
+      <div class="container-fluid">
         <h2>Dev Tabs</h2>
+        <ul class="menu-list">
+          <li class="menu-item" id="open-settings">Settings</li>
+          <li class="menu-item"><a href="https://github.com/Cipher-Coder/chromeExtension" class="menu-link">Repository</a></li>
+          <li class="menu-item"><a href="https://mattaz.com/devtabs" class="menu-link">Website</a></li>
+        </ul>
         <p>
           To change your settings, go to the 'settings' page by clicking the cog
           in the middle of the page, under the weather info. Also for more info
@@ -25,10 +30,7 @@
       <div>
         <h3>QR Code Generator</h3>
         <p>
-          Copy a url and paste it into the input box. Press 'Get QR Code' and it
-          will generate a QR code which you can scan with your phone and it will
-          bring you to the page you were on. Or if you just want to create some
-          QR codes for other things, this will work.
+          Paste URL and get a QR Code you can scan.
         </p>
         <div id="qr-input">
           <label for="userURL">URL: </label><input id="userURL" size="45" />
