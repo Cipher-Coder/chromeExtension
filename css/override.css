@@ -15,6 +15,12 @@ html {
   margin: 0 auto;
 }
 
+@media (max-width: 1300px) {
+  .calendar {
+    max-width: 600px;
+  }
+}
+
 .calendar-graph text.wday,
 .calendar-graph text.month {
   font-size: 10px;
@@ -164,9 +170,13 @@ span.text-muted {
   color: #3987ec;
 }
 
+.weather-text {
+  font-size: 1.25rem;
+}
+
 #clock,
 #date {
-  font-family: "Share Tech Mono", monospace;
+  font-family: 'Share Tech Mono', monospace;
   max-width: 700px;
   display: inline-block;
   text-align: center;
@@ -176,7 +186,23 @@ span.text-muted {
 
 #clock {
   letter-spacing: 0.05em;
+  font-size: 3rem;
   padding: 5px 0;
+}
+
+@media (max-width: 1300px) {
+  #clock {
+    font-size: 2rem;
+  }
+  .weather-text {
+    font-size: 1rem;
+  }
+  .clock-container {
+    padding-top: 25px;
+  }
+  .weather-container {
+    padding-top: 5px;
+  }
 }
 
 #date {
@@ -226,6 +252,7 @@ li a:hover {
 
 .repo-description {
   font-style: italic;
+  font-size: 0.8em;
 }
 
 #gitFeed {
@@ -320,18 +347,24 @@ li a:hover {
 }
 
 #bookmarkList li:nth-child(3n + 1)::before {
-  content: url("/icons/favicon1.ico");
+  content: url('/icons/favicon1.ico');
   padding-right: 1rem;
 }
 
 #bookmarkList li:nth-child(3n + 2)::before {
-  content: url("/icons/favicon2.ico");
+  content: url('/icons/favicon2.ico');
   padding-right: 1rem;
 }
 
 #bookmarkList li:nth-child(3n)::before {
-  content: url("/icons/favicon3.ico");
+  content: url('/icons/favicon3.ico');
   padding-right: 1rem;
+}
+
+@media (max-width: 1300px) {
+  #bookmarkList li {
+    font-size: 0.7rem;
+  }
 }
 
 #addIcon {
@@ -375,10 +408,23 @@ li a:hover {
   margin-top: 9px;
   border: 1px solid #455259;
   background: #46535c;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#a1a1a1),
+    to(#46535c)
+  );
+  background: -webkit-linear-gradient(top, #a1a1a1, #46535c);
+  background: -moz-linear-gradient(top, #a1a1a1, #46535c);
+  background: -ms-linear-gradient(top, #a1a1a1, #46535c);
   background: -o-linear-gradient(top, #a1a1a1, #46535c);
   padding: 5px 10px;
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
   border-radius: 11px;
   -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
   box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
   text-shadow: rgba(0, 0, 0, 1) 0 1px 0;
   color: #f6fffe;
@@ -409,4 +455,28 @@ li a:hover {
 
 label {
   color: #808fbb;
+}
+
+#bmList li {
+  margin-left: -5px;
+}
+
+.singleInput {
+  display: inline-block;
+}
+
+.options-settings {
+  display: inline-block;
+  margin-right: 7px;
+}
+
+.add-bookmark-button {
+  display: inline-block;
+  margin-left: 7px;
+}
+
+@media (max-width: 1300px) {
+  .singleInput {
+    margin-top: -15px;
+  }
 }
