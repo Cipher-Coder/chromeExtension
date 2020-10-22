@@ -1,68 +1,58 @@
-document.getElementById('git-feed').addEventListener('click', feedDisplay);
+const GIT_FEED = document.getElementById('github-feed');
+const BOOKMARK_OPT = document.getElementById('bookmark-option');
+const GITHUB_CAL = document.getElementById('github-cal');
+const WEATHER_OPT = document.getElementById('weatherOpt');
+
+const GITHUB_FEED = document.getElementById('git-feed');
+const BOOKMARK_DISPLAY = document.getElementById('bookmark-opt');
+const CALENDAR_DISPLAY = document.getElementById('githubCal');
+const WEATHER_DISPLAY = document.getElementById('weatherInfo');
+
+GITHUB_FEED.addEventListener('click', feedDisplay);
 function feedDisplay() {
-  let feedSettings = document.getElementById('github-feed');
-  let bookmarkSettings = document.getElementById('bookmark-option');
-  let calSettings = document.getElementById('github-cal');
-  let weatherSettings = document.getElementById('weatherOpt');
-  if (feedSettings.style.display === 'none') {
-    feedSettings.style.display = 'block';
-    bookmarkSettings.style.display = 'none';
-    calSettings.style.display = 'none';
-    weatherSettings.style.display = 'none';
+  if (GIT_FEED.style.display === 'none') {
+    GIT_FEED.style.display = 'block';
+    BOOKMARK_OPT.style.display = 'none';
+    GITHUB_CAL.style.display = 'none';
+    WEATHER_OPT.style.display = 'none';
   } else {
-    feedSettings.style.display = 'none';
+    GIT_FEED.style.display = 'none';
   }
 }
 // Toggle settings being shown
-document
-  .getElementById('bookmark-opt')
-  .addEventListener('click', bookmarkDisplay);
+BOOKMARK_DISPLAY.addEventListener('click', bookmarkDisplay);
 function bookmarkDisplay() {
-  let bookmarkSettings = document.getElementById('bookmark-option');
-  let feedSettings = document.getElementById('github-feed');
-  let calSettings = document.getElementById('github-cal');
-  let weatherSettings = document.getElementById('weatherOpt');
-  if (bookmarkSettings.style.display === 'none') {
-    bookmarkSettings.style.display = 'block';
-    calSettings.style.display = 'none';
-    feedSettings.style.display = 'none';
-    weatherSettings.style.display = 'none';
+  if (BOOKMARK_OPT.style.display === 'none') {
+    BOOKMARK_OPT.style.display = 'block';
+    GITHUB_CAL.style.display = 'none';
+    GIT_FEED.style.display = 'none';
+    WEATHER_OPT.style.display = 'none';
   } else {
-    bookmarkSettings.style.display = 'none';
+    BOOKMARK_OPT.style.display = 'none';
   }
 }
 // Toggle settings being shown
-document.getElementById('githubCal').addEventListener('click', calendarDisplay);
+CALENDAR_DISPLAY.addEventListener('click', calendarDisplay);
 function calendarDisplay() {
-  let calSettings = document.getElementById('github-cal');
-  let bookmarkSettings = document.getElementById('bookmark-option');
-  let feedSettings = document.getElementById('github-feed');
-  let weatherSettings = document.getElementById('weatherOpt');
-  if (calSettings.style.display === 'none') {
-    calSettings.style.display = 'block';
-    bookmarkSettings.style.display = 'none';
-    feedSettings.style.display = 'none';
-    weatherSettings.style.display = 'none';
+  if (GITHUB_CAL.style.display === 'none') {
+    GITHUB_CAL.style.display = 'block';
+    BOOKMARK_OPT.style.display = 'none';
+    GIT_FEED.style.display = 'none';
+    WEATHER_OPT.style.display = 'none';
   } else {
-    calSettings.style.display = 'none';
+    GITHUB_CAL.style.display = 'none';
   }
 }
 // Toggle settings being shown
-document
-  .getElementById('weatherInfo')
-  .addEventListener('click', weatherDisplay);
+WEATHER_DISPLAY.addEventListener('click', weatherDisplay);
 function weatherDisplay() {
-  let calSettings = document.getElementById('github-cal');
-  let bookmarkSettings = document.getElementById('bookmark-option');
-  let feedSettings = document.getElementById('github-feed');
-  let weatherSettings = document.getElementById('weatherOpt');
-  if (weatherSettings.style.display === 'none') {
-    weatherSettings.style.display = 'block';
-    calSettings.style.display = 'none';
-    bookmarkSettings.style.display = 'none';
-    feedSettings.style.display = 'none';
+  if (WEATHER_OPT.style.display === 'none') {
+    WEATHER_OPT.style.display = 'block';
+    GITHUB_CAL.style.display = 'none';
+    BOOKMARK_OPT.style.display = 'none';
+    GIT_FEED.style.display = 'none';
   } else {
-    weatherSettings.style.display = 'none';
+    WEATHER_OPT.style.display = 'none';
   }
 }
 // Get location for weather

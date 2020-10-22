@@ -11,6 +11,7 @@ h1 {
 
 .menu-title {
   margin-left: 10px;
+  font-size: 1.2rem;
 }
 
 .btn {
@@ -77,6 +78,7 @@ input {
 
 .menu-list {
   margin-left: -30px;
+  margin-top: -1em;
   list-style: none;
   line-height: 1.5;
 }
@@ -101,4 +103,8 @@ input {
 
 .menu-item:hover {
   color: #464545;
+}
+
+.qr-title {
+  font-size: 1.3em;
 }
