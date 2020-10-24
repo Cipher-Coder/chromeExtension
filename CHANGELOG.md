@@ -15,6 +15,8 @@
 - Moved the 'Add Single Bookmark' button up and to the side of the options button so you can get to it on smaller screens
 - Adjusted text size on bookmarks that show on main page
 - Adjusted weather and clock font-size to shrink it a bit on smaller screens
+- Fixed text content on Settings page to fit explanations without covering up text on bottom of page.
+- Little bit of JavaScript refactoring
 
 &nbsp;
 
