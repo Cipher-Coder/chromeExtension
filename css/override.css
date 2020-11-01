@@ -479,3 +479,19 @@ label {
     margin-top: -15px;
   }
 }
+
+rect[data-count='0'] {
+  fill: #dddbdb;
+}
+
+rect[data-count='1'] {
+  fill: #39dd34;
+}
+
+rect[data-count='2'] {
+  fill: #45a045;
+}
+
+rect {
+  fill: #047526;
+}

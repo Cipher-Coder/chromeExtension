@@ -316,5 +316,5 @@ function addEntry() {
 function clearInput() {
   document.getElementById('urlName').value = '';
   document.getElementById('siteUrl').value = '';
-  document.location.reload(true);
+  document.location.forceReload(true);
 }

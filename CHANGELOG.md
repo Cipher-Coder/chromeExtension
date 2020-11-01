@@ -17,6 +17,7 @@
 - Adjusted weather and clock font-size to shrink it a bit on smaller screens
 - Fixed text content on Settings page to fit explanations without covering up text on bottom of page.
 - Little bit of JavaScript refactoring
+- clearInput function `location.reload` is depreciated for `location.forceReload`
 
 &nbsp;
 
