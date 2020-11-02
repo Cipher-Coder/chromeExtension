@@ -2,15 +2,18 @@
 
 ### Any notable changes and version notes will be kept in this file.
 
+[![Matthew's github stats](https://github-readme-stats.vercel.app/api?username=Cipher-Coder)](https://github.com/Cipher-Coder/)
+
 &nbsp;
 
-## v0.2.8
+## v0.3.0
 
 ## Changes
 
-#### DOMPurify update / CSS for smaller screens
+#### Github Calendar fix | DOMPurify update | CSS for smaller screens
 
 - Updated DOMPurify Lib to latest release
+- HOTFIX - Github calendar was not working - Fixed
 - Adjusted CSS on Main page to make it slightly more responsive on smaller screens < 1300px
 - Moved the 'Add Single Bookmark' button up and to the side of the options button so you can get to it on smaller screens
 - Adjusted text size on bookmarks that show on main page
