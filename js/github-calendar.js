@@ -1,6 +1,6 @@
 'use strict';
 
-var _typeof2 =
+var _typeof =
   typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol'
     ? function (obj) {
         return typeof obj;
@@ -16,7 +16,7 @@ var _typeof2 =
 
 (function (f) {
   if (
-    (typeof exports === 'undefined' ? 'undefined' : _typeof2(exports)) ===
+    (typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) ===
       'object' &&
     typeof module !== 'undefined'
   ) {
@@ -192,50 +192,21 @@ var _typeof2 =
                 '" target="blank">@' +
                 username +
                 '</a>';
-            options.cache = (options.cache || 24 * 60 * 60) * 1000;
 
             if (options.global_stats === false) {
               container.style.minHeight = '175px';
             }
 
-            var cacheKeys = {
-              content: 'gh_calendar_content.' + username,
-              expire_at: 'gh_calendar_expire.' + username,
-
-              // We need a proxy for CORS
-            };
+            // We need a proxy for CORS
             options.proxy =
               options.proxy ||
               function (username) {
                 return fetch(
-                  `https://mattazurl.appspot.com/req?method=GET&url=https://github.com/users/${username}/contributions/`
+                  'https://mattazurl.appspot.com/req?method=GET&url=https://github.com/users/' +
+                    username +
+                    '/contributions/'
                 ).then(function (r) {
                   return r.text();
-                });
-              };
-
-            options.getCalendar =
-              options.getCalendar ||
-              function (username) {
-                if (
-                  options.cache &&
-                  Date.now() < +localStorage.getItem(cacheKeys.expire_at)
-                ) {
-                  var content = localStorage.getItem(cacheKeys.content);
-                  if (content) {
-                    return Promise.resolve(content);
-                  }
-                }
-
-                return options.proxy(username).then(function (body) {
-                  if (options.cache) {
-                    localStorage.setItem(cacheKeys.content, body);
-                    localStorage.setItem(
-                      cacheKeys.expire_at,
-                      Date.now() + options.cache
-                    );
-                  }
-                  return body;
                 });
               };
 
@@ -915,10 +886,7 @@ var _typeof2 =
         function (require, module, exports) {
           'use strict';
 
-          var githubCalendarLegend = require('github-calendar-legend'),
-            colorLegend = require('github-calendar-legend');
-
-          var GH_FILL_LEVELS = ['day', 'day-L1', 'day-L4', 'day-L3', 'day-L2'];
+          var githubCalendarLegend = require('github-calendar-legend');
 
           /**
            * parseGitHubCalendarSvg
@@ -977,9 +945,7 @@ var _typeof2 =
                   );
                 }
 
-                var fill = c.match(
-                    /fill="var\(\-\-color\-calendar\-graph\-([a-z0-9-]+)\-bg\)"/i
-                  ),
+                var fill = c.match(/fill="(#[a-z0-9]+)"/),
                   date = c.match(/data-date="([0-9\-]+)"/),
                   count = c.match(/data-count="([0-9]+)"/),
                   level = null;
@@ -991,8 +957,6 @@ var _typeof2 =
                 if (!fill) {
                   return;
                 }
-
-                fill = colorLegend[GH_FILL_LEVELS.indexOf(fill)];
 
                 var obj = {
                   fill: fill,
@@ -1028,27 +992,6 @@ var _typeof2 =
       ],
       9: [
         function (require, module, exports) {
-          'use strict';
-
-          var _typeof =
-            typeof Symbol === 'function' &&
-            _typeof2(Symbol.iterator) === 'symbol'
-              ? function (obj) {
-                  return typeof obj === 'undefined'
-                    ? 'undefined'
-                    : _typeof2(obj);
-                }
-              : function (obj) {
-                  return obj &&
-                    typeof Symbol === 'function' &&
-                    obj.constructor === Symbol &&
-                    obj !== Symbol.prototype
-                    ? 'symbol'
-                    : typeof obj === 'undefined'
-                    ? 'undefined'
-                    : _typeof2(obj);
-                };
-
           /**
            * iterateObject
            * Iterates an object. Note the object field order may differ.
