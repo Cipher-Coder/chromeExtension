@@ -210,6 +210,14 @@ var _typeof =
                 });
               };
 
+            options.getCalendar =
+              options.getCalendar ||
+              function (username) {
+                return options.proxy(username).then(function (body) {
+                  return body;
+                });
+              };
+
             var fetchCalendar = function fetchCalendar() {
               return options
                 .getCalendar(username)
