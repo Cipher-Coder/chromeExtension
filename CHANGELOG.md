@@ -6,6 +6,16 @@
 
 &nbsp;
 
+## v0.3.1
+
+## Changes
+
+#### Cache
+
+- Fixed cache so your commits show up right away and not in a day.
+
+&nbsp;
+
 ## v0.3.0
 
 ## Changes
