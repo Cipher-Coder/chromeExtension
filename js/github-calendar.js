@@ -1,6 +1,6 @@
 'use strict';
 
-var _typeof2 =
+var _typeof =
   typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol'
     ? function (obj) {
         return typeof obj;
@@ -16,7 +16,7 @@ var _typeof2 =
 
 (function (f) {
   if (
-    (typeof exports === 'undefined' ? 'undefined' : _typeof2(exports)) ===
+    (typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) ===
       'object' &&
     typeof module !== 'undefined'
   ) {
@@ -90,70 +90,8 @@ var _typeof2 =
           var DATE_FORMAT1 = 'MMM D, YYYY',
             DATE_FORMAT2 = 'MMMM D';
 
-          var MONTH_NAMES = [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec',
-          ];
-
           function printDayCount(dayCount) {
             return dayCount + ' ' + (dayCount === 1 ? 'day' : 'days');
-          }
-
-          function addTooltips(container) {
-            var tooltip = document.createElement('div');
-            tooltip.classList.add('day-tooltip');
-            container.appendChild(tooltip);
-
-            // Add mouse event listener to show & hide tooltip
-            var days = container.querySelectorAll('rect.day');
-            days.forEach(function (day) {
-              day.addEventListener('mouseenter', function (e) {
-                var contribCount = e.target.getAttribute('data-count');
-                if (contribCount === '0') {
-                  contribCount = 'No contributions';
-                } else if (contribCount === '1') {
-                  contribCount = '1 contribution';
-                } else {
-                  contribCount = contribCount + ' contributions';
-                }
-                var date = new Date(e.target.getAttribute('data-date'));
-                var dateText =
-                  MONTH_NAMES[date.getUTCMonth()] +
-                  ' ' +
-                  date.getUTCDate() +
-                  ', ' +
-                  date.getUTCFullYear();
-                tooltip.innerHTML =
-                  '<strong>' + contribCount + '</strong> on ' + dateText;
-                tooltip.classList.add('is-visible');
-                var size = e.target.getBoundingClientRect(),
-                  leftPos =
-                    size.left +
-                    window.pageXOffset -
-                    tooltip.offsetWidth / 2 +
-                    size.width / 2,
-                  topPos =
-                    size.bottom +
-                    window.pageYOffset -
-                    tooltip.offsetHeight -
-                    2 * size.height;
-                tooltip.style.top = topPos + 'px';
-                tooltip.style.left = leftPos + 'px';
-              });
-              day.addEventListener('mouseleave', function () {
-                tooltip.classList.remove('is-visible');
-              });
-            });
           }
 
           /**
@@ -172,7 +110,6 @@ var _typeof2 =
            *      The default is using @Bloggify's APIs.
            *    - `global_stats` (Boolean): If `false`, the global stats (total, longest and current streaks) will not be calculated and displayed. By default this is enabled.
            *    - `responsive` (Boolean): If `true`, the graph is changed to scale with the container. Custom CSS should be applied to the element to scale it appropriately. By default this is disabled.
-           *    - `tooltips` (Boolean): If `true`, tooltips will be shown when hovered over calendar days. By default this is disabled.
            *    - `cache` (Number) The cache time in seconds.
            *
            * @return {Promise} A promise returned by the `fetch()` call.
@@ -196,12 +133,14 @@ var _typeof2 =
             if (options.global_stats === false) {
               container.style.minHeight = '175px';
             }
-
+            // We need a proxy for CORS
             options.proxy =
               options.proxy ||
               function (username) {
                 return fetch(
-                  `https://mattazurl.appspot.com/req?method=GET&url=https://github.com/users/${username}/contributions/`
+                  'https://mattazurl.appspot.com/req?method=GET&url=https://github.com/users/' +
+                    username +
+                    '/contributions/'
                 ).then(function (r) {
                   return r.text();
                 });
@@ -321,11 +260,6 @@ var _typeof2 =
                     }
 
                     container.innerHTML = cal.innerHTML;
-
-                    // If options includes tooltips, add tooltips listeners to SVG
-                    if (options.tooltips === true) {
-                      addTooltips(container);
-                    }
                   }
                 })
                 .catch(function (e) {
@@ -889,10 +823,7 @@ var _typeof2 =
         function (require, module, exports) {
           'use strict';
 
-          var githubCalendarLegend = require('github-calendar-legend'),
-            colorLegend = require('github-calendar-legend');
-
-          var GH_FILL_LEVELS = ['day', 'day-L1', 'day-L4', 'day-L3', 'day-L2'];
+          var githubCalendarLegend = require('github-calendar-legend');
 
           /**
            * parseGitHubCalendarSvg
@@ -951,9 +882,7 @@ var _typeof2 =
                   );
                 }
 
-                var fill = c.match(
-                    /fill="var\(\-\-color\-calendar\-graph\-([a-z0-9-]+)\-bg\)"/i
-                  ),
+                var fill = c.match(/fill="(#[a-z0-9]+)"/),
                   date = c.match(/data-date="([0-9\-]+)"/),
                   count = c.match(/data-count="([0-9]+)"/),
                   level = null;
@@ -965,8 +894,6 @@ var _typeof2 =
                 if (!fill) {
                   return;
                 }
-
-                fill = colorLegend[GH_FILL_LEVELS.indexOf(fill)];
 
                 var obj = {
                   fill: fill,
@@ -1002,27 +929,6 @@ var _typeof2 =
       ],
       9: [
         function (require, module, exports) {
-          'use strict';
-
-          var _typeof =
-            typeof Symbol === 'function' &&
-            _typeof2(Symbol.iterator) === 'symbol'
-              ? function (obj) {
-                  return typeof obj === 'undefined'
-                    ? 'undefined'
-                    : _typeof2(obj);
-                }
-              : function (obj) {
-                  return obj &&
-                    typeof Symbol === 'function' &&
-                    obj.constructor === Symbol &&
-                    obj !== Symbol.prototype
-                    ? 'symbol'
-                    : typeof obj === 'undefined'
-                    ? 'undefined'
-                    : _typeof2(obj);
-                };
-
           /**
            * iterateObject
            * Iterates an object. Note the object field order may differ.

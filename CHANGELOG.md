@@ -13,6 +13,7 @@
 #### Cache
 
 - Fixed cache so your commits show up right away and not in a day.
+- Fixed rendering issue again... Guessing GitHub keeps changing how the graph is being rendered.
 
 &nbsp;
 
