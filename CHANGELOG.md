@@ -6,6 +6,16 @@
 
 &nbsp;
 
+## v0.3.2
+
+## Changes
+
+#### Streaks &
+
+- Fixed rendering issue on the streaks and contributions
+
+&nbsp;
+
 ## v0.3.1
 
 ## Changes
