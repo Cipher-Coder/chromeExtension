@@ -6,6 +6,30 @@
   --color-calendar-graph-day-L4-bg: #0e4e0b;
 }
 
+[data-level='0'] {
+  fill: #dddbdb;
+}
+
+[data-level='1'] {
+  fill: #39dd34;
+}
+
+[data-level='2'] {
+  fill: #45a045;
+}
+
+[data-level='3'] {
+  fill: #047526;
+}
+
+[data-level='4'] {
+  fill: #0a4208;
+}
+
+.ContributionCalendar-label {
+  fill: rgb(240, 61, 61);
+}
+
 html {
   background-color: #252730;
   font-family: monospace;
@@ -135,6 +159,18 @@ html {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   will-change: overflow;
+}
+
+.float-left {
+  float: left;
+  color: #5bd75b;
+  margin-left: 8px;
+  font-size: 0.7rem;
+  padding: 2px;
+}
+
+.float-left a {
+  color: #1ca0dd;
 }
 
 .left.text-muted {
