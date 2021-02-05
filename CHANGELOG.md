@@ -6,11 +6,11 @@
 
 &nbsp;
 
-## v0.3.2
+## v0.3.2 & v0.3.3
 
 ## Changes
 
-#### Streaks &
+#### Streaks & GitHub keeps changing the way they render their contributions SVG
 
 - Fixed rendering issue on the streaks and contributions
 
