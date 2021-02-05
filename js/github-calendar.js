@@ -892,31 +892,27 @@ var _typeof =
 
                 var obj = {
                   fill: fill,
-                  date: new Date(date + ' 00:00'),
+                  date: new Date(date),
                   count: count,
                   level: githubCalendarLegend.indexOf(fill),
                 };
 
-                var currentDate = new Date().setHours(0, 0, 0, 0);
-
-                if (currentDate != Date.parse(obj.date)) {
-                  if (data.current_streak === 0) {
-                    data.current_streak_range[0] = obj.date;
-                  }
-
-                  if (obj.count) {
-                    ++data.current_streak;
-                    data.last_year += obj.count;
-                    data.last_contributed = obj.date;
-                    data.current_streak_range[1] = obj.date;
-                  } else {
-                    updateLongestStreak();
-                    data.current_streak = 0;
-                  }
-
-                  lastWeek.push(obj);
-                  data.days.push(obj);
+                if (data.current_streak === 0) {
+                  data.current_streak_range[0] = obj.date;
                 }
+
+                if (obj.count) {
+                  ++data.current_streak;
+                  data.last_year += obj.count;
+                  data.last_contributed = obj.date;
+                  data.current_streak_range[1] = obj.date;
+                } else {
+                  updateLongestStreak();
+                  data.current_streak = 0;
+                }
+
+                lastWeek.push(obj);
+                data.days.push(obj);
               });
 
             updateLongestStreak();
