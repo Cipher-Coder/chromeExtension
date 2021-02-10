@@ -6,6 +6,17 @@
 
 &nbsp;
 
+## v0.3.4
+
+## Changes
+
+#### Fixed the Streaks display that was still not working
+
+- In the GitHub Calendar, the streaks box was not showing the "Current Streak". This has now been fixed.
+- Cleaned up a little CSS to make the SVG look a little nicer.
+
+&nbsp;
+
 ## v0.3.2 & v0.3.3
 
 ## Changes

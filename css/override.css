@@ -28,6 +28,7 @@
 
 .ContributionCalendar-label {
   fill: rgb(240, 61, 61);
+  font-size: 10px;
 }
 
 html {
@@ -83,6 +84,11 @@ html {
 .text-small {
   font-size: 12px;
   color: #5bd75b;
+}
+
+.js-calendar-graph {
+  padding: 5px 0 0 5px;
+  text-align: center;
 }
 
 .calendar-graph {
@@ -164,7 +170,7 @@ html {
 .float-left {
   float: left;
   color: #5bd75b;
-  margin-left: 8px;
+  margin-left: 20px;
   font-size: 0.7rem;
   padding: 2px;
 }
@@ -208,6 +214,7 @@ span.text-muted {
 
 .text-gray {
   color: #5bd75b;
+  font-size: 12px;
 }
 
 .float-left.text-gray a {
