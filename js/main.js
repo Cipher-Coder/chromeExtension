@@ -133,64 +133,65 @@ let humidityEl = document.getElementById('humidity');
 let windEl = document.getElementById('wind');
 let skyEl = document.getElementById('sky');
 
-chrome.storage.local.get(['userLat', 'userLong', 'unitOfMeasure'], function (
-  result
-) {
-  // Pull from chrome local storage
-  let lat = result.userLat;
-  let lon = result.userLong;
-  let unit = result.unitOfMeasure;
+chrome.storage.local.get(
+  ['userLat', 'userLong', 'unitOfMeasure'],
+  function (result) {
+    // Pull from chrome local storage
+    let lat = result.userLat;
+    let lon = result.userLong;
+    let unit = result.unitOfMeasure;
 
-  /**
-   *
-   * @type {object} response
-   * @property {object} main
-   * @property {number} temp
-   * @property {number} humidity
-   * @property {number} wind
-   * @property {number} clouds
-   * @property {string} name
-   *
-   */
+    /**
+     *
+     * @type {object} response
+     * @property {object} main
+     * @property {number} temp
+     * @property {number} humidity
+     * @property {number} wind
+     * @property {number} clouds
+     * @property {string} name
+     *
+     */
 
-  function findWeather() {
-    let searchLink =
-      'https://api.openweathermap.org/data/2.5/weather?lat=' +
-      lat +
-      '&lon=' +
-      lon +
-      '&appid=' +
-      apiKey +
-      '&units=' +
-      unit;
-    httpRequestAsync(searchLink, theResponse);
-  }
-
-  function theResponse(response) {
-    let jsonObject = JSON.parse(response);
-    cityEl.textContent = jsonObject.name; // Location
-    currTempEl.textContent = parseInt(jsonObject.main.temp) + '° '; //Temperature
-    humidityEl.textContent = jsonObject.main.humidity + '%'; // Humidity
-    let windSpeed = 'mph';
-
-    if (unit === 'metric') {
-      windSpeed = 'kph';
+    function findWeather() {
+      let searchLink =
+        'https://api.openweathermap.org/data/2.5/weather?lat=' +
+        lat +
+        '&lon=' +
+        lon +
+        '&appid=' +
+        apiKey +
+        '&units=' +
+        unit;
+      httpRequestAsync(searchLink, theResponse);
     }
-    windEl.textContent = jsonObject.wind.speed + windSpeed + ' '; // Wind Speed
-    skyEl.textContent = jsonObject.clouds.all + '%'; // Cloud Cover %
-  }
 
-  function httpRequestAsync(url, callback) {
-    let httpRequest = new XMLHttpRequest();
-    httpRequest.onreadystatechange = () => {
-      if (httpRequest.readyState === 4 && httpRequest.status === 200)
-        callback(httpRequest.responseText);
-    };
-    httpRequest.open('GET', url, true);
-    httpRequest.send();
+    function theResponse(response) {
+      let jsonObject = JSON.parse(response);
+      cityEl.textContent = jsonObject.name; // Location
+      currTempEl.textContent = parseInt(jsonObject.main.temp) + '° '; //Temperature
+      humidityEl.textContent = jsonObject.main.humidity + '%'; // Humidity
+      let windSpeed = 'mph';
+
+      if (unit === 'metric') {
+        windSpeed = 'kph';
+      }
+      windEl.textContent = jsonObject.wind.speed + windSpeed + ' '; // Wind Speed
+      skyEl.textContent = jsonObject.clouds.all + '%'; // Cloud Cover %
+    }
+
+    function httpRequestAsync(url, callback) {
+      let httpRequest = new XMLHttpRequest();
+      httpRequest.onreadystatechange = () => {
+        if (httpRequest.readyState === 4 && httpRequest.status === 200)
+          callback(httpRequest.responseText);
+      };
+      httpRequest.open('GET', url, true);
+      httpRequest.send();
+    }
+    findWeather(); //Initiate the function
   }
-  findWeather(); //Initiate the function
-});
+);
 
 // Dev.to Feed
 
