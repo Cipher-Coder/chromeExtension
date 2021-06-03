@@ -293,6 +293,7 @@ input {
   margin-left: 76px;
   margin-bottom: 10px;
   width: 90px;
+  user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
