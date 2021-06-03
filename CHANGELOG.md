@@ -6,6 +6,20 @@
 
 &nbsp;
 
+## v0.3.5
+
+&nbsp;
+
+## Changes
+
+#### DEV API update
+
+- DEV api has either changed or been updated and it was no longer fetching the latest articles and displaying them. The articles displayed were stale.
+
+- Updated the API call to pull the latest 20 articles and display them.
+
+&nbsp;
+
 ## v0.3.4
 
 ## Changes
