@@ -6,9 +6,17 @@
 
 &nbsp;
 
-## v0.3.5
+## v0.3.6
+
+## Changes
+
+#### Better Onboarding
+
+- Made it easier to access settings on first run. Refrence [Issue #1](https://github.com/Cipher-Coder/chromeExtension/issues/1)
 
 &nbsp;
+
+## v0.3.5
 
 ## Changes
 
