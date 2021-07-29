@@ -13,6 +13,7 @@
 #### Better Onboarding
 
 - Made it easier to access settings on first run. Refrence [Issue #1](https://github.com/Cipher-Coder/chromeExtension/issues/1)
+- Added a Cache for the Github Graph - Too many requests are being sent. Sometimes one person is aquiring a new tab > 20 times an hour. Since my self-hosted proxy is hosted on GCP the cost is increasing exponentially. Right now, it is set to cache the data for one hour. However, if this does not bring the cost back down to a managable range I will increase the time.
 
 &nbsp;
 
