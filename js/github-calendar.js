@@ -186,12 +186,11 @@ var _typeof =
 
             options = options || {}
             options.summary_text =
-              options.summary_text ||
               'Summary of pull requests, issues opened, and commits made by <a href="https://github.com/' +
-                username +
-                '" target="blank">@' +
-                username +
-                '</a>'
+              username +
+              '" target="blank">@' +
+              username +
+              '</a>'
             options.cache = (options.cache || 1 * 60 * 60) * 1000
 
             if (options.global_stats === false) {
@@ -249,7 +248,8 @@ var _typeof =
                   div.innerHTML = body
                   var cal = div.querySelector('.js-yearly-contributions')
                   $('.position-relative h2', cal).remove()
-                  //cal.querySelector(".float-left.text-gray").innerHTML = options.summary_text
+                  cal.querySelector('.float-left').innerHTML =
+                    options.summary_text
 
                   // If 'include-fragment' with spinner img loads instead of the svg, fetchCalendar again
                   if (cal.querySelector('include-fragment')) {
